@@ -1,4 +1,7 @@
-/* Box sizing rules */
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyleReset = createGlobalStyle`
+ /* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -42,7 +45,7 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture,
-sgv {
+svg {
   max-width: 100%;
   display: block;
 }
@@ -62,3 +65,4 @@ sgv {
     scroll-behavior: auto !important;
   }
 }
+`;
