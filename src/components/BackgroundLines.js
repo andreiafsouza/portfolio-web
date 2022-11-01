@@ -12,9 +12,9 @@ export const BackgroundLines = () => {
         <path strokeOpacity="0.5" d="M0 39.5L180 39.5"></path>
         <path strokeOpacity="0.5" d="M0 59.5L180 59.5"></path>
         <path strokeOpacity="0.2" d="M0 59.5L382.85 59.5"></path>
-        <path strokeOpacity="0.5" d="M0 79.5L494 79.5"></path>
-        <path strokeOpacity="0.5" d="M0 99.5L494 99.5"></path>
-        <path strokeOpacity="0.5" d="M0 119.5L494 119.5"></path>
+        <path strokeOpacity="0.5" d="M0 79.5L523 79.5"></path>
+        <path strokeOpacity="0.5" d="M0 99.5L523 99.5"></path>
+        <path strokeOpacity="0.5" d="M0 119.5L523 119.5"></path>
         <path strokeOpacity="0.2" d="M523 59.5L768.675 59.5"></path>
         <path strokeOpacity="0.5" d="M523 79.5L840 79.5"></path>
         <path strokeOpacity="0.5" d="M523 99.5L840 99.5"></path>
