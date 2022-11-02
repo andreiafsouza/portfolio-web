@@ -4,11 +4,12 @@ export const typography = {
     display: 'Noto Serif'
   },
   sizes: {
-    xs: '.6rem',
-    sm: '.8rem',
+    xs: '0.625rem',
+    sm: '.75rem',
     md: '1rem',
-    lg: '1.4rem',
+    lg: '1.25rem',
     xl: '2rem',
-    xxl: '3rem'
+    xxl: '4rem',
+    xxxl: '5rem'
   }
 };

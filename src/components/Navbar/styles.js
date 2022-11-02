@@ -11,16 +11,16 @@ export const Container = styled.div`
 `;
 
 export const NavbarWrapper = styled.div`
+  width: 37%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 2.7rem 6.5rem 0 6.5rem;
+  padding: 2.7rem 15% 0 15%;
   gap: 2.7rem;
 `;
 
 export const NavbarItem = styled.div`
   font-family: ${typography.text.main}, sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: ${typography.sizes.md};
   line-height: 103.7%;

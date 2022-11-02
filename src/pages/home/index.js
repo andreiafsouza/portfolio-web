@@ -1,22 +1,45 @@
 import * as S from './styles';
 import { BackgroundLines } from '../../components/BackgroundLines';
 import { Navbar } from '../../components/Navbar';
+import { Button } from '../../components/Button';
 
 export const Home = () => {
   return (
     <S.Container>
       <Navbar />
       <S.BackgroundWrapper>
-        <S.MainTextBackground />
-        <S.ButtonBackground />
-        <S.ProfileWrapper>
-          <S.ProfileBackgroundItemSmall />
-          <S.ProfileBackgroundItemMedium />
-          <S.ProfileBackgroundItemBig />
-        </S.ProfileWrapper>
-        <S.BackgroundLinesWrapper>
-          <BackgroundLines />
-        </S.BackgroundLinesWrapper>
+        <S.MainPageWrapper>
+          <S.MainWrapper>
+            <S.LeftMainContentWrapper>
+              <S.MainTextMedium>design</S.MainTextMedium>
+              <S.MainTextMedium>engineer</S.MainTextMedium>
+              <S.MainTextLarge>CREATE</S.MainTextLarge>
+              <S.ButtonWrapper>
+                <Button hasLabel text={'projetos.'} />
+                <Button hasLabel text={'github.'} />
+                <Button hasLabel text={'figma.'} />
+              </S.ButtonWrapper>
+            </S.LeftMainContentWrapper>
+            <S.RightMainContentWrapper>
+              <S.MainParagraphWrapper>
+                <S.MainParagraph>
+                  motivated by finding effective and efficient ways to solve
+                  problems
+                </S.MainParagraph>
+              </S.MainParagraphWrapper>
+            </S.RightMainContentWrapper>
+          </S.MainWrapper>
+          <S.ProfileWrapper>
+            <S.ProfileBackgroundItemSmall />
+            <S.ProfileBackgroundItemMedium />
+            <S.ProfileBackgroundItemBig />
+          </S.ProfileWrapper>
+          <S.ButtonBackground />
+          <S.MainTextBackground />
+          <S.BackgroundLinesWrapper>
+            <BackgroundLines />
+          </S.BackgroundLinesWrapper>
+        </S.MainPageWrapper>
       </S.BackgroundWrapper>
     </S.Container>
   );
