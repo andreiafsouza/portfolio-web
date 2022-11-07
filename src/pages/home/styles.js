@@ -74,7 +74,7 @@ export const ButtonBackground = styled.div`
   background-color: ${colors.secondary[800]};
   width: 41.6%;
   max-width: 600px;
-  height: 21rem;
+  height: calc(100vh - 68%);
   position: absolute;
   z-index: 4;
   bottom: 90px;
@@ -150,4 +150,42 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   padding-top: calc(100vh - 880px);
   gap: 1.25rem;
+`;
+
+export const ProfileLinesWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  padding-top: 10.2rem;
+  padding-right: 4.5rem;
+  height: 100vh;
+  position: absolute;
+  z-index: 6;
+  right: 0;
+`;
+
+export const AboutInfoWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  padding-top: 42.75rem;
+  padding-right: 6.68rem;
+  height: 100vh;
+  position: absolute;
+  z-index: 7;
+  right: 0;
+`;
+
+export const AboutInfoAndButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const AboutParagraph = styled.div`
+  max-width: 14rem;
+  font-family: ${typography.text.main}, sans-serif;
+  font-weight: 400;
+  font-size: ${typography.sizes.md};
+  color: ${colors.primary[200]};
 `;

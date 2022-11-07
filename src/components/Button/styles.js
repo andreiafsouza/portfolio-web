@@ -8,17 +8,18 @@ export const Container = styled.div`
   max-height: 2.5rem;
   display: flex;
   justify-content: center;
-  border: 1px solid ${colors.neutral[100]};
+  border: 1px solid;
+  border-color: ${({ color }) => (color ? color : colors.neutral[100])};
   border-radius: 4px;
   padding: 0.6rem 0.5rem;
-  gap: 0.25rem;
+  gap: 0.5rem;
   transition: all 0.1s ease-in-out;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       transition: all 0.1s ease-in-out;
-      background: ${colors.shadows[400]};
-      /* opacity: 0.8; */
+      background: ${({ hoverColor }) =>
+        hoverColor ? hoverColor : colors.shadows[400]};
       cursor: pointer;
     }
   }
@@ -31,5 +32,11 @@ export const Label = styled.div`
   font-weight: 400;
   font-size: ${typography.sizes.lg};
   line-height: 103.7%;
-  color: ${colors.neutral[100]};
+  color: ${({ color }) => (color ? color : colors.neutral[100])};
+`;
+
+export const Icon = styled.div`
+  display: ${({ hasIcon }) => (hasIcon ? 'flex' : 'none')};
+  align-items: center;
+  font-size: ${typography.sizes.lg};
 `;

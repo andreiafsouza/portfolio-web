@@ -2,6 +2,9 @@ import * as S from './styles';
 import { BackgroundLines } from '../../components/BackgroundLines';
 import { Navbar } from '../../components/Navbar';
 import { Button } from '../../components/Button';
+import { ProfileLines } from '../../components/ProfileLines';
+import { AccountCircleOutlined } from '../../components/Icons/AccountCircleOutlined';
+import { colors } from '../../stylesheets/abstracts/palettes';
 
 export const Home = () => {
   return (
@@ -29,6 +32,25 @@ export const Home = () => {
               </S.MainParagraphWrapper>
             </S.RightMainContentWrapper>
           </S.MainWrapper>
+          <S.AboutInfoWrapper>
+            <S.AboutInfoAndButtonWrapper>
+              <S.AboutParagraph>
+                Hi There! I'm a front-end web developer with a professional
+                background in graphic design and mechanical engineering.
+              </S.AboutParagraph>
+              <Button
+                hasLabel
+                text={'about.'}
+                hasIcon
+                color={colors.primary[200]}
+                hoverColor={colors.shadows[800]}
+                icon={<AccountCircleOutlined color={colors.primary[200]} />}
+              />
+            </S.AboutInfoAndButtonWrapper>
+          </S.AboutInfoWrapper>
+          <S.ProfileLinesWrapper>
+            <ProfileLines />
+          </S.ProfileLinesWrapper>
           <S.ProfileWrapper>
             <S.ProfileBackgroundItemSmall />
             <S.ProfileBackgroundItemMedium />
