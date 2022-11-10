@@ -29,6 +29,7 @@ html:focus-within {
 html,
 body {
   height: 100%;
+  min-height: -webkit-fill-available
 }
 
 /* Set core body defaults */

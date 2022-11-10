@@ -4,15 +4,16 @@ import { typography } from '../../stylesheets/base/typography';
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 8.75rem;
+  max-width: ${({ size }) => (size === 'small' ? '6.25rem' : '8.75rem')};
   max-height: 2.5rem;
   display: flex;
   justify-content: center;
   border: 1px solid;
   border-color: ${({ color }) => (color ? color : colors.neutral[100])};
   border-radius: 4px;
-  padding: 0.6rem 0.5rem;
-  gap: 0.5rem;
+  padding: ${({ size }) =>
+    size === 'small' ? '0.4rem 0.5rem' : '0.6rem 0.5rem'};
+  gap: 0.25rem;
   transition: all 0.1s ease-in-out;
 
   @media (hover: hover) and (pointer: fine) {
@@ -30,7 +31,8 @@ export const Label = styled.div`
   align-items: center;
   font-family: ${typography.text.main}, sans-serif;
   font-weight: 400;
-  font-size: ${typography.sizes.lg};
+  font-size: ${({ size }) =>
+    size === 'small' ? typography.sizes.md : typography.sizes.lg};
   line-height: 103.7%;
   color: ${({ color }) => (color ? color : colors.neutral[100])};
 `;

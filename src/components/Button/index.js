@@ -6,12 +6,13 @@ export const Button = ({
   hasIcon,
   icon,
   color,
-  hoverColor
+  hoverColor,
+  size
 }) => {
   return (
-    <S.Container hoverColor={hoverColor} color={color}>
+    <S.Container hoverColor={hoverColor} color={color} size={size}>
       <S.Icon hasIcon>{icon}</S.Icon>
-      <S.Label hasLabel color={color}>
+      <S.Label size={size} hasLabel color={color}>
         {text}
       </S.Label>
     </S.Container>

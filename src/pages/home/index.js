@@ -32,25 +32,28 @@ export const Home = () => {
               </S.MainParagraphWrapper>
             </S.RightMainContentWrapper>
           </S.MainWrapper>
-          <S.AboutInfoWrapper>
-            <S.AboutInfoAndButtonWrapper>
-              <S.AboutParagraph>
-                Hi There! I'm a front-end web developer with a professional
-                background in graphic design and mechanical engineering.
-              </S.AboutParagraph>
-              <Button
-                hasLabel
-                text={'about.'}
-                hasIcon
-                color={colors.primary[200]}
-                hoverColor={colors.shadows[800]}
-                icon={<AccountCircleOutlined color={colors.primary[200]} />}
-              />
-            </S.AboutInfoAndButtonWrapper>
-          </S.AboutInfoWrapper>
-          <S.ProfileLinesWrapper>
-            <ProfileLines />
-          </S.ProfileLinesWrapper>
+          <S.ProfileContentWrapper>
+            <S.ProfileLinesWrapper>
+              <ProfileLines />
+            </S.ProfileLinesWrapper>
+            <S.AboutInfoWrapper>
+              <S.AboutInfoAndButtonWrapper>
+                <S.AboutParagraph>
+                  Hi There! I'm a front-end web developer with a professional
+                  background in graphic design and mechanical engineering.
+                </S.AboutParagraph>
+                <Button
+                  size={'small'}
+                  hasLabel
+                  text={'about.'}
+                  hasIcon
+                  color={colors.primary[200]}
+                  hoverColor={colors.shadows[800]}
+                  icon={<AccountCircleOutlined color={colors.primary[200]} />}
+                />
+              </S.AboutInfoAndButtonWrapper>
+            </S.AboutInfoWrapper>
+          </S.ProfileContentWrapper>
           <S.ProfileWrapper>
             <S.ProfileBackgroundItemSmall />
             <S.ProfileBackgroundItemMedium />

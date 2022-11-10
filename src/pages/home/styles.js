@@ -152,29 +152,25 @@ export const ButtonWrapper = styled.div`
   gap: 1.25rem;
 `;
 
-export const ProfileLinesWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
+export const ProfileContentWrapper = styled.div`
   width: 50%;
-  padding-top: 10.2rem;
-  padding-right: 4.5rem;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 5%;
+  padding-top: 14%;
   position: absolute;
   z-index: 6;
   right: 0;
 `;
 
-export const AboutInfoWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 50%;
-  padding-top: 42.75rem;
-  padding-right: 6.68rem;
-  height: 100vh;
-  position: absolute;
-  z-index: 7;
-  right: 0;
+export const ProfileLinesWrapper = styled.div`
+  width: 80%;
+  max-width: 518px;
 `;
+
+export const AboutInfoWrapper = styled.div``;
 
 export const AboutInfoAndButtonWrapper = styled.div`
   display: flex;
