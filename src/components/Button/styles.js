@@ -4,7 +4,7 @@ import { typography } from '../../stylesheets/base/typography';
 
 export const Container = styled.div`
   width: 100%;
-  max-width: ${({ size }) => (size === 'small' ? '6.25rem' : '8.75rem')};
+  max-width: ${({ size }) => (size === 'small' ? 'fit-content' : '8.75rem')};
   max-height: 2.5rem;
   display: flex;
   justify-content: center;

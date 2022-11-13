@@ -12,54 +12,60 @@ export const Home = () => {
       <Navbar />
       <S.BackgroundWrapper>
         <S.MainPageWrapper>
-          <S.MainWrapper>
+          <S.MainContentWrapper>
             <S.LeftMainContentWrapper>
-              <S.MainTextMedium>design</S.MainTextMedium>
-              <S.MainTextMedium>engineer</S.MainTextMedium>
-              <S.MainTextLarge>CREATE</S.MainTextLarge>
-              <S.ButtonWrapper>
-                <Button hasLabel text={'projetos.'} />
-                <Button hasLabel text={'github.'} />
-                <Button hasLabel text={'figma.'} />
-              </S.ButtonWrapper>
+              <S.MainText>
+                <S.MainTextHeadline>
+                  <S.MainTextMediumDesign>design</S.MainTextMediumDesign>
+                  <S.MainTextMediumEngineer>engineer</S.MainTextMediumEngineer>
+                  <S.MainTextLarge>CREATE</S.MainTextLarge>
+                </S.MainTextHeadline>
+                <S.MainTextParagraphWrapper>
+                  <S.MainParagraph>
+                    motivated by finding effective and efficient ways to solve
+                    problems
+                  </S.MainParagraph>
+                </S.MainTextParagraphWrapper>
+              </S.MainText>
             </S.LeftMainContentWrapper>
-            <S.RightMainContentWrapper>
-              <S.MainParagraphWrapper>
-                <S.MainParagraph>
-                  motivated by finding effective and efficient ways to solve
-                  problems
-                </S.MainParagraph>
-              </S.MainParagraphWrapper>
-            </S.RightMainContentWrapper>
-          </S.MainWrapper>
+            <S.MainButtonWrapper>
+              <Button hasLabel text={'projetos.'} />
+              <Button hasLabel text={'github.'} />
+              <Button hasLabel text={'figma.'} />
+            </S.MainButtonWrapper>
+          </S.MainContentWrapper>
           <S.ProfileContentWrapper>
             <S.ProfileLinesWrapper>
               <ProfileLines />
             </S.ProfileLinesWrapper>
-            <S.AboutInfoWrapper>
-              <S.AboutInfoAndButtonWrapper>
+            <S.AboutInfoAndButtonWrapper>
+              <S.AboutParagraphWrapper>
                 <S.AboutParagraph>
                   Hi There! I'm a front-end web developer with a professional
                   background in graphic design and mechanical engineering.
                 </S.AboutParagraph>
-                <Button
-                  size={'small'}
-                  hasLabel
-                  text={'about.'}
-                  hasIcon
-                  color={colors.primary[200]}
-                  hoverColor={colors.shadows[800]}
-                  icon={<AccountCircleOutlined color={colors.primary[200]} />}
-                />
-              </S.AboutInfoAndButtonWrapper>
-            </S.AboutInfoWrapper>
+              </S.AboutParagraphWrapper>
+              <Button
+                size={'small'}
+                hasLabel
+                text={'about.'}
+                hasIcon
+                color={colors.primary[200]}
+                hoverColor={colors.shadows[800]}
+                icon={
+                  <AccountCircleOutlined
+                    color={colors.primary[200]}
+                    size={20}
+                  />
+                }
+              />
+            </S.AboutInfoAndButtonWrapper>
           </S.ProfileContentWrapper>
           <S.ProfileWrapper>
             <S.ProfileBackgroundItemSmall />
             <S.ProfileBackgroundItemMedium />
             <S.ProfileBackgroundItemBig />
           </S.ProfileWrapper>
-          <S.ButtonBackground />
           <S.MainTextBackground />
           <S.BackgroundLinesWrapper>
             <BackgroundLines />
