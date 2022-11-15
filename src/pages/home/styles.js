@@ -168,17 +168,27 @@ export const ProfileContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 11.2%;
   padding-right: 5%;
+  padding-left: 8%;
   position: absolute;
   z-index: 6;
   right: 0;
   gap: 2rem;
+
+  @media (min-width: 1980px) {
+    padding-top: 7%;
+    padding-right: 7%;
+  }
 `;
 
 export const ProfileLinesWrapper = styled.div`
   width: 100%;
-  max-width: 32rem;
+  max-width: 33rem;
+  @media (min-width: 1980px) {
+    max-width: 40rem;
+  }
 `;
 
 export const AboutParagraphWrapper = styled.div`

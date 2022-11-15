@@ -10,11 +10,13 @@ export const Button = ({
   size
 }) => {
   return (
-    <S.Container hoverColor={hoverColor} color={color} size={size}>
-      <S.Icon hasIcon>{icon}</S.Icon>
-      <S.Label size={size} hasLabel color={color}>
-        {text}
-      </S.Label>
-    </S.Container>
+    <>
+      <S.Container hoverColor={hoverColor} color={color} size={size}>
+        <S.Icon hasIcon>{icon}</S.Icon>
+        <S.Label size={size} hasLabel color={color}>
+          {text}
+        </S.Label>
+      </S.Container>
+    </>
   );
 };
