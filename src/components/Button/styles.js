@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../../stylesheets/abstracts/palettes';
-import { typography } from '../../stylesheets/base/typography';
 
 export const Container = styled.div`
   width: 100%;
@@ -15,11 +13,25 @@ export const Container = styled.div`
   transition: all 0.3s ease-in-out;
   background-repeat: no-repeat;
   background-image: linear-gradient(
-      ${({ color }) => (color ? color : colors.neutral[100])} 0 0
+      ${({ color }) =>
+          color ? color : (props) => props.theme.textColor.main[100]}
+        0 0
     ),
-    linear-gradient(${({ color }) => (color ? color : colors.neutral[100])} 0 0),
-    linear-gradient(${({ color }) => (color ? color : colors.neutral[100])} 0 0),
-    linear-gradient(${({ color }) => (color ? color : colors.neutral[100])} 0 0);
+    linear-gradient(
+      ${({ color }) =>
+          color ? color : (props) => props.theme.textColor.main[100]}
+        0 0
+    ),
+    linear-gradient(
+      ${({ color }) =>
+          color ? color : (props) => props.theme.textColor.main[100]}
+        0 0
+    ),
+    linear-gradient(
+      ${({ color }) =>
+          color ? color : (props) => props.theme.textColor.main[100]}
+        0 0
+    );
   background-size: 100% 0.1rem, 0.1rem 100%;
   background-position: 0 0, 100% 0, 0 100%, 0 0;
   position: relative;
@@ -35,7 +47,7 @@ export const Container = styled.div`
     transition: all 0.3s ease-in-out;
     z-index: 0;
     background-color: ${({ hoverColor }) =>
-      hoverColor ? hoverColor : colors.shadows[400]};
+      hoverColor ? hoverColor : (props) => props.theme.button.hoverColor};
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -56,16 +68,19 @@ export const Container = styled.div`
 export const Label = styled.div`
   display: ${({ hasLabel }) => (hasLabel ? 'flex' : 'none')};
   align-items: center;
-  font-family: ${typography.text.main}, sans-serif;
-  font-weight: 400;
+  font-family: ${(props) => props.theme.fontFamilies.main};
+  font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${({ size }) =>
-    size === 'small' ? typography.sizes.md : typography.sizes.lg};
+    size === 'small'
+      ? (props) => props.theme.fontSizes.md
+      : (props) => props.theme.fontSizes.lg};
   line-height: 103.7%;
-  color: ${({ color }) => (color ? color : colors.neutral[100])};
+  color: ${({ color }) =>
+    color ? color : (props) => props.theme.textColor.main[100]};
 `;
 
 export const Icon = styled.div`
   display: ${({ hasIcon }) => (hasIcon ? 'flex' : 'none')};
   align-items: center;
-  font-size: ${typography.sizes.lg};
+  font-size: ${(props) => props.theme.fontSizes.lg};
 `;

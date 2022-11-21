@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../stylesheets/abstracts/palettes';
-import { typography } from '../../stylesheets/base/typography';
+import * as mixins from '../../stylesheets/abstracts/mixins';
 
 export const Container = styled.div`
   position: relative;
@@ -26,7 +25,7 @@ export const BackgroundLinesWrapper = styled.div`
   position: absolute;
   z-index: 2;
   overflow: hidden;
-  background-color: ${colors.primary[900]};
+  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
 `;
 
 export const ProfileWrapper = styled.div`
@@ -42,24 +41,24 @@ export const ProfileWrapper = styled.div`
 export const ProfileBackgroundItemBig = styled.div`
   width: 74%;
   height: 100vh;
-  background-color: ${colors.primary[900]};
+  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
 `;
 
 export const ProfileBackgroundItemMedium = styled.div`
   width: 12.5%;
   height: 55%;
   max-height: 35.25rem;
-  background-color: ${colors.primary[900]};
+  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
 `;
 
 export const ProfileBackgroundItemSmall = styled.div`
   width: 13.5%;
   height: 41%;
-  background-color: ${colors.primary[900]};
+  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
 `;
 
 export const MainTextBackground = styled.div`
-  background-color: ${colors.shadows[800]};
+  background-color: ${(props) => props.theme.shadows.main};
   width: 100%;
   max-width: 48.8rem;
   height: calc(100vh - 270px);
@@ -100,32 +99,25 @@ export const MainTextHeadline = styled.div`
   align-items: flex-end;
   justify-content: flex-end;
   padding-right: 1.25rem;
+  color: ${(props) => props.theme.textColor.main[100]};
+  font-family: ${(props) => props.theme.fontFamilies.display};
+  font-size: ${(props) => props.theme.fontSizes.xxl};
+  font-weight: ${(props) => props.theme.fontWeights.normal};
   gap: 2.2rem;
 `;
 
 export const MainTextMediumDesign = styled.div`
-  font-family: ${typography.text.display}, sans-serif;
-  color: ${colors.neutral[100]};
-  font-weight: 400;
-  font-size: ${typography.sizes.xxl};
   line-height: 65%;
   text-align: right;
 `;
 
 export const MainTextMediumEngineer = styled.div`
-  font-family: ${typography.text.display}, sans-serif;
-  color: ${colors.neutral[100]};
-  font-weight: 400;
-  font-size: ${typography.sizes.xxl};
   line-height: 70%;
   text-align: right;
 `;
 
 export const MainTextLarge = styled.div`
-  font-family: ${typography.text.display}, sans-serif;
-  color: ${colors.neutral[100]};
-  font-weight: 400;
-  font-size: ${typography.sizes.xxxl};
+  font-size: ${(props) => props.theme.fontSizes.xxxl};
   line-height: 80%;
   text-align: right;
   vertical-align: bottom;
@@ -138,15 +130,15 @@ export const MainTextParagraphWrapper = styled.div`
   align-items: flex-end;
   padding-left: 1.25rem;
   width: 100%;
-  border-left: 1px solid ${colors.neutral[100]};
+  border-left: 1px solid ${(props) => props.theme.textColor.main[100]};
 `;
 
 export const MainParagraph = styled.div`
-  font-family: ${typography.text.main}, sans-serif;
-  font-weight: 400;
-  font-size: ${typography.sizes.lg};
+  font-family: ${(props) => props.theme.fontFamilies.main};
+  font-weight: ${(props) => props.theme.fontWeights.normal};
+  font-size: ${(props) => props.theme.fontSizes.lg};
   line-height: 108%;
-  color: ${colors.neutral[200]};
+  color: ${(props) => props.theme.textColor.secondary[200]};
 `;
 
 export const MainButtonWrapper = styled.div`
@@ -158,8 +150,8 @@ export const MainButtonWrapper = styled.div`
   gap: 1.25rem;
   padding-right: 10rem;
   padding-block: 5.2rem;
-  background-color: ${colors.secondary[800]};
-  box-shadow: 4px 4px 4px ${colors.shadows[100]};
+  background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
+  ${mixins.mainBoxShadow}
 `;
 
 export const ProfileContentWrapper = styled.div`
@@ -199,11 +191,11 @@ export const AboutParagraphWrapper = styled.div`
 
 export const AboutParagraph = styled.div`
   max-width: 16rem;
-  font-family: ${typography.text.main}, sans-serif;
-  font-weight: 400;
+  font-family: ${(props) => props.theme.fontFamilies.main};
+  font-weight: ${(props) => props.theme.fontWeights.normal};
   line-height: 110%;
-  font-size: ${typography.sizes.md};
-  color: ${colors.primary[200]};
+  font-size: ${(props) => props.theme.fontSizes.md};
+  color: ${(props) => props.theme.textColor.secondary[200]};
 `;
 
 export const AboutInfoAndButtonWrapper = styled.div`

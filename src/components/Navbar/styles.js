@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../../stylesheets/abstracts/palettes';
-import { typography } from '../../stylesheets/base/typography';
 
 export const Container = styled.div`
   width: 100%;
@@ -20,9 +18,9 @@ export const NavbarWrapper = styled.div`
 `;
 
 export const NavbarItem = styled.div`
-  font-family: ${typography.text.main}, sans-serif;
-  font-weight: 400;
-  font-size: ${typography.sizes.md};
+  color: ${(props) => props.theme.textColor.main[100]};
+  font-family: ${(props) => props.theme.fontFamilies.main};
+  font-weight: ${(props) => props.theme.fontWeights.normal};
+  font-size: ${(props) => props.theme.fontSizes.md};
   line-height: 103.7%;
-  color: ${colors.neutral[100]};
 `;

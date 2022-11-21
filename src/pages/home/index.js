@@ -1,12 +1,17 @@
-import * as S from './styles';
-import { BackgroundLines } from '../../components/BackgroundLines';
+/* components */
 import { Navbar } from '../../components/Navbar';
 import { Button } from '../../components/Button';
+import { BackgroundLines } from '../../components/BackgroundLines';
 import { ProfileLines } from '../../components/ProfileLines';
+/* icons */
 import { AccountCircleOutlined } from '../../components/Icons/AccountCircleOutlined';
-import { colors } from '../../stylesheets/abstracts/palettes';
+/* style */
+import { useTheme } from 'styled-components';
+import * as S from './styles';
 
 export const Home = () => {
+  const theme = useTheme();
+
   return (
     <S.Container>
       <Navbar />
@@ -50,11 +55,11 @@ export const Home = () => {
                 hasLabel
                 text={'about.'}
                 hasIcon
-                color={colors.primary[200]}
-                hoverColor={colors.shadows[800]}
+                color={theme.textColor.secondary[200]}
+                hoverColor={theme.button.hoverColorLight}
                 icon={
                   <AccountCircleOutlined
-                    color={colors.primary[200]}
+                    color={theme.textColor.secondary[200]}
                     size={20}
                   />
                 }

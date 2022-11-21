@@ -1,9 +1,9 @@
 export const typography = {
-  text: {
-    main: 'Noto Sans',
-    display: 'Noto Serif'
+  fontFamilies: {
+    main: `'Noto Sans' , 'sans-serif'`,
+    display: `'Noto Serif', 'serif'`
   },
-  sizes: {
+  fontSizes: {
     xs: '0.625rem',
     sm: '.75rem',
     md: '1rem',
@@ -11,5 +11,12 @@ export const typography = {
     xl: '2rem',
     xxl: '4rem',
     xxxl: '5rem'
+  },
+  fontWeights: {
+    normal: 400,
+    bold: 600
+  },
+  lineHeight: {
+    main: '103.7%'
   }
 };

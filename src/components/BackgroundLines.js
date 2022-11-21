@@ -1,7 +1,11 @@
+import { useTheme } from 'styled-components';
+
 export const BackgroundLines = () => {
+  const theme = useTheme();
+
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1440 1024">
-      <g stroke="#7662D7" clipPath="url(#clip0_12_44)">
+      <g stroke={theme.svgLinesColor} clipPath="url(#clip0_12_44)">
         <path strokeOpacity="0.5" d="M0 19.5L180 19.5"></path>
         <path strokeOpacity="0.5" d="M0 39.5L180 39.5"></path>
         <path strokeOpacity="0.5" d="M0 59.5L180 59.5"></path>
