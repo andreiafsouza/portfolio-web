@@ -34,9 +34,9 @@ export const Home = () => {
               </S.MainText>
             </S.LeftMainContentWrapper>
             <S.MainButtonWrapper>
-              <Button hasLabel text={'projetos.'} />
-              <Button hasLabel text={'github.'} />
-              <Button hasLabel text={'figma.'} />
+              <Button hasLabel text={'projetos.'} href={'#'} />
+              <Button hasLabel text={'github.'} href={'#'} />
+              <Button hasLabel text={'figma.'} href={'#'} />
             </S.MainButtonWrapper>
           </S.MainContentWrapper>
           <S.ProfileContentWrapper>

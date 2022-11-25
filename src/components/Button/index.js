@@ -7,11 +7,17 @@ export const Button = ({
   icon,
   color,
   hoverColor,
-  size
+  size,
+  href
 }) => {
   return (
     <>
-      <S.Container hoverColor={hoverColor} color={color} size={size}>
+      <S.Container
+        hoverColor={hoverColor}
+        color={color}
+        size={size}
+        href={href}
+      >
         <S.Icon hasIcon>{icon}</S.Icon>
         <S.Label size={size} hasLabel color={color}>
           {text}
