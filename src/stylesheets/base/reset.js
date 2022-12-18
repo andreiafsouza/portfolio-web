@@ -1,21 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyleReset = createGlobalStyle`
- /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+/* Remove list styles */
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
@@ -28,14 +26,14 @@ html:focus-within {
 
 html,
 body {
-  height: 100%;
-  min-height: -webkit-fill-available
+  height: 100vh;
 }
 
 /* Set core body defaults */
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: ${(props) => props.theme.backgroundColor.primary[900]}
 }
 
 /* A elements that don't have a class get default styles */
@@ -51,19 +49,4 @@ svg {
   display: block;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 `;

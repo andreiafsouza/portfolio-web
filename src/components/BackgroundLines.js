@@ -1,10 +1,16 @@
 import { useTheme } from 'styled-components';
 
-export const BackgroundLines = () => {
+export const BackgroundLines = ({ width, height }) => {
   const theme = useTheme();
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1440 1024">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 1440 1024"
+      width={width}
+      height={height}
+    >
       <g stroke={theme.svgLinesColor} clipPath="url(#clip0_12_44)">
         <path strokeOpacity="0.5" d="M0 19.5L180 19.5"></path>
         <path strokeOpacity="0.5" d="M0 39.5L180 39.5"></path>
@@ -86,7 +92,7 @@ export const BackgroundLines = () => {
         <path strokeOpacity="0.5" d="M860.5 100L860.5 1023"></path>
         <path strokeOpacity="0.2" d="M880.5 20L880.5 308"></path>
         <path strokeOpacity="0.2" d="M900.5 20L900.5 308"></path>
-        <path strokeOpacity="0.2" d="M920.5 20L920.5 308"></path>
+        {/* <path strokeOpacity="0.2" d="M920.5 20L920.5 308"></path>
         <path strokeOpacity="0.5" d="M940.5 20L940.5 308"></path>
         <path strokeOpacity="0.2" d="M960.5 60L960.5 1023"></path>
         <path strokeOpacity="0.2" d="M980.5 60L980.5 1023"></path>
@@ -111,7 +117,7 @@ export const BackgroundLines = () => {
         <path strokeOpacity="0.2" d="M1360.5 60L1360.5 1023"></path>
         <path strokeOpacity="0.2" d="M1380.5 60L1380.5 1023"></path>
         <path strokeOpacity="0.2" d="M1400.5 60L1400.5 1023"></path>
-        <path strokeOpacity="0.5" d="M1420.5 60L1420.5 1023"></path>
+        <path strokeOpacity="0.5" d="M1420.5 60L1420.5 1023"></path> */}
       </g>
       <defs>
         <clipPath id="clip0_12_44">

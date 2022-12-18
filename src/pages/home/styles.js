@@ -3,11 +3,40 @@ import * as mixins from '../../stylesheets/abstracts/mixins';
 
 export const Container = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
+  /*   width: 100%;
+  height: 100%; */
 `;
 
-export const BackgroundWrapper = styled.div`
+export const MainContainer = styled.div`
+  display: grid;
+
+  @media (min-width: 50em) {
+    grid-auto-flow: column;
+    grid-auto-columns: 1.7fr 1fr;
+  }
+`;
+
+export const MainLeftContainer = styled.div`
+  position: relative;
+  display: flex;
+  background-color: aqua;
+`;
+
+export const MainRightContainer = styled.div`
+  display: flex;
+  background-color: brown;
+`;
+
+export const BackgroundLinesContainer = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: stretch;
+  z-index: 0;
+`;
+
+/* export const BackgroundWrapper = styled.div`
   width: 100%;
   height: 100%;
 `;
@@ -203,3 +232,4 @@ export const AboutInfoAndButtonWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
+ */

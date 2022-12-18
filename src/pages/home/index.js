@@ -1,8 +1,8 @@
 /* components */
-import { Navbar } from '../../components/Navbar';
 import { Button } from '../../components/Button';
 import { BackgroundLines } from '../../components/BackgroundLines';
 import { ProfileLines } from '../../components/ProfileLines';
+import { BackgroundPurpleLines } from '../../components/BackgroundPurpleLines';
 /* icons */
 import { AccountCircleOutlined } from '../../components/Icons/AccountCircleOutlined';
 /* style */
@@ -14,8 +14,15 @@ export const Home = () => {
 
   return (
     <S.Container>
-      <Navbar />
-      <S.BackgroundWrapper>
+      <S.MainContainer>
+        <S.MainLeftContainer>
+          <S.BackgroundLinesContainer>
+            <BackgroundPurpleLines />
+          </S.BackgroundLinesContainer>
+        </S.MainLeftContainer>
+        <S.MainRightContainer></S.MainRightContainer>
+      </S.MainContainer>
+      {/*  <S.BackgroundWrapper>
         <S.MainPageWrapper>
           <S.MainContentWrapper>
             <S.LeftMainContentWrapper>
@@ -76,7 +83,7 @@ export const Home = () => {
             <BackgroundLines />
           </S.BackgroundLinesWrapper>
         </S.MainPageWrapper>
-      </S.BackgroundWrapper>
+      </S.BackgroundWrapper> */}
     </S.Container>
   );
 };
