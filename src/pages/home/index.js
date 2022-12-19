@@ -1,6 +1,5 @@
 /* components */
 import { Button } from '../../components/Button';
-import { BackgroundLines } from '../../components/BackgroundLines';
 import { ProfileLines } from '../../components/ProfileLines';
 import { BackgroundPurpleLines } from '../../components/BackgroundPurpleLines';
 /* icons */
@@ -16,47 +15,36 @@ export const Home = () => {
     <S.Container>
       <S.MainContainer>
         <S.MainLeftContainer>
+          <S.MainText>
+            <S.MainTextHeadline>
+              <S.MainTextMediumDesign>design</S.MainTextMediumDesign>
+              <S.MainTextMediumEngineer>engineer</S.MainTextMediumEngineer>
+              <S.MainTextCreate>CREATE</S.MainTextCreate>
+            </S.MainTextHeadline>
+            <S.MainTextParagraphContainer>
+              <S.MainTextParagraph>
+                motivated by finding effective and efficient ways to solve
+                problems
+              </S.MainTextParagraph>
+            </S.MainTextParagraphContainer>
+          </S.MainText>
+          <S.MainButtonContainer>
+            <Button hasLabel text={'projetos.'} href={'#'} />
+            <Button hasLabel text={'github.'} href={'#'} />
+            <Button hasLabel text={'figma.'} href={'#'} />
+          </S.MainButtonContainer>
           <S.BackgroundLinesContainer>
             <BackgroundPurpleLines />
           </S.BackgroundLinesContainer>
         </S.MainLeftContainer>
-        <S.MainRightContainer></S.MainRightContainer>
-      </S.MainContainer>
-      {/*  <S.BackgroundWrapper>
-        <S.MainPageWrapper>
-          <S.MainContentWrapper>
-            <S.LeftMainContentWrapper>
-              <S.MainText>
-                <S.MainTextHeadline>
-                  <S.MainTextMediumDesign>design</S.MainTextMediumDesign>
-                  <S.MainTextMediumEngineer>engineer</S.MainTextMediumEngineer>
-                  <S.MainTextLarge>CREATE</S.MainTextLarge>
-                </S.MainTextHeadline>
-                <S.MainTextParagraphWrapper>
-                  <S.MainParagraph>
-                    motivated by finding effective and efficient ways to solve
-                    problems
-                  </S.MainParagraph>
-                </S.MainTextParagraphWrapper>
-              </S.MainText>
-            </S.LeftMainContentWrapper>
-            <S.MainButtonWrapper>
-              <Button hasLabel text={'projetos.'} href={'#'} />
-              <Button hasLabel text={'github.'} href={'#'} />
-              <Button hasLabel text={'figma.'} href={'#'} />
-            </S.MainButtonWrapper>
-          </S.MainContentWrapper>
-          <S.ProfileContentWrapper>
-            <S.ProfileLinesWrapper>
-              <ProfileLines />
-            </S.ProfileLinesWrapper>
-            <S.AboutInfoAndButtonWrapper>
-              <S.AboutParagraphWrapper>
-                <S.AboutParagraph>
-                  Hi There! I'm a front-end web developer with a professional
-                  background in graphic design and mechanical engineering.
-                </S.AboutParagraph>
-              </S.AboutParagraphWrapper>
+        <S.MainRightContainer>
+          <ProfileLines />
+          <S.ProfileInfoContainer>
+            <S.AboutInfoContainer>
+              <S.AboutInfoText>
+                Hi There! I'm a front-end web developer with a professional
+                background in graphic design and mechanical engineering.
+              </S.AboutInfoText>
               <Button
                 size={'small'}
                 hasLabel
@@ -71,19 +59,10 @@ export const Home = () => {
                   />
                 }
               />
-            </S.AboutInfoAndButtonWrapper>
-          </S.ProfileContentWrapper>
-          <S.ProfileWrapper>
-            <S.ProfileBackgroundItemSmall />
-            <S.ProfileBackgroundItemMedium />
-            <S.ProfileBackgroundItemBig />
-          </S.ProfileWrapper>
-          <S.MainTextBackground />
-          <S.BackgroundLinesWrapper>
-            <BackgroundLines />
-          </S.BackgroundLinesWrapper>
-        </S.MainPageWrapper>
-      </S.BackgroundWrapper> */}
+            </S.AboutInfoContainer>
+          </S.ProfileInfoContainer>
+        </S.MainRightContainer>
+      </S.MainContainer>
     </S.Container>
   );
 };

@@ -26,7 +26,8 @@ export const Container = styled.a`
     width: 0%;
     height: 100%;
     transition: all 0.3s ease-in-out;
-    z-index: 0;
+    z-index: 1;
+    border-radius: 4px;
     background: ${({ hoverColor }) =>
       hoverColor ? hoverColor : (props) => props.theme.button.hoverColor};
   }

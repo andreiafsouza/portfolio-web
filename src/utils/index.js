@@ -1,3 +1,7 @@
+/* constants */
+export const mobileBreakPointWidth = '65em';
+export const mobileBreakPointFont = '40em';
+
 export const tabletSize = {
   width: 744,
   height: 1133

@@ -1,125 +1,52 @@
 import styled from 'styled-components';
+import { mobileBreakPointWidth, mobileBreakPointFont } from '../../utils';
 import * as mixins from '../../stylesheets/abstracts/mixins';
 
 export const Container = styled.div`
   position: relative;
-  /*   width: 100%;
-  height: 100%; */
 `;
 
 export const MainContainer = styled.div`
   display: grid;
+  padding: 6rem 0;
 
-  @media (min-width: 50em) {
+  @media (min-width: ${mobileBreakPointWidth}) {
     grid-auto-flow: column;
     grid-auto-columns: 1.7fr 1fr;
+    padding-top: 3.6rem;
+    padding: 3.6rem 5rem;
   }
 `;
 
 export const MainLeftContainer = styled.div`
-  position: relative;
-  display: flex;
-  background-color: aqua;
-`;
-
-export const MainRightContainer = styled.div`
-  display: flex;
-  background-color: brown;
-`;
-
-export const BackgroundLinesContainer = styled.div`
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: stretch;
-  z-index: 0;
-`;
-
-/* export const BackgroundWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-export const MainPageWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-`;
-
-export const BackgroundLinesWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: 2;
-  overflow: hidden;
-  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
-`;
-
-export const ProfileWrapper = styled.div`
-  display: flex;
-  align-items: flex-end;
-  width: 50%;
-  height: 100vh;
-  position: absolute;
-  z-index: 5;
-  right: 0;
-`;
-
-export const ProfileBackgroundItemBig = styled.div`
-  width: 74%;
-  height: 100vh;
-  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
-`;
-
-export const ProfileBackgroundItemMedium = styled.div`
-  width: 12.5%;
-  height: 55%;
-  max-height: 35.25rem;
-  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
-`;
-
-export const ProfileBackgroundItemSmall = styled.div`
-  width: 13.5%;
-  height: 41%;
-  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
-`;
-
-export const MainTextBackground = styled.div`
-  background-color: ${(props) => props.theme.shadows.main};
-  width: 100%;
-  max-width: 48.8rem;
-  height: calc(100vh - 270px);
-  position: absolute;
-  z-index: 3;
-  top: 10.15%;
-  left: 6.5%;
-`;
-
-export const MainContentWrapper = styled.div`
-  width: 55%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-top: 5.5%;
-  padding-bottom: 6.5%;
-  position: absolute;
-  z-index: 6;
-  left: 0;
-  gap: 9.9%;
-`;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  background-color: ${(props) => props.theme.shadows.main};
 
-export const LeftMainContentWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  padding-left: 17.5%;
+  @media (min-width: ${mobileBreakPointWidth}) {
+    padding-right: 4rem;
+    margin-bottom: 0;
+    background-color: transparent;
+  }
 `;
 
 export const MainText = styled.div`
-  display: flex;
-  height: 100%;
+  position: relative;
+  z-index: 10;
+
+  display: grid;
+  margin: auto;
+  gap: 1rem;
+  padding: 5rem 0.25rem 5rem 0;
+  background-color: ${(props) => props.theme.shadows.main};
+
+  @media (min-width: ${mobileBreakPointWidth}) {
+    display: flex;
+    padding: 14rem 3rem 8.6rem 3.75rem;
+    margin: initial;
+  }
 `;
 
 export const MainTextHeadline = styled.div`
@@ -127,7 +54,7 @@ export const MainTextHeadline = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-right: 1.25rem;
+  padding-right: 0.25rem;
   color: ${(props) => props.theme.textColor.main[100]};
   font-family: ${(props) => props.theme.fontFamilies.display};
   font-size: ${(props) => props.theme.fontSizes.xxl};
@@ -145,14 +72,16 @@ export const MainTextMediumEngineer = styled.div`
   text-align: right;
 `;
 
-export const MainTextLarge = styled.div`
+export const MainTextCreate = styled.div`
   font-size: ${(props) => props.theme.fontSizes.xxxl};
   line-height: 80%;
   text-align: right;
   vertical-align: bottom;
+  text-transform: uppercase;
 `;
 
-export const MainTextParagraphWrapper = styled.div`
+export const MainTextParagraphContainer = styled.div`
+  position: relative;
   height: 100%;
   max-width: 20rem;
   display: flex;
@@ -160,9 +89,28 @@ export const MainTextParagraphWrapper = styled.div`
   padding-left: 1.25rem;
   width: 100%;
   border-left: 1px solid ${(props) => props.theme.textColor.main[100]};
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 26.4rem;
+    width: 1px;
+    background-color: ${(props) => props.theme.textColor.main[100]};
+    opacity: 0;
+  }
+
+  @media (min-width: ${mobileBreakPointWidth}) {
+    border-left: none;
+
+    &::before {
+      opacity: 1;
+    }
+  }
 `;
 
-export const MainParagraph = styled.div`
+export const MainTextParagraph = styled.div`
   font-family: ${(props) => props.theme.fontFamilies.main};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${(props) => props.theme.fontSizes.lg};
@@ -170,55 +118,88 @@ export const MainParagraph = styled.div`
   color: ${(props) => props.theme.textColor.secondary[200]};
 `;
 
-export const MainButtonWrapper = styled.div`
-  width: 100%;
-  max-width: 37.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1.25rem;
-  padding-right: 10rem;
-  padding-block: 5.2rem;
-  background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
-  ${mixins.mainBoxShadow}
-`;
-
-export const ProfileContentWrapper = styled.div`
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding-top: 11.2%;
-  padding-right: 5%;
-  padding-left: 8%;
+export const BackgroundLinesContainer = styled.div`
   position: absolute;
-  z-index: 6;
-  right: 0;
-  gap: 2rem;
-
-  @media (min-width: 1980px) {
-    padding-top: 7%;
-    padding-right: 7%;
-  }
-`;
-
-export const ProfileLinesWrapper = styled.div`
-  width: 100%;
-  max-width: 33rem;
-  @media (min-width: 1980px) {
-    max-width: 40rem;
-  }
-`;
-
-export const AboutParagraphWrapper = styled.div`
+  inset: 0;
   display: flex;
-  justify-content: flex-end;
-  padding-right: 5%;
+  align-items: flex-start;
+  justify-content: stretch;
+  z-index: 0;
 `;
 
-export const AboutParagraph = styled.div`
+export const MainButtonContainer = styled.div`
+  position: relative;
+  z-index: 10;
+  align-self: center;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  padding: 0 30%;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
+  border: 1px solid ${(props) => props.theme.backgroundColor.secondary[800]};
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3.5rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid ${(props) => props.theme.backgroundColor.secondary[800]};
+    outline: 4rem solid ${(props) => props.theme.backgroundColor.secondary[800]};
+    background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
+  }
+
+  @media (min-width: ${mobileBreakPointWidth}) {
+    align-self: initial;
+    padding: 0;
+    max-width: 70%;
+  }
+
+  @media (min-width: ${mobileBreakPointWidth}) and (min-height: 51rem) {
+    flex-direction: column;
+    max-width: 37.5rem;
+  }
+`;
+
+export const MainRightContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0;
+  padding: 3rem 2rem;
+  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
+
+  @media (min-width: ${mobileBreakPointWidth}) {
+    align-self: initial;
+    padding: 0;
+    gap: 2rem;
+    align-items: flex-end;
+  }
+`;
+
+export const ProfileInfoContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+
+export const AboutInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: flex-end;
+  align-self: flex-end;
+`;
+
+export const AboutInfoText = styled.div`
   max-width: 16rem;
   font-family: ${(props) => props.theme.fontFamilies.main};
   font-weight: ${(props) => props.theme.fontWeights.normal};
@@ -226,10 +207,3 @@ export const AboutParagraph = styled.div`
   font-size: ${(props) => props.theme.fontSizes.md};
   color: ${(props) => props.theme.textColor.secondary[200]};
 `;
-
-export const AboutInfoAndButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
- */
