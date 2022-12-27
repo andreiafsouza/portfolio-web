@@ -1,5 +1,6 @@
 /* constants */
-export const mobileBreakPointWidth = '65em';
+export const mediumLayoutBreakPoint = '75em';
+export const smallLayoutBreakPoint = '40em';
 export const mobileBreakPointFont = '40em';
 
 export const tabletSize = {

@@ -5,8 +5,8 @@ import {
 } from '../../stylesheets/abstracts/mixins';
 
 export const Container = styled.a`
-  width: 100%;
   max-width: ${({ size }) => (size === 'small' ? 'fit-content' : '8.75rem')};
+  min-width: ${({ size }) => (size === 'small' ? '5.6rem' : '8.75rem')};
   max-height: 2.5rem;
   display: flex;
   justify-content: center;

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { mobileBreakPointWidth, mobileBreakPointFont } from '../../utils';
-import * as mixins from '../../stylesheets/abstracts/mixins';
+import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '../../utils';
 
 export const Container = styled.div`
   position: relative;
@@ -8,13 +7,12 @@ export const Container = styled.div`
 
 export const MainContainer = styled.div`
   display: grid;
-  padding: 6rem 0;
+  padding: 4rem 0;
 
-  @media (min-width: ${mobileBreakPointWidth}) {
+  @media (min-width: ${mediumLayoutBreakPoint}) {
     grid-auto-flow: column;
     grid-auto-columns: 1.7fr 1fr;
-    padding-top: 3.6rem;
-    padding: 3.6rem 5rem;
+    padding: 3.4rem 5rem; //5.5%;
   }
 `;
 
@@ -22,10 +20,9 @@ export const MainLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: 2rem;
   background-color: ${(props) => props.theme.shadows.main};
 
-  @media (min-width: ${mobileBreakPointWidth}) {
+  @media (min-width: ${mediumLayoutBreakPoint}) {
     padding-right: 4rem;
     margin-bottom: 0;
     background-color: transparent;
@@ -42,7 +39,7 @@ export const MainText = styled.div`
   padding: 5rem 0.25rem 5rem 0;
   background-color: ${(props) => props.theme.shadows.main};
 
-  @media (min-width: ${mobileBreakPointWidth}) {
+  @media (min-width: ${mediumLayoutBreakPoint}) {
     display: flex;
     padding: 14rem 3rem 8.6rem 3.75rem;
     margin: initial;
@@ -52,14 +49,21 @@ export const MainText = styled.div`
 export const MainTextHeadline = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
-  padding-right: 0.25rem;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
   color: ${(props) => props.theme.textColor.main[100]};
   font-family: ${(props) => props.theme.fontFamilies.display};
-  font-size: ${(props) => props.theme.fontSizes.xxl};
+  font-size: var(--fs-xxl);
   font-weight: ${(props) => props.theme.fontWeights.normal};
-  gap: 2.2rem;
+  gap: 1.6rem;
+
+  @media (min-width: ${mediumLayoutBreakPoint}) {
+    align-items: flex-end;
+    padding-right: 0.25rem;
+    gap: 2.2rem;
+  }
 `;
 
 export const MainTextMediumDesign = styled.div`
@@ -73,7 +77,7 @@ export const MainTextMediumEngineer = styled.div`
 `;
 
 export const MainTextCreate = styled.div`
-  font-size: ${(props) => props.theme.fontSizes.xxxl};
+  font-size: var(--fs-xxxl);
   line-height: 80%;
   text-align: right;
   vertical-align: bottom;
@@ -82,12 +86,11 @@ export const MainTextCreate = styled.div`
 
 export const MainTextParagraphContainer = styled.div`
   position: relative;
-  height: 100%;
-  max-width: 20rem;
+  min-height: 100%;
+  max-width: 14rem;
   display: flex;
   align-items: flex-end;
   padding-left: 1.25rem;
-  width: 100%;
   border-left: 1px solid ${(props) => props.theme.textColor.main[100]};
 
   &::before {
@@ -101,8 +104,9 @@ export const MainTextParagraphContainer = styled.div`
     opacity: 0;
   }
 
-  @media (min-width: ${mobileBreakPointWidth}) {
+  @media (min-width: ${mediumLayoutBreakPoint}) {
     border-left: none;
+    max-width: 20rem;
 
     &::before {
       opacity: 1;
@@ -113,8 +117,8 @@ export const MainTextParagraphContainer = styled.div`
 export const MainTextParagraph = styled.div`
   font-family: ${(props) => props.theme.fontFamilies.main};
   font-weight: ${(props) => props.theme.fontWeights.normal};
-  font-size: ${(props) => props.theme.fontSizes.lg};
-  line-height: 108%;
+  font-size: var(--fs-lg);
+  line-height: 110%;
   color: ${(props) => props.theme.textColor.secondary[200]};
 `;
 
@@ -134,7 +138,7 @@ export const MainButtonContainer = styled.div`
   width: 100%;
   max-width: 100%;
   display: flex;
-  padding: 0 30%;
+  padding: 0 36%;
 
   flex-wrap: wrap;
   justify-content: center;
@@ -155,13 +159,13 @@ export const MainButtonContainer = styled.div`
     background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
   }
 
-  @media (min-width: ${mobileBreakPointWidth}) {
+  @media (min-width: ${mediumLayoutBreakPoint}) {
     align-self: initial;
     padding: 0;
     max-width: 70%;
   }
 
-  @media (min-width: ${mobileBreakPointWidth}) and (min-height: 51rem) {
+  @media (min-width: ${mediumLayoutBreakPoint}) and (min-height: 51rem) {
     flex-direction: column;
     max-width: 37.5rem;
   }
@@ -170,22 +174,33 @@ export const MainButtonContainer = styled.div`
 export const MainRightContainer = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0;
-  padding: 3rem 2rem;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2rem 2rem;
   background-color: ${(props) => props.theme.backgroundColor.primary[900]};
 
-  @media (min-width: ${mobileBreakPointWidth}) {
-    align-self: initial;
+  @media (min-width: ${smallLayoutBreakPoint}) and (max-width: ${mediumLayoutBreakPoint}) {
+    padding: 6rem 2rem;
+  }
+
+  @media (min-width: ${mediumLayoutBreakPoint}) {
     padding: 0;
-    gap: 2rem;
-    align-items: flex-end;
+  }
+`;
+
+export const ProfileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @media (min-width: ${mediumLayoutBreakPoint}) {
+    max-width: fit-content;
   }
 `;
 
 export const ProfileInfoContainer = styled.div`
+  align-self: flex-end;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -204,6 +219,6 @@ export const AboutInfoText = styled.div`
   font-family: ${(props) => props.theme.fontFamilies.main};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   line-height: 110%;
-  font-size: ${(props) => props.theme.fontSizes.md};
+  font-size: var(--fs-md);
   color: ${(props) => props.theme.textColor.secondary[200]};
 `;

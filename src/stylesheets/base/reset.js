@@ -1,6 +1,28 @@
 import { createGlobalStyle } from 'styled-components';
+import { smallLayoutBreakPoint } from '../../utils';
 
 export const GlobalStyleReset = createGlobalStyle`
+:root{
+  --fs-xs: 0.625rem;
+  --fs-sm: 0.6875rem;
+  --fs-md: .75rem;
+  --fs-lg: 1rem;
+  --fs-xl: 1.5rem;
+  --fs-xxl: 2.5rem;
+  --fs-xxxl: 3.5rem;
+
+  
+  @media (min-width: ${smallLayoutBreakPoint}) {
+    --fs-xs: 0.625rem;
+    --fs-sm: .75rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 4rem;
+    --fs-xxxl: 5rem;
+  }
+}
+
 *,
 *::before,
 *::after {
