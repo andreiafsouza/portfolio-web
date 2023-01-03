@@ -1,6 +1,6 @@
 export const typography = {
   fontFamilies: {
-    main: `'Noto Sans' , 'sans-serif'`,
+    main: `'Noto Sans' , '-apple-system', 'sans-serif'`,
     display: `'Noto Serif', 'serif'`
   },
   fontSizes: {

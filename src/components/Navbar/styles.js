@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { mediumLayoutBreakPoint } from '../../utils';
 
 export const Container = styled.div`
-  min-width: 100%;
+  max-width: 137.5rem;
   position: sticky;
   top: 0;
+  margin: 0 auto;
   margin-top: -3.75rem;
   z-index: 1000;
   display: grid;
@@ -34,7 +36,8 @@ export const NavbarRightContainer = styled.div`
 
 export const NavbarContainer = styled.div`
   display: none;
-  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
+  /* background-color: ${(props) =>
+    props.theme.backgroundColor.primary[900]}; */
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     min-width: 100%;
@@ -42,11 +45,11 @@ export const NavbarContainer = styled.div`
     justify-content: center;
     align-items: flex-end;
     padding: 2.7rem 0.5rem 0 0.8rem;
-    gap: 8%;
+    gap: 2rem;
   }
 `;
 
-export const NavbarItem = styled.a`
+export const NavbarItem = styled(Link)`
   position: relative;
   padding: 0 0.6rem;
   color: ${(props) => props.theme.textColor.main[100]};
@@ -67,9 +70,7 @@ export const NavbarItem = styled.a`
     height: 0%;
     transition: all 0.3s ease-in-out;
     z-index: 0;
-    border-left: 0.2rem solid
-      ${({ hoverColor }) =>
-        hoverColor ? hoverColor : (props) => props.theme.button.hoverColor};
+    border-left: 0.2rem solid ${(props) => props.theme.svgLinesColor};
   }
 
   @media (hover: hover) and (pointer: fine) {

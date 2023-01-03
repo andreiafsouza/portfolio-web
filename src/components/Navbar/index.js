@@ -28,16 +28,44 @@ export const Navbar = ({ hoverColor }) => {
           <BarsSolid size={32} />
         </S.MenuIconContainer>
         <S.NavbarContainer>
-          <S.NavbarItem hoverColor={theme.svgLinesColor} href="#">
+          <S.NavbarItem
+            to="/"
+            smooth="true"
+            duration={500}
+            spy="true"
+            offset={-60}
+            exact="true"
+          >
             home
           </S.NavbarItem>
-          <S.NavbarItem hoverColor={theme.svgLinesColor} href="#">
+          <S.NavbarItem
+            to="about"
+            smooth="true"
+            duration={500}
+            spy="true"
+            offset={-60}
+            exact="true"
+          >
             about
           </S.NavbarItem>
-          <S.NavbarItem hoverColor={theme.svgLinesColor} href="#">
+          <S.NavbarItem
+            to="#"
+            smooth="true"
+            duration={500}
+            spy="true"
+            offset={-60}
+            exact="true"
+          >
             projects
           </S.NavbarItem>
-          <S.NavbarItem hoverColor={theme.svgLinesColor} href="#">
+          <S.NavbarItem
+            to="#"
+            smooth="true"
+            duration={500}
+            spy="true"
+            offset={-60}
+            exact="true"
+          >
             contact
           </S.NavbarItem>
         </S.NavbarContainer>

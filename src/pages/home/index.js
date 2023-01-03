@@ -1,6 +1,6 @@
 /* components */
 import { Button } from '../../components/Button';
-import { ProfileLines } from '../../components/ProfileLines';
+import { ProfileLines } from './components/ProfileLines/ProfileLines';
 import { BackgroundPurpleLines } from '../../components/BackgroundPurpleLines';
 /* icons */
 import { AccountCircleOutlined } from '../../components/Icons/AccountCircleOutlined';
@@ -12,7 +12,7 @@ export const Home = () => {
   const theme = useTheme();
 
   return (
-    <S.Container>
+    <S.Container id="home">
       <S.MainContainer>
         <S.MainLeftContainer>
           <S.MainText>

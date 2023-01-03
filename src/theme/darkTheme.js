@@ -36,6 +36,7 @@ export const darkTheme = {
     main: colors.shadows[800]
   },
   svgLinesColor: colors.accent.purple,
+  profileBgColor: colors.accent.yellow,
   fontSizes: typography.fontSizes,
   fontWeights: typography.fontWeights,
   lineHeight: typography.lineHeight

@@ -1,16 +1,18 @@
 /* components */
 import { Navbar } from './components/Navbar';
-/* pages */
-import { Home } from './pages/home';
+/* router */
+import { useRoutes } from 'react-router-dom';
+import routes from './routes';
 /* style */
 import { GlobalStyleReset } from './stylesheets/base/reset';
 import { Theme } from './theme';
 
 function App() {
+  const router = useRoutes(routes);
   return (
     <Theme>
       <Navbar />
-      <Home />
+      {router}
       <GlobalStyleReset />
     </Theme>
   );

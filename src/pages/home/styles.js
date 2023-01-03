@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '../../utils';
 
 export const Container = styled.div`
   position: relative;
+  max-width: 137.5rem;
+  margin: 0 auto;
 `;
 
 export const MainContainer = styled.div`
@@ -26,6 +28,70 @@ export const MainLeftContainer = styled.div`
     padding-right: 4rem;
     margin-bottom: 0;
     background-color: transparent;
+  }
+`;
+
+const borderHeight = keyframes`
+from {
+  height: 0;
+  opacity: 0;
+  }
+to {
+  height: 26.4rem;
+  }
+`;
+
+const opacity = keyframes`
+from {
+  opacity: 0;
+  }
+to {
+  opacity: 1;
+  }
+`;
+
+const TextOpacity = keyframes`
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const fadeIn = keyframes`
+0%, 49% {
+  opacity: 0;
+}
+50% {
+  opacity: 0.5;
+}
+100% {
+  opacity: 1;
+}
+`;
+
+const translateXButtons = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(-80%);
+  }
+  40% {
+    transform: translateX(-60%);
+  }
+  60% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 `;
 
@@ -69,11 +135,13 @@ export const MainTextHeadline = styled.div`
 export const MainTextMediumDesign = styled.div`
   line-height: 65%;
   text-align: right;
+  animation: ${TextOpacity} 5.5s ease-in;
 `;
 
 export const MainTextMediumEngineer = styled.div`
   line-height: 70%;
   text-align: right;
+  animation: ${TextOpacity} 3s ease-in;
 `;
 
 export const MainTextCreate = styled.div`
@@ -82,6 +150,7 @@ export const MainTextCreate = styled.div`
   text-align: right;
   vertical-align: bottom;
   text-transform: uppercase;
+  animation: ${opacity} 0.7s ease-in;
 `;
 
 export const MainTextParagraphContainer = styled.div`
@@ -99,6 +168,7 @@ export const MainTextParagraphContainer = styled.div`
     left: 0;
     bottom: 0;
     height: 26.4rem;
+    animation: ${borderHeight} 3s linear backwards;
     width: 1px;
     background-color: ${(props) => props.theme.textColor.main[100]};
     opacity: 0;
@@ -120,6 +190,7 @@ export const MainTextParagraph = styled.div`
   font-size: var(--fs-lg);
   line-height: 110%;
   color: ${(props) => props.theme.textColor.secondary[200]};
+  animation: ${opacity} 0.7s ease-in;
 `;
 
 export const BackgroundLinesContainer = styled.div`
@@ -144,8 +215,6 @@ export const MainButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.25rem;
-  background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
-  border: 1px solid ${(props) => props.theme.backgroundColor.secondary[800]};
 
   &::after {
     content: '';
@@ -157,6 +226,7 @@ export const MainButtonContainer = styled.div`
     border: 2px solid ${(props) => props.theme.backgroundColor.secondary[800]};
     outline: 4rem solid ${(props) => props.theme.backgroundColor.secondary[800]};
     background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
+    animation: ${translateXButtons} 3s linear;
   }
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
