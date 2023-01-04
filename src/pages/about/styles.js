@@ -9,6 +9,8 @@ const cursorBlink = keyframes`
 `;
 
 export const Container = styled.div`
+  max-width: 137.5rem;
+  margin: 0 auto;
   position: relative;
   padding-top: 3.7rem;
   padding-inline: 1rem;
@@ -19,8 +21,6 @@ export const Container = styled.div`
 `;
 
 export const AboutInfoContainer = styled.div`
-  max-width: 137.5rem;
-  margin: 0 auto;
   display: grid;
   justify-items: center;
   align-items: flex-start;
@@ -39,6 +39,12 @@ export const ImageContainer = styled.div`
   position: relative;
   max-width: 30rem;
   background-color: ${(props) => props.theme.profileBgColor};
+  /*   background: linear-gradient(
+    #090312 50%,
+    #5a273d 65%,
+    #a9543a 75%,
+    #bda523 100%
+  ); */
   z-index: 0;
   border-radius: 50%;
   align-items: flex-start;
@@ -51,7 +57,7 @@ export const ImageProfile = styled.img`
 `;
 
 export const AboutTerminalContainer = styled.div`
-  background-color: rgba(29, 24, 53, 0.8);
+  background-color: ${(props) => props.theme.backgroundColor.primary[500]};
   border-radius: 1rem;
   overflow: hidden;
   ${mainBoxShadow}
@@ -66,7 +72,7 @@ export const AboutParagraphHeader = styled.div`
   padding-top: 0.4rem;
   padding-inline: 0.6rem;
   ${mainBoxShadow}
-  background-color: #101014;
+  background-color: ${(props) => props.theme.backgroundColor.neutral[900]};
 `;
 
 export const AboutTerminalHeaderLeft = styled.div`
@@ -91,9 +97,10 @@ export const AboutTerminalHeaderTag = styled.div`
   white-space: nowrap;
   border-top-left-radius: 0.6rem;
   border-top-right-radius: 0.6rem;
-  background-color: rgba(29, 24, 53, 0.8);
+  opacity: 0.8;
+  background-color: ${(props) => props.theme.backgroundColor.primary[500]};
   font-size: ${(props) => props.theme.fontSizes.sm};
-  color: ${(props) => props.theme.textColor.main[200]};
+  color: ${(props) => props.theme.textColor.main[100]};
   font-weight: ${(props) => props.theme.fontWeights.bold};
 `;
 

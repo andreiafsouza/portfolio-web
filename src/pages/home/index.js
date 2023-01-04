@@ -1,6 +1,6 @@
 /* components */
 import { Button } from '../../components/Button';
-import { ProfileLines } from './components/ProfileLines/ProfileLines';
+import { ProfileLines } from './components/ProfileLines';
 import { BackgroundPurpleLines } from '../../components/BackgroundPurpleLines';
 /* icons */
 import { AccountCircleOutlined } from '../../components/Icons/AccountCircleOutlined';

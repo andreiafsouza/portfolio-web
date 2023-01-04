@@ -10,6 +10,9 @@ export const darkTheme = {
     },
     secondary: {
       800: colors.secondary[800]
+    },
+    neutral: {
+      900: colors.neutral[900]
     }
   },
   textColor: {
@@ -35,6 +38,7 @@ export const darkTheme = {
   shadows: {
     main: colors.shadows[800]
   },
+  accentGreen: colors.accent.green,
   svgLinesColor: colors.accent.purple,
   profileBgColor: colors.accent.yellow,
   fontSizes: typography.fontSizes,

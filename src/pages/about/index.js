@@ -1,11 +1,13 @@
 /* style */
 import { useTheme } from 'styled-components';
 import profile from '../../assets/images/profile.png';
+import profileArt from '../../assets/images/profile_art.jpg';
 import AngleDownSolid from '../../components/Icons/AngleDownSolid';
 import AngleUpSolid from '../../components/Icons/AngleUpSolid';
 import Terminal from '../../components/Icons/Terminal';
 import XMarkSolid from '../../components/Icons/XMarkSolid';
-import { ProfileLinesAbout } from './components/ProfileLinesAbout/ProfileLinesAbout';
+import { ProfileLinesAbout } from './components/ProfileLinesAbout';
+import ResponsiveCarousel from './components/SkillsCarousel';
 import * as S from './styles';
 
 export const About = () => {
@@ -37,8 +39,13 @@ export const About = () => {
           </S.AboutParagraphHeader>
           <S.AboutParagraphContainer>
             <S.TerminalLine>
-              <S.WordColoring color={'#5C8187'}>Administrator</S.WordColoring>
-              in <S.WordColoring color={'#6A822E'}>~\Documents</S.WordColoring>
+              <S.WordColoring color={theme.textColor.secondary[200]}>
+                Administrator
+              </S.WordColoring>
+              in{' '}
+              <S.WordColoring color={theme.profileBgColor}>
+                ~\Documents
+              </S.WordColoring>
             </S.TerminalLine>
             <S.TerminalLine>
               <AngleUpSolid size={16} color={theme.svgLinesColor} rotate={90} />
@@ -64,8 +71,13 @@ export const About = () => {
               perspiciatis, magnam nihil eius blanditiis et incidunt enim.
             </S.AboutParagraph>
             <S.TerminalLine>
-              <S.WordColoring color={'#5C8187'}>Administrator</S.WordColoring>{' '}
-              in <S.WordColoring color={'#6A822E'}>~\Documents</S.WordColoring>
+              <S.WordColoring color={theme.textColor.secondary[200]}>
+                Administrator
+              </S.WordColoring>{' '}
+              in{' '}
+              <S.WordColoring color={theme.profileBgColor}>
+                ~\Documents
+              </S.WordColoring>
             </S.TerminalLine>
             <S.TerminalLine>
               <AngleUpSolid size={16} color={theme.svgLinesColor} rotate={90} />
@@ -73,6 +85,7 @@ export const About = () => {
           </S.AboutParagraphContainer>
         </S.AboutTerminalContainer>
       </S.AboutInfoContainer>
+      <ResponsiveCarousel />
     </S.Container>
   );
 };
