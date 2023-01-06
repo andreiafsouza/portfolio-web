@@ -1,4 +1,5 @@
 import React from 'react';
+/* style */
 import styled from 'styled-components';
 
 const CarouselSlide = styled.div`
@@ -8,17 +9,13 @@ const CarouselSlide = styled.div`
   flex: 0 0 auto;
   width: 25%;
 
-  img {
-    width: 60%;
-  }
+  /*   border: 1px solid red; */
 `;
 
-const ImageCarousel = ({ images }) => (
+const ImageCarousel = ({ icons }) => (
   <>
-    {images.map((image) => (
-      <CarouselSlide key={image.id}>
-        <img src={image.src} alt={image.alt} />
-      </CarouselSlide>
+    {icons.map((icon, index) => (
+      <CarouselSlide key={index}>{icon}</CarouselSlide>
     ))}
   </>
 );
