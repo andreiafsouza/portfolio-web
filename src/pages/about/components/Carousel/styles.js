@@ -27,8 +27,20 @@ export const CaretContainer = styled.div`
 
 export const LeftCaret = styled(CaretContainer)`
   left: 0;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover svg {
+      opacity: 0.7;
+    }
+  }
 `;
 
 export const RightCaret = styled(CaretContainer)`
   right: 0;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover svg {
+      opacity: 0.7;
+    }
+  }
 `;

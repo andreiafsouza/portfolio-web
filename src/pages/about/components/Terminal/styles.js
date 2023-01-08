@@ -8,7 +8,7 @@ const cursorBlink = keyframes`
 `;
 
 export const AboutTerminalContainer = styled.div`
-  background-color: ${(props) => props.theme.backgroundColor.primary[500]};
+  background-color: ${(props) => props.theme.background.secondary};
   border-radius: 1rem;
   overflow: hidden;
   ${mainBoxShadow}
@@ -23,7 +23,7 @@ export const AboutParagraphHeader = styled.div`
   padding-top: 0.4rem;
   padding-inline: 0.6rem;
   ${mainBoxShadow}
-  background-color: ${(props) => props.theme.backgroundColor.neutral[900]};
+  background-color: ${(props) => props.theme.background.neutral};
 `;
 
 export const AboutTerminalHeaderLeft = styled.div`
@@ -49,9 +49,9 @@ export const AboutTerminalHeaderTag = styled.div`
   border-top-left-radius: 0.6rem;
   border-top-right-radius: 0.6rem;
   opacity: 0.8;
-  background-color: ${(props) => props.theme.backgroundColor.primary[500]};
+  background-color: ${(props) => props.theme.background.secondary};
   font-size: ${(props) => props.theme.fontSizes.sm};
-  color: ${(props) => props.theme.textColor.main[100]};
+  color: ${(props) => props.theme.text.primary};
   font-weight: ${(props) => props.theme.fontWeights.bold};
 `;
 
@@ -66,7 +66,7 @@ export const AboutParagraphContainer = styled.article`
   padding-top: 1em;
   padding-inline: 0.5rem;
   font-size: ${(props) => props.theme.fontSizes.md};
-  color: ${(props) => props.theme.textColor.main[100]};
+  color: ${(props) => props.theme.text.primary};
   font-weight: ${(props) => props.theme.fontWeights.normal};
 `;
 
@@ -86,8 +86,7 @@ export const TerminalLine = styled.div`
 `;
 
 export const WordColoring = styled.span`
-  color: ${({ color }) =>
-    color ? color : (props) => props.theme.textColor.main[100]};
+  color: ${({ color }) => (color ? color : (props) => props.theme.text.primary)};
 `;
 
 export const AboutParagraph = styled.p`

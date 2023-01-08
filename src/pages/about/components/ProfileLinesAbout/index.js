@@ -1,6 +1,8 @@
 import * as S from './styles';
+import { useTheme } from 'styled-components';
 
 export const ProfileLinesAbout = () => {
+  const theme = useTheme();
   return (
     <S.Wrapper>
       <svg
@@ -9,6 +11,7 @@ export const ProfileLinesAbout = () => {
         fill="none"
         viewBox="0 0 460 424"
         preserveAspectRatio="xMidYMax meet"
+        stroke={theme.svg.accent}
       >
         <path
           pathLength={1}

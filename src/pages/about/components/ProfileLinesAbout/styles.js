@@ -23,7 +23,6 @@ export const Wrapper = styled.div`
   z-index: 1;
 
   path {
-    stroke: ${(props) => props.theme.svgLinesColor};
     stroke-width: 1;
     opacity: 0.7;
     stroke-dasharray: 1;

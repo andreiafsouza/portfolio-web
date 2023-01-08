@@ -11,8 +11,7 @@ export const Container = styled.a`
   display: flex;
   justify-content: center;
   border-radius: 4px;
-  padding: ${({ size }) =>
-    size === 'small' ? '0.4rem 0.5rem' : '0.6rem 0.5rem'};
+  padding: ${({ size }) => (size === 'small' ? '0.4rem 0.5rem' : '0.6rem 0.5rem')};
   gap: 0.25rem;
   text-decoration: none;
   outline: none;
@@ -28,8 +27,7 @@ export const Container = styled.a`
     transition: all 0.3s ease-in-out;
     z-index: 1;
     border-radius: 4px;
-    background: ${({ hoverColor }) =>
-      hoverColor ? hoverColor : (props) => props.theme.button.hoverColor};
+    background: ${({ hoverColor }) => (hoverColor ? hoverColor : (props) => props.theme.button.hover)};
   }
 
   &::after {
@@ -60,15 +58,11 @@ export const Container = styled.a`
 export const Label = styled.div`
   display: ${({ hasLabel }) => (hasLabel ? 'flex' : 'none')};
   align-items: center;
-  font-family: ${(props) => props.theme.fontFamilies.main};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${({ size }) =>
-    size === 'small'
-      ? (props) => props.theme.fontSizes.md
-      : (props) => props.theme.fontSizes.lg};
+    size === 'small' ? (props) => props.theme.fontSizes.md : (props) => props.theme.fontSizes.lg};
   line-height: 103.7%;
-  color: ${({ color }) =>
-    color ? color : (props) => props.theme.textColor.main[100]};
+  color: ${({ color }) => (color ? color : (props) => props.theme.text.primary)};
   z-index: 1;
 `;
 

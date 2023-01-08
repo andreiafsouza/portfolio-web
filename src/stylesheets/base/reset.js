@@ -55,8 +55,8 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
-  font-family: ${(props) => props.theme.fontFamilies.main}
+  background: ${(props) => props.theme.background.primary};
+  font-family: ${(props) => props.theme.font.main}
 }
 
 /* A elements that don't have a class get default styles */

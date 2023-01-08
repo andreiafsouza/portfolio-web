@@ -3,44 +3,41 @@ import { colors } from '../stylesheets/abstracts/palettes';
 
 export const darkTheme = {
   colors: colors,
-  backgroundColor: {
-    primary: {
-      500: colors.primary[500],
-      900: colors.primary[900]
-    },
-    secondary: {
-      800: colors.secondary[800]
-    },
-    neutral: {
-      900: colors.neutral[900]
-    }
+  background: {
+    primary: colors.primary[900],
+    secondary: colors.primary[500],
+    neutral: colors.neutral[900],
+    accent: colors.accent.yellow,
+    secondaryAccent: colors.secondary[800]
   },
-  textColor: {
-    main: {
-      100: colors.neutral[100],
-      200: colors.neutral[200]
-    },
-    secondary: {
-      200: colors.primary[200]
-    }
+  text: {
+    primary: colors.neutral[100],
+    secondary: colors.primary[200],
+    neutral: colors.neutral[200]
   },
-  fontFamilies: {
+  font: {
     main: typography.fontFamilies.main,
     display: typography.fontFamilies.display
   },
-  boxShadows: {
-    main: colors.shadows[100]
-  },
   button: {
-    hoverColor: colors.shadows[400],
-    hoverColorLight: colors.shadows[800]
+    hover: colors.shadows[400],
+    hoverLight: colors.shadows[800]
   },
   shadows: {
-    main: colors.shadows[800]
+    primary: colors.shadows[100],
+    secondary: colors.shadows[800]
   },
-  accentGreen: colors.accent.green,
-  svgLinesColor: colors.accent.purple,
-  profileBgColor: colors.accent.yellow,
+  icon: {
+    primary: colors.neutral[100],
+    accent: colors.accent.purple
+  },
+  svg: {
+    primary: colors.neutral[100],
+    accent: colors.accent.purple
+  },
+  profile: {
+    primary: colors.accent.yellow
+  },
   fontSizes: typography.fontSizes,
   fontWeights: typography.fontWeights,
   lineHeight: typography.lineHeight

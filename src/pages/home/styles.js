@@ -22,7 +22,7 @@ export const MainLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: ${(props) => props.theme.shadows.main};
+  background-color: ${(props) => props.theme.shadows.secondary};
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     padding-right: 4rem;
@@ -103,7 +103,7 @@ export const MainText = styled.div`
   margin: auto;
   gap: 1rem;
   padding: 5rem 0.25rem 5rem 0;
-  background-color: ${(props) => props.theme.shadows.main};
+  background-color: ${(props) => props.theme.shadows.secondary};
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     display: flex;
@@ -119,10 +119,10 @@ export const MainTextHeadline = styled.div`
   justify-content: flex-end;
   padding-right: 1.25rem;
   padding-left: 1.25rem;
-  color: ${(props) => props.theme.textColor.main[100]};
-  font-family: ${(props) => props.theme.fontFamilies.display};
-  font-size: var(--fs-xxl);
+  font-family: ${(props) => props.theme.font.display};
+  color: ${(props) => props.theme.text.primary};
   font-weight: ${(props) => props.theme.fontWeights.normal};
+  font-size: var(--fs-xxl);
   gap: 1.6rem;
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
@@ -160,7 +160,7 @@ export const MainTextParagraphContainer = styled.div`
   display: flex;
   align-items: flex-end;
   padding-left: 1.25rem;
-  border-left: 1px solid ${(props) => props.theme.textColor.main[100]};
+  border-left: 1px solid ${(props) => props.theme.text.primary};
 
   &::before {
     content: '';
@@ -170,7 +170,7 @@ export const MainTextParagraphContainer = styled.div`
     height: 26.4rem;
     animation: ${borderHeight} 3s linear backwards;
     width: 1px;
-    background-color: ${(props) => props.theme.textColor.main[100]};
+    background-color: ${(props) => props.theme.text.primary};
     opacity: 0;
   }
 
@@ -185,11 +185,10 @@ export const MainTextParagraphContainer = styled.div`
 `;
 
 export const MainTextParagraph = styled.div`
-  font-family: ${(props) => props.theme.fontFamilies.main};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: var(--fs-lg);
   line-height: 110%;
-  color: ${(props) => props.theme.textColor.secondary[200]};
+  color: ${(props) => props.theme.text.secondary};
   animation: ${opacity} 0.7s ease-in;
 `;
 
@@ -223,9 +222,9 @@ export const MainButtonContainer = styled.div`
     left: -3.5rem;
     width: 100%;
     height: 100%;
-    border: 2px solid ${(props) => props.theme.backgroundColor.secondary[800]};
-    outline: 4rem solid ${(props) => props.theme.backgroundColor.secondary[800]};
-    background-color: ${(props) => props.theme.backgroundColor.secondary[800]};
+    border: 2px solid ${(props) => props.theme.background.secondaryAccent};
+    outline: 4rem solid ${(props) => props.theme.background.secondaryAccent};
+    background-color: ${(props) => props.theme.background.secondaryAccent};
     animation: ${translateXButtons} 3s linear;
   }
 
@@ -247,7 +246,7 @@ export const MainRightContainer = styled.div`
   justify-content: center;
   align-items: flex-end;
   padding: 2rem 2rem;
-  background-color: ${(props) => props.theme.backgroundColor.primary[900]};
+  background-color: ${(props) => props.theme.background.primary};
 
   @media (min-width: ${smallLayoutBreakPoint}) and (max-width: ${mediumLayoutBreakPoint}) {
     padding: 6rem 2rem;
@@ -286,9 +285,8 @@ export const AboutInfoContainer = styled.div`
 
 export const AboutInfoText = styled.div`
   max-width: 16rem;
-  font-family: ${(props) => props.theme.fontFamilies.main};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   line-height: 110%;
   font-size: var(--fs-md);
-  color: ${(props) => props.theme.textColor.secondary[200]};
+  color: ${(props) => props.theme.text.secondary};
 `;

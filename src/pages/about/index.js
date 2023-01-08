@@ -35,7 +35,10 @@ export const About = () => {
       <S.AboutInfoContainer>
         <S.ImageContainer>
           <ProfileLinesAbout />
-          <S.ImageProfile src={profile} />
+          <S.ImageProfile
+            src={profile}
+            alt="a profile picture illustration of Andreia Souza wearing eyeglasses and smilling"
+          />
         </S.ImageContainer>
         <Terminal />
       </S.AboutInfoContainer>

@@ -11,10 +11,8 @@ export const Container = styled.div`
   z-index: 1000;
   display: grid;
   background: ${(props) =>
-    props.navColor
-      ? (props) => props.theme.backgroundColor.primary[900]
-      : 'transparent'};
-  opacity: ${(props) => (props.navColor ? '90%' : '100%')};
+    props.navColor ? (props) => props.theme.background.primary : 'transparent'};
+  opacity: ${(props) => (props.navColor ? 0.97 : 1)};
   transition: background-color 0.3s ease-in-out 0.5ms;
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
@@ -36,8 +34,6 @@ export const NavbarRightContainer = styled.div`
 
 export const NavbarContainer = styled.div`
   display: none;
-  /* background-color: ${(props) =>
-    props.theme.backgroundColor.primary[900]}; */
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     min-width: 100%;
@@ -52,8 +48,7 @@ export const NavbarContainer = styled.div`
 export const NavbarItem = styled(Link)`
   position: relative;
   padding: 0 0.6rem;
-  color: ${(props) => props.theme.textColor.main[100]};
-  font-family: ${(props) => props.theme.fontFamilies.main};
+  color: ${(props) => props.theme.text.primary};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: var(--fs-md);
   line-height: 103.7%;
@@ -70,14 +65,14 @@ export const NavbarItem = styled(Link)`
     height: 0%;
     transition: all 0.3s ease-in-out;
     z-index: 0;
-    border-left: 0.2rem solid ${(props) => props.theme.svgLinesColor};
+    border-left: 0.2rem solid ${(props) => props.theme.svg.accent};
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover,
     &:focus-within {
       transition: all 0.1s ease-in-out;
-      color: ${(props) => props.theme.textColor.secondary[200]};
+      color: ${(props) => props.theme.text.secondary};
       &::before {
         height: 110%;
         transition: all 0.3s ease-in-out;
@@ -90,9 +85,47 @@ export const MenuIconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem;
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     display: none;
   }
+`;
+
+export const MenuButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+
+  @media (min-width: ${mediumLayoutBreakPoint}) {
+    display: none;
+  }
+
+  .hamburger {
+    transition: translate 1s, rotate 1s;
+  }
+
+  &[aria-expanded='true'] .hamburger {
+    translate: 0.1rem -0.1rem;
+    rotate: 0.125turn;
+  }
+
+  .line {
+    transition: 1s;
+    stroke-dasharray: 60 31 60 1000;
+  }
+
+  &[aria-expanded='true'] .line {
+    stroke-dasharray: 60 105 60 1000;
+    stroke-dashoffset: -89;
+  }
+`;
+
+export const MenuBars = styled.svg`
+  fill: ${(props) => props.theme.svg.accent};
+  width: 2rem;
+  height: 2rem;
 `;

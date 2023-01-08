@@ -3,10 +3,13 @@ import BarsSolid from '../Icons/BarsSolid';
 /* style */
 import { useTheme } from 'styled-components';
 import * as S from './styles';
+import { ToggleButton } from './components/ToggleButton';
+import { MenuBars } from './components/MenuBars';
 
-export const Navbar = ({ hoverColor }) => {
+export const Navbar = ({ hoverColor, toggleTheme }) => {
   const theme = useTheme();
   const [navColor, setNavColor] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
 
   const changeNavColor = () => {
     if (window.scrollY > 1) {
@@ -20,13 +23,28 @@ export const Navbar = ({ hoverColor }) => {
     window.addEventListener('scroll', changeNavColor);
   }, []);
 
+  const handleMenuButton = () => {
+    const menuButton = document.getElementById('menu');
+    const isOpened = menuButton.getAttribute('aria-expanded');
+    if (isOpened === 'false') {
+      menuButton.setAttribute('aria-expanded', 'true');
+    } else {
+      menuButton.setAttribute('aria-expanded', 'false');
+    }
+  };
+
   return (
     <S.Container navColor={navColor}>
       <S.NavbarLeftContainer></S.NavbarLeftContainer>
       <S.NavbarRightContainer>
-        <S.MenuIconContainer>
-          <BarsSolid size={32} />
-        </S.MenuIconContainer>
+        <S.MenuButton
+          id="menu"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          onClick={handleMenuButton}
+        >
+          <MenuBars />
+        </S.MenuButton>
         <S.NavbarContainer>
           <S.NavbarItem
             to="/"
@@ -69,6 +87,7 @@ export const Navbar = ({ hoverColor }) => {
             contact
           </S.NavbarItem>
         </S.NavbarContainer>
+        {/*  <ToggleButton toggleTheme={toggleTheme} /> */}
       </S.NavbarRightContainer>
     </S.Container>
   );

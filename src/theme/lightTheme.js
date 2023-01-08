@@ -1,41 +1,42 @@
 import { typography } from '../stylesheets/base/typography';
-import { colors } from '../stylesheets/abstracts/palettes';
+import { colorsLight } from '../stylesheets/abstracts/palettes';
 
 export const lightTheme = {
-  colors: colors,
-  backgroundColor: {
-    primary: {
-      500: colors.primary[200],
-      900: colors.neutral[200]
-    },
-    secondary: {
-      800: colors.secondary[400]
-    }
+  background: {
+    primary: '#eeeeee',
+    secondary: 'rgba(118, 98, 215, 0.1)',
+    neutral: '#CFCED0',
+    accent: '#7662D7',
+    secondaryAccent: '#5C8187'
   },
-  textColor: {
-    main: {
-      100: colors.primary[900],
-      200: colors.primary[500]
-    },
-    secondary: {
-      200: colors.primary[400]
-    }
+  text: {
+    primary: '#090312',
+    secondary: '#1D1835',
+    neutral: '#101014'
   },
-  fontFamilies: {
+  font: {
     main: typography.fontFamilies.main,
     display: typography.fontFamilies.display
   },
-  boxShadows: {
-    main: colors.shadows[100]
-  },
   button: {
-    hoverColor: colors.shadows[200],
-    hoverColorLight: colors.shadows[100]
+    hover: 'rgba(9, 3, 18, 0.2)',
+    hoverLight: 'rgba(9, 3, 18, 0.1)'
   },
   shadows: {
-    main: colors.shadows[900]
+    primary: 'rgba(9, 3, 18, 0.1)',
+    secondary: 'rgba(29, 24, 53, 0.3)'
   },
-  svgLinesColor: colors.accent.purple,
+  icon: {
+    primary: '#090312',
+    accent: '#7662D7'
+  },
+  svg: {
+    primary: '#090312',
+    accent: '#7662D7'
+  },
+  profile: {
+    primary: colorsLight.shadows[900]
+  },
   fontSizes: typography.fontSizes,
   fontWeights: typography.fontWeights,
   lineHeight: typography.lineHeight

@@ -32,7 +32,7 @@ export const AboutInfoContainer = styled.div`
 export const ImageContainer = styled.div`
   position: relative;
   max-width: 30rem;
-  background-color: ${(props) => props.theme.profileBgColor};
+  background-color: ${(props) => props.theme.profile.primary};
   /*   background: linear-gradient(
     #090312 50%,
     #5a273d 65%,
@@ -42,7 +42,6 @@ export const ImageContainer = styled.div`
   z-index: 0;
   border-radius: 50%;
   align-items: flex-start;
-  ${mainBoxShadow}
 `;
 
 export const ImageProfile = styled.img`

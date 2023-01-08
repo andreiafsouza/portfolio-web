@@ -20,7 +20,7 @@ const Carousel = ({ inlinePadding }) => {
   const carouselRef = useRef(null);
   const [autoSlide, setAutoSlide] = useState(true);
   const scrollWidth = (window.innerWidth - inlinePadding * 2) / 2;
-  const iconColor = theme.svgLinesColor;
+  const iconColor = theme.icon.accent;
   let timeoutId = null;
 
   const icons = [
@@ -43,10 +43,7 @@ const Carousel = ({ inlinePadding }) => {
           behavior: 'smooth'
         });
 
-        if (
-          carouselRef.current.scrollLeft >=
-          carouselRef.current.scrollWidth - window.innerWidth
-        ) {
+        if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth - window.innerWidth) {
           carouselRef.current.scrollTo({
             left: 0,
             behavior: 'smooth'
@@ -96,10 +93,7 @@ const Carousel = ({ inlinePadding }) => {
         behavior: 'smooth'
       });
 
-      if (
-        carouselRef.current.scrollLeft >=
-        carouselRef.current.scrollWidth - window.innerWidth
-      ) {
+      if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth - window.innerWidth) {
         carouselRef.current.scrollTo({
           left: 0,
           behavior: 'smooth'
@@ -122,10 +116,7 @@ const Carousel = ({ inlinePadding }) => {
           behavior: 'smooth'
         });
 
-        if (
-          carouselRef.current.scrollLeft >=
-          carouselRef.current.scrollWidth - window.innerWidth
-        ) {
+        if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth - window.innerWidth) {
           carouselRef.current.scrollTo({
             left: 0,
             behavior: 'smooth'
