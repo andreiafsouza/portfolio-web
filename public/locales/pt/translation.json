@@ -1,0 +1,16 @@
+{
+  "design": "desenhar",
+  "engineer": "projetar",
+  "create": "criar",
+  "headline": "Código limpo e flexível em Javascript + React sempre aplicando as melhores práticas de  UI/UX design.",
+  "aboutText": "Olá! Eu sou uma Desenvolvedora Web Front-End motivada por achar soluções efetivas e eficientes na resolução de problemas.",
+  "home": "Inicio",
+  "about": "Sobre",
+  "projects": "Projetos",
+  "contact": "Contato",
+  "portfolio": "Portfólio",
+  "skills": "Eu busco aprender continuamente sobre novas técnicas e ferramentas para auxiliar na criação e desenvolvimento da melhor versão possível de um código, além de continuar aprofundando meu conhecimento sobre o que já utilizei e aprendi até aqui.",
+  "skillsLink": "Para saber mais sobre cada ferramenta, é só acessar os links!",
+  "skillsLabel": "Leia mais sobre ",
+  "goTo": "Ir para "
+}

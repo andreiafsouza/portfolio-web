@@ -1,0 +1,16 @@
+{
+  "design": "design",
+  "engineer": "engineer",
+  "create": "create",
+  "headline": "Flexible and clean code in Javascript + React always applying UI/UX design best practices.",
+  "aboutText": "Hi There! I'm a Front-End Web Developer motivated by finding effective and efficient ways to solve problems",
+  "home": "Home",
+  "about": "About",
+  "projects": "Projects",
+  "contact": "Contact",
+  "portfolio": "Portfolio",
+  "skills": "I’m constantly learning about  new techniques and tools to help create and develop the best possible version of code, and also improving my knowledge of what I've already used and learned so far.",
+  "skillsLink": "To learn more about each tool, just access the links!",
+  "skillsLabel": "Read more about ",
+  "goTo": "Go to "
+}

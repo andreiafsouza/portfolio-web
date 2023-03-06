@@ -1,0 +1,16 @@
+{
+  "design": "entwerfen",
+  "engineer": "konstruieren",
+  "create": "erstellen",
+  "headline": "Flexibler und sauberer Code in Javascript + React, wobei immer Best Practices für das UI/UX-Design angewendet werden.",
+  "aboutText": "Hallo! Ich bin ein Front-End-Webentwickler, der motiviert ist, effektive und effiziente Wege zur Lösung von Problemen zu finden",
+  "home": "Startseite",
+  "about": "Über mich",
+  "projects": "Projekte",
+  "contact": "Kontakt",
+  "portfolio": "Portfolio",
+  "skills": "Ich lerne ständig neue Techniken und Tools kennen, um die bestmögliche Version von Code zu erstellen und zu entwickeln, und verbessere auch mein Wissen darüber, was ich bisher bereits verwendet und gelernt habe.",
+  "skillsLink": "Um mehr über jedes Tool zu erfahren, greifen Sie einfach auf die Links zu!",
+  "skillsLabel": "Lesen Sie mehr über ",
+  "goTo": "Gehe zu "
+}
