@@ -4,7 +4,7 @@ import { Header } from '../../components/Header';
 import { About } from './components/About';
 import { Divider } from '../../components/Divider';
 import { Container } from './styles';
-import { Portfolio } from './components/Portfolio';
+import { PortfolioCarousel } from './components/PortfolioCarousel';
 
 export const Home = () => {
   return (
@@ -14,7 +14,7 @@ export const Home = () => {
       <Divider />
       <About />
       <Divider />
-      <Portfolio style={{ height: '100vh' }}></Portfolio>
+      <PortfolioCarousel />
     </Container>
   );
 };

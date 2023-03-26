@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-const dashIn = keyframes`
+export const dashIn = keyframes`
 from {
     stroke-dashoffset: 1;
   }
@@ -9,7 +9,7 @@ from {
   }
 `;
 
-const dashOut = keyframes`
+export const dashOut = keyframes`
 from {
     stroke-dashoffset: 0;
   }
@@ -18,7 +18,7 @@ from {
   }
 `;
 
-const fadeIn = keyframes`
+export const fadeIn = keyframes`
 from {
   opacity: 0;
 }
@@ -27,7 +27,7 @@ to {
 }
 `;
 
-const fadeOut = keyframes`
+export const fadeOut = keyframes`
 from {
   opacity: 1;
 }
@@ -53,6 +53,20 @@ export const Wrapper = styled.div`
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
+      path {
+        animation: ${dashIn} 6s linear alternate infinite, ${fadeIn} 1s;
+      }
+    }
+  }
+
+  @media (pointer: coarse) {
+    &[aria-expanded='false'] {
+      path {
+        animation: ${dashOut} 1s linear forwards, ${fadeOut} 1s;
+      }
+    }
+
+    &[aria-expanded='true'] {
       path {
         animation: ${dashIn} 6s linear alternate infinite, ${fadeIn} 1s;
       }

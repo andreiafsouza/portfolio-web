@@ -97,7 +97,11 @@ export const SkillsTitle = styled(BaseMainText)``;
 
 export const SkillsSubtitle = styled(BaseTextParagraph)`
   font-style: italic;
-  min-height: 6rem;
+  min-height: 6.875rem;
+`;
+
+export const SkillsList = styled(BaseTextParagraph)`
+  padding-top: 1rem;
 `;
 
 export const SkillsLink = styled(BaseTextParagraph)`
@@ -106,7 +110,6 @@ export const SkillsLink = styled(BaseTextParagraph)`
 
 export const SkillCardContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 2.4rem;
   flex-wrap: wrap;

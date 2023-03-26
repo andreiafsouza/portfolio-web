@@ -4,12 +4,16 @@ import AngleDownSolid from '@icons/AngleDownSolid';
 import AngleUpSolid from '@icons/AngleUpSolid';
 import TerminalIcon from '@icons/Terminal';
 import XMarkSolid from '@icons/XMarkSolid';
+/* i18 */
+import { useTranslation } from 'react-i18next';
 /* style */
 import { useTheme } from 'styled-components';
 import * as S from './styles';
 
 export const Terminal = () => {
+  const { t } = useTranslation();
   const theme = useTheme();
+
   return (
     <S.AboutTerminalContainer>
       <S.AboutParagraphHeader>
@@ -38,22 +42,8 @@ export const Terminal = () => {
           <S.WordColoring color={theme.background.accent}>cat</S.WordColoring>
           about.txt
         </S.TerminalLine>
-        <S.AboutParagraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus impedit odit
-          facilis eum iusto eius velit? Quia exercitationem, et minus cum voluptate hic ab
-          culpa, magni sunt nam, sed ullam. Est repellat iure sequi illo quam assumenda,
-          dignissimos nesciunt. Laudantium, ducimus necessitatibus. Illum dolore maiores iste,
-          architecto voluptas veniam error laboriosam consectetur perspiciatis, magnam nihil
-          eius blanditiis et incidunt enim.
-        </S.AboutParagraph>
-        <S.AboutParagraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus impedit odit
-          facilis eum iusto eius velit? Quia exercitationem, et minus cum voluptate hic ab
-          culpa, magni sunt nam, sed ullam. Est repellat iure sequi illo quam assumenda,
-          dignissimos nesciunt. Laudantium, ducimus necessitatibus. Illum dolore maiores iste,
-          architecto voluptas veniam error laboriosam consectetur perspiciatis, magnam nihil
-          eius blanditiis et incidunt enim.
-        </S.AboutParagraph>
+        <S.AboutParagraph>{t('aboutDescriptionOne')}</S.AboutParagraph>
+        <S.AboutParagraph>{t('aboutDescriptionTwo')}</S.AboutParagraph>
         <S.TerminalLine>
           <S.WordColoring color={theme.text.secondary}>Administrator</S.WordColoring> in{' '}
           <S.WordColoring color={theme.background.accent}>~\Documents</S.WordColoring>

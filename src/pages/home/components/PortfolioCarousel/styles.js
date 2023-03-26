@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '@src/utils';
+import { mediumLayoutBreakPoint } from '@src/utils';
 
 export const Container = styled.section`
   max-width: 137.5rem;

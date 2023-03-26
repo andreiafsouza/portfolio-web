@@ -129,8 +129,11 @@ export const Header = ({ hoverColor }) => {
               </S.NavbarItem>
               <S.NavbarItem
                 title={t('portfolio')}
-                to="/portfolio"
+                to="portfolio"
                 exact="true"
+                smooth="true"
+                duration={500}
+                offset={-64}
                 onClick={handleMenuButton}
               >
                 {t('portfolio')}

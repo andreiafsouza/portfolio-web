@@ -1,10 +1,25 @@
+import { useState } from 'react';
 import * as S from './styles';
 import { useTheme } from 'styled-components';
 
 export const ProfileLines = () => {
   const theme = useTheme();
+
+  const [isTouched, setIsTouched] = useState(false);
+
+  const handleIsTouched = (event) => {
+    event.stopPropagation();
+    setIsTouched(!isTouched);
+  };
+
+  console.log(isTouched);
+
   return (
-    <S.Wrapper>
+    <S.Wrapper
+      onTouchStart={handleIsTouched}
+      onTouchEnd={handleIsTouched}
+      aria-expanded={isTouched ? 'true' : 'false'}
+    >
       <svg width="1762" fill="none" viewBox="0 0 1762 1847">
         <g
           stroke={theme.svg.accent}

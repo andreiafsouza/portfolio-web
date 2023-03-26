@@ -42,7 +42,11 @@ export const About = () => {
         <S.SkillsTextContainer>
           <S.SkillsTitle>Skills</S.SkillsTitle>
           <S.SkillsSubtitle>{t('skills')}</S.SkillsSubtitle>
-          <AngleUpSolid size={24} color={theme.svg.accent} />
+          <S.SkillsList>
+            HTML | CSS | Javascript | Typescript | React | RESTful APIs | GraphQL | Git | Ant
+            Design | Material UI | Figma | Adobe Creative Suite | Styled Components | Android
+            Studio | Redux
+          </S.SkillsList>
         </S.SkillsTextContainer>
         <S.SkillCardContainer>
           <SkillCard />

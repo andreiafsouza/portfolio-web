@@ -25,7 +25,8 @@ export const lightTheme = {
   },
   shadows: {
     primary: 'rgba(9, 3, 18, 0.1)',
-    secondary: 'rgba(224, 211, 245, 0.5)'
+    secondary: 'rgba(224, 211, 245, 0.5)',
+    box: '#605C7Acc'
   },
   icon: {
     primary: '#090312',

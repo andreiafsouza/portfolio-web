@@ -79,24 +79,6 @@ const TextOpacity = keyframes`
   }
 `;
 
-const translateXButtons = keyframes`
-  0% {
-    transform: translateX(-100%);
-  }
-  20% {
-    transform: translateX(-80%);
-  }
-  40% {
-    transform: translateX(-60%);
-  }
-  60% {
-    transform: translateX(-40%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-`;
-
 export const MainTextContainer = styled.div`
   position: relative;
   z-index: 10;

@@ -12,5 +12,10 @@
   "skills": "I’m constantly learning about  new techniques and tools to help create and develop the best possible version of code, and also improving my knowledge of what I've already used and learned so far.",
   "skillsLink": "To learn more about each tool, just access the links!",
   "skillsLabel": "Read more about ",
-  "goTo": "Go to "
+  "goTo": "Go to ",
+  "previous": "previous",
+  "next": "next",
+  "aboutDescriptionOne": "I'm a multidisciplinary professional who loves to study and apply what she learns in the development of cool things in a very creative way!",
+  "aboutDescriptionTwo": "I work as Front-End Web Developer and I have professional and academic experience in Graphic Design and Mechanical Engineering. As a designer, I acquired empathy to understand and respect the client's vision, using my parameters and skills to deliver a final result in line with what was requested. In engineering, I dedicated myself to understanding long and complex development processes, always looking for the most effective and efficient way to solve any problem. Now, as a web developer, I can combine my skills in a more interesting and diverse way, creating web and mobile applications according to the required standards, in an optimized and personalized way.",
+  "back": "Back"
 }

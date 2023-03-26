@@ -10,60 +10,45 @@ import '@glidejs/glide/dist/css/glide.theme.min.css';
 import { useTheme } from 'styled-components';
 import CarouselCaret from '@components/icons/CarouselCaret';
 
-import eldorado from '@images/eldorado-thumbnail.png';
+import eldorado from '@images/eldoauto-full.png';
 import coffee from '@images/coffee-thumbnail.png';
 
-const Carousel = () => {
+const FullPageCarousel = () => {
   const theme = useTheme();
   const { t } = useTranslation();
   const carouselRef = useRef(null);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   useEffect(() => {
-    new Glide(carouselRef.current, {
+    const glide = new Glide(carouselRef.current, {
       type: 'carousel',
-      perView: 4,
-      gap: '12%',
-      breakpoints: {
-        1680: {
-          perView: 3
-        },
-        1200: {
-          perView: 2
-        },
-        960: {
-          perView: 1
-        }
-      },
+      perView: 1,
       // Add the `controls` option with left and right caret icons
       controls: {
         prev: '<i class="glide__icon glide__icon--prev"></i>',
         next: '<i class="glide__icon glide__icon--next"></i>'
       }
-    }).mount();
+    });
+    glide.on('run.before', () => {
+      window.scrollTo(0, 0);
+    });
+    glide.mount();
   }, []);
-
   return (
     <S.CarouselContainer ref={carouselRef}>
-      <div className="glide__track" data-glide-el="track">
-        <ul className="glide__slides">
-          <li className="glide__slide">
-            <NavLink to="/portfolio/1">
-              <img src={eldorado} alt="Eldorado Automóveis - Website" loading="lazy" />
-            </NavLink>
-          </li>
-          <li className="glide__slide">
-            <NavLink to="/portfolio/2">
-              <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
-            </NavLink>
-          </li>
-        </ul>
-      </div>
       <S.CaretsContainer className="glide__arrows" data-glide-el="controls">
         <button
           className="glide__arrow glide__arrow--prev"
           data-glide-dir="<"
           aria-label={t('previous')}
           title={t('previous')}
+          onClick={scrollToTop}
         >
           <i className="glide__icon glide__icon--prev">
             <CarouselCaret color={theme.svg.accent} rotate={-180} />
@@ -74,14 +59,31 @@ const Carousel = () => {
           data-glide-dir=">"
           aria-label={t('next')}
           title={t('next')}
+          onClick={scrollToTop}
         >
           <i className="glide__icon glide__icon--next">
             <CarouselCaret color={theme.svg.accent} />
           </i>
         </button>
       </S.CaretsContainer>
+      <div className="glide__track" data-glide-el="track">
+        <ul className="glide__slides">
+          <li className="glide__slide">
+            <S.SlideInfoContainer>INFO</S.SlideInfoContainer>
+            <S.WebLink href="https://eldoauto-web.vercel.app/" target="_blank">
+              <img src={eldorado} alt="Eldorado Automóveis - Website" loading="lazy" />
+            </S.WebLink>
+          </li>
+          <li className="glide__slide">
+            <S.SlideInfoContainer>INFO</S.SlideInfoContainer>
+            <NavLink to="/portfolio/2">
+              <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
+            </NavLink>
+          </li>
+        </ul>
+      </div>
     </S.CarouselContainer>
   );
 };
 
-export default Carousel;
+export default FullPageCarousel;

@@ -26,7 +26,8 @@ export const darkTheme = {
   },
   shadows: {
     primary: colors.shadows[100],
-    secondary: colors.shadows[800]
+    secondary: colors.shadows[800],
+    box: '#7662D780'
   },
   icon: {
     primary: colors.neutral[100],
