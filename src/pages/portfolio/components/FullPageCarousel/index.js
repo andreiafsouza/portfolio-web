@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { animateScroll } from 'react-scroll';
+import { NavLink, useLocation } from 'react-router-dom';
 import Glide from '@glidejs/glide';
 /* i18 */
 import { useTranslation } from 'react-i18next';
@@ -17,29 +18,43 @@ const FullPageCarousel = () => {
   const theme = useTheme();
   const { t } = useTranslation();
   const carouselRef = useRef(null);
+  const location = useLocation();
+  const [currentSlide, setCurrentSlide] = useState(null);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  const handleScrollToTop = () => {
+    animateScroll.scrollToTop({
+      duration: 300,
+      smooth: true,
+      delay: 0
     });
   };
 
+  const changeSlideNumber = () => {
+    const hash = location?.hash;
+    const number = parseInt(hash.slice(1));
+    setCurrentSlide(number);
+  };
+
   useEffect(() => {
-    const glide = new Glide(carouselRef.current, {
-      type: 'carousel',
-      perView: 1,
-      // Add the `controls` option with left and right caret icons
-      controls: {
-        prev: '<i class="glide__icon glide__icon--prev"></i>',
-        next: '<i class="glide__icon glide__icon--next"></i>'
-      }
-    });
-    glide.on('run.before', () => {
-      window.scrollTo(0, 0);
-    });
-    glide.mount();
-  }, []);
+    changeSlideNumber();
+    if (currentSlide !== null) {
+      const glide = new Glide(carouselRef.current, {
+        type: 'carousel',
+        perView: 1,
+        dragThreshold: false,
+        swipeThreshold: false,
+        startAt: currentSlide ? currentSlide : 1,
+        // Add the `controls` option with left and right caret icons
+        controls: {
+          prev: '<i class="glide__icon glide__icon--prev"></i>',
+          next: '<i class="glide__icon glide__icon--next"></i>'
+        }
+      });
+
+      glide.mount();
+    }
+  }, [location, currentSlide]);
+
   return (
     <S.CarouselContainer ref={carouselRef}>
       <S.CaretsContainer className="glide__arrows" data-glide-el="controls">
@@ -48,7 +63,7 @@ const FullPageCarousel = () => {
           data-glide-dir="<"
           aria-label={t('previous')}
           title={t('previous')}
-          onClick={scrollToTop}
+          onClick={handleScrollToTop}
         >
           <i className="glide__icon glide__icon--prev">
             <CarouselCaret color={theme.svg.accent} rotate={-180} />
@@ -59,7 +74,7 @@ const FullPageCarousel = () => {
           data-glide-dir=">"
           aria-label={t('next')}
           title={t('next')}
-          onClick={scrollToTop}
+          onClick={handleScrollToTop}
         >
           <i className="glide__icon glide__icon--next">
             <CarouselCaret color={theme.svg.accent} />
@@ -69,16 +84,44 @@ const FullPageCarousel = () => {
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
           <li className="glide__slide">
-            <S.SlideInfoContainer>INFO</S.SlideInfoContainer>
-            <S.WebLink href="https://eldoauto-web.vercel.app/" target="_blank">
-              <img src={eldorado} alt="Eldorado Automóveis - Website" loading="lazy" />
-            </S.WebLink>
+            <S.Title>Eldorado Automóveis</S.Title>
+            <S.SlideInfoContainer>
+              <S.TechInfoContainer>
+                <S.TechText>JavaScript | React</S.TechText>
+                <S.TechText>HTML | CSS</S.TechText>
+                <S.TechText>Webpack</S.TechText>
+              </S.TechInfoContainer>
+              <S.InfoContainer>
+                <S.TechText>
+                  Link:
+                  <S.WebLink href="https://eldoauto-web.vercel.app/" target={'_blank'}>
+                    eldoauto.app
+                  </S.WebLink>
+                </S.TechText>
+                <S.TechText>{`${t('year')}: 2022`}</S.TechText>
+              </S.InfoContainer>
+            </S.SlideInfoContainer>
+            <img src={eldorado} alt="Eldorado Automóveis - Website" loading="lazy" />
           </li>
           <li className="glide__slide">
-            <S.SlideInfoContainer>INFO</S.SlideInfoContainer>
-            <NavLink to="/portfolio/2">
-              <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
-            </NavLink>
+            <S.Title>Rocket Coffee</S.Title>
+            <S.SlideInfoContainer>
+              <S.TechInfoContainer>
+                <S.TechText>JavaScript | React</S.TechText>
+                <S.TechText>HTML | CSS</S.TechText>
+                <S.TechText>Webpack</S.TechText>
+              </S.TechInfoContainer>
+              <S.InfoContainer>
+                <S.TechText>
+                  Link:
+                  <S.WebLink href="https://eldoauto-web.vercel.app/" target={'_blank'}>
+                    eldoauto.app
+                  </S.WebLink>
+                </S.TechText>
+                <S.TechText>{`${t('year')}: 2022`}</S.TechText>
+              </S.InfoContainer>
+            </S.SlideInfoContainer>
+            <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
           </li>
         </ul>
       </div>

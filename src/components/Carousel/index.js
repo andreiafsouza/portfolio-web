@@ -1,15 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+/* components */
 import Glide from '@glidejs/glide';
+import CarouselCaret from '@components/icons/CarouselCaret';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* style */
 import * as S from './styles';
+import { useTheme } from 'styled-components';
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
-import { useTheme } from 'styled-components';
-import CarouselCaret from '@components/icons/CarouselCaret';
-
+/* images */
 import eldorado from '@images/eldorado-thumbnail.png';
 import coffee from '@images/coffee-thumbnail.png';
 
@@ -47,12 +48,12 @@ const Carousel = () => {
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
           <li className="glide__slide">
-            <NavLink to="/portfolio/1">
+            <NavLink to="/portfolio/#2">
               <img src={eldorado} alt="Eldorado Automóveis - Website" loading="lazy" />
             </NavLink>
           </li>
           <li className="glide__slide">
-            <NavLink to="/portfolio/2">
+            <NavLink to="/portfolio/#1">
               <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
             </NavLink>
           </li>

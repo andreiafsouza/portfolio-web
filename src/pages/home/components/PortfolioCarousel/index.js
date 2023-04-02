@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 import { useTheme } from 'styled-components';
 /* components */
 import Carousel from '@components/Carousel/index';
@@ -11,8 +11,16 @@ export const PortfolioCarousel = () => {
   const theme = useTheme();
   const { t } = useTranslation();
 
+  const portfolioRef = useRef(null);
+
+  useEffect(() => {
+    if (window.location.hash === '#portfolio') {
+      portfolioRef.current.scrollIntoView();
+    }
+  }, []);
+
   return (
-    <S.Container id="portfolio">
+    <S.Container id="portfolio" ref={portfolioRef}>
       <S.Title>{t('portfolio')}</S.Title>
       <S.CarouselContainer>
         <Carousel />

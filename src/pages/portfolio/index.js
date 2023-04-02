@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* components */
@@ -15,7 +15,7 @@ export const Portfolio = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.BackLink to="/">
+        <S.BackLink to="/#portfolio">
           <AngleUpSolid size={24} color={theme.icon.accent} rotate={-90} />
           <S.BackLinkText>{t('back')}</S.BackLinkText>
         </S.BackLink>

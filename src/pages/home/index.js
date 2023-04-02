@@ -15,6 +15,7 @@ export const Home = () => {
       <About />
       <Divider />
       <PortfolioCarousel />
+      <Divider />
     </Container>
   );
 };

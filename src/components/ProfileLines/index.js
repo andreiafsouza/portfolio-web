@@ -12,8 +12,6 @@ export const ProfileLines = () => {
     setIsTouched(!isTouched);
   };
 
-  console.log(isTouched);
-
   return (
     <S.Wrapper
       onTouchStart={handleIsTouched}

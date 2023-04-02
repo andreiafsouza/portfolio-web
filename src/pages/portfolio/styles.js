@@ -32,7 +32,7 @@ export const Header = styled.div`
 
 export const BackLink = styled(NavLink)`
   text-decoration: none;
-  padding: 0.4rem;
+  padding-block: 0.8rem;
 
   display: flex;
   gap: 0.4rem;
