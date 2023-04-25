@@ -45,6 +45,14 @@ export const Header = ({ hoverColor }) => {
     setOpenMenu(!openMenu);
   };
 
+  const linkCommonConfig = {
+    offset: -64, //header height
+    exact: 'true',
+    smooth: 'true',
+    duration: 500,
+    onClick: handleMenuButton
+  };
+
   const handleOpenLanguageMenu = (event) => {
     event.stopPropagation();
     setOpenDropdown(!openDropdown);
@@ -105,45 +113,16 @@ export const Header = ({ hoverColor }) => {
         >
           <S.NavbarContainer>
             <S.NavbarContainer>
-              <S.NavbarItem
-                title={t('home')}
-                offset={-64}
-                to="/"
-                exact="true"
-                smooth="true"
-                duration={500}
-                onClick={handleMenuButton}
-              >
+              <S.NavbarItem title={t('home')} to="home" {...linkCommonConfig}>
                 {t('home')}
               </S.NavbarItem>
-              <S.NavbarItem
-                title={t('about')}
-                to="about"
-                exact="true"
-                smooth="true"
-                duration={500}
-                offset={-64}
-                onClick={handleMenuButton}
-              >
+              <S.NavbarItem title={t('about')} to="about" {...linkCommonConfig}>
                 {t('about')}
               </S.NavbarItem>
-              <S.NavbarItem
-                title={t('portfolio')}
-                to="portfolio"
-                exact="true"
-                smooth="true"
-                duration={500}
-                offset={-64}
-                onClick={handleMenuButton}
-              >
+              <S.NavbarItem title={t('portfolio')} to="portfolio" {...linkCommonConfig}>
                 {t('portfolio')}
               </S.NavbarItem>
-              <S.NavbarItem
-                title={t('contact')}
-                to="/contact"
-                exact="true"
-                onClick={handleMenuButton}
-              >
+              <S.NavbarItem title={t('contact')} to="contact" {...linkCommonConfig}>
                 {t('contact')}
               </S.NavbarItem>
             </S.NavbarContainer>

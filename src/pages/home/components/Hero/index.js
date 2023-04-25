@@ -15,7 +15,7 @@ export const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <S.Container id="/">
+    <S.Container id="home">
       <S.MainContainer>
         <S.MainLeftContainer>
           <S.MainTextContainer>

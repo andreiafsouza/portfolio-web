@@ -1,21 +1,24 @@
 /* components */
 import { Hero } from './components/Hero';
-import { Header } from '../../components/Header';
+
 import { About } from './components/About';
 import { Divider } from '../../components/Divider';
 import { Container } from './styles';
 import { PortfolioCarousel } from './components/PortfolioCarousel';
+import { Header } from '@components/Header';
 
 export const Home = () => {
   return (
-    <Container>
+    <Container id="/">
       <Header />
-      <Hero />
-      <Divider />
-      <About />
-      <Divider />
-      <PortfolioCarousel />
-      <Divider />
+      <main>
+        <Hero />
+        <Divider />
+        <About />
+        <Divider />
+        <PortfolioCarousel />
+        <Divider />
+      </main>
     </Container>
   );
 };

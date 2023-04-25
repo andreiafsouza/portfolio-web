@@ -1,4 +1,6 @@
 import { ThemeContext } from './context/themeContext';
+/* components */
+import { Header } from '@src/components/Header';
 /* router */
 import { BrowserRouter } from 'react-router-dom';
 import { Router } from './components/Router';
@@ -21,6 +23,7 @@ function App() {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <ThemeProvider theme={themeMode}>
         <BrowserRouter>
+          {/*  <Header /> */}
           <Router />
         </BrowserRouter>
         <GlobalStyleReset />

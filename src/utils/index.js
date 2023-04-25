@@ -1,3 +1,14 @@
+import { animateScroll } from 'react-scroll';
+
+/* functions */
+export const handleScrollToTop = () => {
+  animateScroll.scrollToTop({
+    duration: 300,
+    smooth: true,
+    delay: 0
+  });
+};
+
 /* constants */
 export const mediumLayoutBreakPoint = '60em';
 export const smallLayoutBreakPoint = '40em';
