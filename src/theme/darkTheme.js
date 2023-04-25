@@ -9,7 +9,8 @@ export const darkTheme = {
     neutral: colors.neutral[900],
     accent: colors.accent.yellow,
     secondaryAccent: colors.secondary[800],
-    navbar: `${colors.primary[900]}E6`
+    navbar: `${colors.primary[900]}E6`,
+    footer: `${colors.primary[500]}40`
   },
   text: {
     primary: colors.neutral[100],

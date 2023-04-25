@@ -8,7 +8,8 @@ export const lightTheme = {
     neutral: '#F4F3F5',
     accent: '#9586DD',
     secondaryAccent: '#60859B',
-    navbar: '#EEEEEEE6'
+    navbar: '#EEEEEEE6',
+    footer: '#DDDEED'
   },
   text: {
     primary: '#2D2327',

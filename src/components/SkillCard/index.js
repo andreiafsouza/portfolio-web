@@ -32,11 +32,11 @@ export const SkillCard = ({ icon: Icon, title, url, animation }) => {
         container.style.setProperty('--rotateX', '0');
         container.style.setProperty('--rotateY', '0');
       };
-      document.addEventListener('mouseout', resetRotation);
+      /* document.addEventListener('mouseout', resetRotation); */
 
       return () => {
         document.removeEventListener('mousemove', rotateElement);
-        document.removeEventListener('mouseout', resetRotation);
+        /* document.removeEventListener('mouseout', resetRotation); */
       };
     }
   }, [containerRef]);

@@ -1,6 +1,5 @@
 /* components */
 import { Terminal } from '@src/components/Terminal';
-import { ProfileLinesAbout } from '@src/components/ProfileLinesAbout';
 import { ProfileLines } from '@src/components/ProfileLines/index';
 /* assets | svgs | images */
 import profile from '@images/profile.png';
@@ -20,7 +19,6 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 import * as S from './styles';
 import { SkillCard } from '@src/components/SkillCard';
-import AngleUpSolid from '@src/components/icons/AngleUpSolid';
 
 export const About = () => {
   const theme = useTheme();
