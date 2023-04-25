@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { mediumLayoutBreakPoint } from '../../utils';
 import {
@@ -10,7 +9,7 @@ import {
 export const Header = styled.header`
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 99999;
 `;
 
 export const Container = styled.div`

@@ -38,7 +38,7 @@ body {
   transition: color 350ms ease 0s, background-color 350ms ease 0s; 
   height: 100vh;
   
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
       width: 8px;
       background-color: ${(props) => props.theme.background.primary}; //card
     }
@@ -51,7 +51,7 @@ body {
     scrollbar-width: thin;
     scrollbar-color: 
     ${(props) => props.theme.background.secondary} ${(props) =>
-  props.theme.background.primary};
+  props.theme.background.primary}; */
  
 }
 

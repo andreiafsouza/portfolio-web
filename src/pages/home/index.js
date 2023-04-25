@@ -6,6 +6,8 @@ import { Divider } from '../../components/Divider';
 import { Container } from './styles';
 import { PortfolioCarousel } from './components/PortfolioCarousel';
 import { Header } from '@components/Header';
+import { Contact } from './components/Contact/index';
+import { Footer } from '@components/Footer/index';
 
 export const Home = () => {
   return (
@@ -18,7 +20,9 @@ export const Home = () => {
         <Divider />
         <PortfolioCarousel />
         <Divider />
+        <Contact />
       </main>
+      <Footer />
     </Container>
   );
 };
