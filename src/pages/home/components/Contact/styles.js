@@ -43,19 +43,20 @@ export const Subtitle = styled(BaseSubtitleText)`
 export const ContactInfoBox = styled.div`
   padding: 1rem;
   margin: 0 auto;
-  /*  max-width: 50rem; */
-  /* border-top: 2px dotted ${(props) => props.theme.text.secondary}; */
   border-bottom: 1px dotted ${(props) => props.theme.text.secondary};
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-direction: column-reverse;
   gap: 0.5rem;
   justify-content: space-between;
 
   @media (min-width: ${smallLayoutBreakPoint}) {
     flex-direction: row;
     align-items: flex-end;
+    gap: 1rem;
+    justify-content: center;
+    width: fit-content;
   }
 `;
 

@@ -6,6 +6,14 @@ import {
   borderAnimationUsingBackgroundMedia
 } from '../../stylesheets/abstracts/mixins';
 
+//animations
+const cursorBlink = keyframes`
+0% {
+  opacity: 0;
+}
+`;
+
+//components
 export const Header = styled.header`
   position: sticky;
   top: 0;
@@ -32,18 +40,13 @@ export const Container = styled.div`
   }
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
   display: flex;
   padding: 0.16rem 0.4rem;
   align-items: center;
   background: ${(props) => props.theme.background.primary};
   transition: background-color 350ms ease 0s;
-`;
-
-const cursorBlink = keyframes`
-0% {
-  opacity: 0;
-}
+  cursor: pointer;
 `;
 
 export const LogoText = styled.div`
@@ -92,18 +95,19 @@ export const ActionsContainer = styled.nav`
     transition: transform 350ms ease-out;
 
     &[aria-expanded='true'] {
-      transition: transform 350ms ease-out, background-color 350ms ease 0s;
       transform: translateX(0);
+      transition: transform 350ms ease-out, background-color 350ms ease 0s;
     }
   }
 `;
 
 export const NavbarContainer = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 2rem;
 
-  @media (max-width: ${mediumLayoutBreakPoint}) {
-    flex-direction: column;
+  @media (min-width: ${mediumLayoutBreakPoint}) {
+    flex-direction: row;
   }
 `;
 
@@ -206,6 +210,9 @@ export const SelectLanguage = styled.div`
     }
     &::after {
       ${borderAnimationUsingBackgroundMedia}
+    }
+    svg {
+      transform: rotate(180deg);
     }
   }
 

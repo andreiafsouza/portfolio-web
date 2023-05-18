@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { useTheme } from 'styled-components';
+import { useLocation, useNavigate } from 'react-router-dom';
 /* components */
 import Carousel from '@components/Carousel/index';
 /* i18 */
@@ -8,16 +8,19 @@ import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 export const PortfolioCarousel = () => {
-  const theme = useTheme();
   const { t } = useTranslation();
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  const previousLocation = location.state?.from;
   const portfolioRef = useRef(null);
 
   useEffect(() => {
-    if (window.location.hash === '#portfolio') {
+    if (previousLocation === '/portfolio/') {
       portfolioRef.current.scrollIntoView();
+      //reset state
+      navigate(location.pathname, { replace: true });
     }
-  }, []);
+  }, [previousLocation, location.pathname, navigate]);
 
   return (
     <S.Container id="portfolio" ref={portfolioRef}>

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { animateScroll } from 'react-scroll';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Glide from '@glidejs/glide';
 /* i18 */
 import { useTranslation } from 'react-i18next';
@@ -9,7 +9,8 @@ import * as S from './styles';
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
 import { useTheme } from 'styled-components';
-import CarouselCaret from '@components/icons/CarouselCaret';
+import CaretLeft from '@components/icons/CaretLeft';
+import CaretRight from '@components/icons/CaretRight';
 
 import eldorado from '@images/eldoauto-full.png';
 import coffee from '@images/coffee-thumbnail.png';
@@ -29,13 +30,12 @@ const FullPageCarousel = () => {
     });
   };
 
-  const changeSlideNumber = () => {
-    const hash = location?.hash;
-    const number = parseInt(hash.slice(1));
-    setCurrentSlide(number);
-  };
-
   useEffect(() => {
+    const changeSlideNumber = () => {
+      const hash = location?.hash;
+      const number = parseInt(hash.slice(1));
+      setCurrentSlide(number);
+    };
     changeSlideNumber();
     if (currentSlide !== null) {
       const glide = new Glide(carouselRef.current, {
@@ -66,7 +66,7 @@ const FullPageCarousel = () => {
           onClick={handleScrollToTop}
         >
           <i className="glide__icon glide__icon--prev">
-            <CarouselCaret color={theme.svg.accent} rotate={-180} />
+            <CaretLeft color={theme.svg.accent} />
           </i>
         </button>
         <button
@@ -77,7 +77,7 @@ const FullPageCarousel = () => {
           onClick={handleScrollToTop}
         >
           <i className="glide__icon glide__icon--next">
-            <CarouselCaret color={theme.svg.accent} />
+            <CaretRight color={theme.svg.accent} />
           </i>
         </button>
       </S.CaretsContainer>

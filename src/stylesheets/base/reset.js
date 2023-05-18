@@ -31,12 +31,17 @@ html:focus-within {
     color: ${(props) => props.theme.background.secondary}
 }
 
-
 html,
 body {
   background: ${(props) => props.theme.background.primary};
   transition: color 350ms ease 0s, background-color 350ms ease 0s; 
   height: 100vh;
+
+  -webkit-tap-highlight-color: ${(props) => props.theme.button.hover};
+  -moz-tap-highlight-color: ${(props) => props.theme.button.hover};
+  -ms-tap-highlight-color: ${(props) => props.theme.button.hover};
+
+  
   
   /* ::-webkit-scrollbar {
       width: 8px;

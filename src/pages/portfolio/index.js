@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* components */
-import AngleUpSolid from '@components/icons/AngleUpSolid';
+import AngleLeftSolid from '@components/icons/AngleLeftSolid';
 /* utils */
 import { handleScrollToTop } from 'utils/index';
 /* styles */
@@ -13,6 +14,7 @@ import FullPageCarousel from './components/FullPageCarousel/index';
 export const Portfolio = () => {
   const theme = useTheme();
   const { t } = useTranslation();
+  const location = useLocation();
 
   useEffect(() => {
     handleScrollToTop();
@@ -21,8 +23,8 @@ export const Portfolio = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.BackLink to="/#portfolio">
-          <AngleUpSolid size={24} color={theme.icon.accent} rotate={-90} />
+        <S.BackLink to="/" state={{ from: location.pathname }}>
+          <AngleLeftSolid size={24} color={theme.icon.accent} />
           <S.BackLinkText>{t('back')}</S.BackLinkText>
         </S.BackLink>
       </S.Header>

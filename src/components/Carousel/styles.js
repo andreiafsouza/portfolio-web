@@ -12,9 +12,6 @@ export const CarouselContainer = styled.div`
   }
 
   .glide__slide {
-    padding: 0.8rem;
-    opacity: 0.9;
-
     position: relative;
 
     &::before {
@@ -32,9 +29,9 @@ export const CarouselContainer = styled.div`
     }
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        opacity: 1;
+      padding: 0.8rem;
 
+      &:hover {
         &::before {
           top: 0;
           left: 0rem;

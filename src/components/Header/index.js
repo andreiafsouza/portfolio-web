@@ -1,18 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
-/* style */
-import * as S from './styles';
-import { ToggleThemeButton } from '../ToggleThemeButton';
-import { MenuBars } from '../icons/MenuBars';
-import AngleUpSolid from '../icons/AngleUpSolid';
-import { useTheme } from 'styled-components';
-/* icons */
-import { UsaFlag } from '../icons/UsaFlag';
-import { BrasilFlag } from '../icons/BrasilFlag';
-import { DeutschFlag } from '../icons/DeutschFlag';
+/* components */
+import { ToggleThemeButton } from '@components/ToggleThemeButton';
+/* assets | svgs | images */
+import { MenuBars } from '@components/icons/MenuBars';
+import AngleRightSolid from '@components/icons/AngleRightSolid';
+import AngleDownSolid from '@components/icons/AngleDownSolid';
 /* i18 */
 import { useTranslation } from 'react-i18next';
+/* style */
+import * as S from './styles';
+import { useTheme } from 'styled-components';
 
-export const Header = ({ hoverColor }) => {
+export const Header = () => {
   const theme = useTheme();
   const { t, i18n } = useTranslation();
   const languageMenu = useRef(null);
@@ -25,18 +24,15 @@ export const Header = ({ hoverColor }) => {
   const languages = {
     en: {
       nativeName: 'English (US)',
-      abbreviation: 'En',
-      icon: <UsaFlag size={24} />
+      abbreviation: 'En'
     },
     pt: {
       nativeName: 'Português (BR)',
-      abbreviation: 'Pt',
-      icon: <BrasilFlag size={24} />
+      abbreviation: 'Pt'
     },
     de: {
       nativeName: 'Deutsch',
-      abbreviation: 'De',
-      icon: <DeutschFlag size={24} />
+      abbreviation: 'De'
     }
   };
 
@@ -101,14 +97,20 @@ export const Header = ({ hoverColor }) => {
   return (
     <S.Header>
       <S.Container>
-        <S.LogoContainer>
-          <AngleUpSolid size={24} color={theme.svg.accent} rotate={90} />
+        <S.LogoContainer
+          title={t('home')}
+          to="home"
+          smooth={'true'}
+          exact={'true'}
+          offset={-64}
+        >
+          <AngleRightSolid size={24} color={theme.svg.accent} />
           <S.LogoText>andreia souza</S.LogoText>
         </S.LogoContainer>
         <S.ActionsContainer
           onClick={handleMenuButton}
           id="primary-navigation"
-          aria-expanded={openMenu ? 'true' : 'false'}
+          aria-expanded={openMenu}
           ref={menu}
         >
           <S.NavbarContainer>
@@ -135,21 +137,12 @@ export const Header = ({ hoverColor }) => {
               onClick={handleOpenLanguageMenu}
               ref={languageMenu}
             >
-              <S.SelectLanguage
-                aria-expanded={openDropdown ? 'true' : 'false'}
-                color={theme.text.secondary}
-              >
-                <S.LanguageSelectText className="selected">
-                  {selectedLanguage}
-                </S.LanguageSelectText>
-                <AngleUpSolid
-                  rotate={openDropdown ? 0 : 180}
-                  className="caret"
-                  size={16}
-                  color={theme.svg.accent}
-                />
+              <S.SelectLanguage aria-expanded={openDropdown} color={theme.text.secondary}>
+                <S.LanguageSelectText>{selectedLanguage}</S.LanguageSelectText>
+
+                <AngleDownSolid className="caret" size={16} color={theme.svg.accent} />
               </S.SelectLanguage>
-              <S.DropdownLanguage aria-expanded={openDropdown ? 'true' : 'false'}>
+              <S.DropdownLanguage aria-expanded={openDropdown}>
                 {Object.keys(languages).map((language) => (
                   <S.ListItem
                     key={language}
@@ -172,7 +165,7 @@ export const Header = ({ hoverColor }) => {
             ref={menuButton}
             id="menu"
             aria-controls="primary-navigation"
-            aria-expanded={openMenu ? 'true' : 'false'}
+            aria-expanded={openMenu}
             onClick={handleMenuButton}
           >
             <MenuBars />

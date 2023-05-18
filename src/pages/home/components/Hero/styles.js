@@ -7,6 +7,42 @@ import { Link } from 'react-scroll';
 const borderRadius = '8px';
 const mainTextAdaptWidth = '1335px';
 
+//animations
+const borderHeight = keyframes`
+from {
+  height: 0;
+  opacity: 0;
+  }
+to {
+  height: 24rem;
+  }
+`;
+
+const opacity = keyframes`
+from {
+  opacity: 0;
+  }
+to {
+  opacity: 1;
+  }
+`;
+
+const TextOpacity = keyframes`
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+//components
 export const Container = styled.section`
   position: relative;
   max-width: 137.5rem;
@@ -45,47 +81,11 @@ export const MainLeftContainer = styled.div`
   }
 `;
 
-const borderHeight = keyframes`
-from {
-  height: 0;
-  opacity: 0;
-  }
-to {
-  height: 24rem;
-  }
-`;
-
-const opacity = keyframes`
-from {
-  opacity: 0;
-  }
-to {
-  opacity: 1;
-  }
-`;
-
-const TextOpacity = keyframes`
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
 export const MainTextContainer = styled.div`
   position: relative;
   z-index: 10;
   display: grid;
-  justify-content: center;
   gap: 1rem;
-
   padding: 5rem 1rem;
 
   background: ${(props) => props.theme.shadows.secondary};
@@ -93,13 +93,14 @@ export const MainTextContainer = styled.div`
 
   border-radius: ${borderRadius};
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    justify-content: flex-start;
+  @media (max-width: ${mediumLayoutBreakPoint}) {
+    justify-items: center;
   }
 
   @media (min-width: ${mainTextAdaptWidth}) {
     display: flex;
     padding: 10rem 1rem 8.6rem;
+    justify-items: flex-start;
   }
 `;
 
@@ -107,8 +108,7 @@ export const MainTextHeadlineContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 1.25rem;
+  justify-content: center;
 
   gap: 1.6rem;
 
@@ -156,7 +156,7 @@ export const MainTextParagraphContainer = styled.div`
   min-height: 100%;
   max-width: 14rem;
   display: flex;
-  align-items: flex-end;
+  /*   align-items: flex-end; */
   padding-left: 1.25rem;
   border-left: 1px dotted ${(props) => props.theme.text.primary};
 
@@ -174,6 +174,7 @@ export const MainTextParagraphContainer = styled.div`
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     border-left: none;
+    align-items: flex-end;
     max-width: 50%;
 
     &::before {
@@ -196,7 +197,6 @@ export const MainButtonContainer = styled.div`
   align-self: center;
   width: 100%;
   max-width: 100%;
-  padding: 0 36%;
 
   display: flex;
   flex-direction: column;
@@ -274,4 +274,5 @@ export const AboutInfoText = styled.div`
 
 export const LinkScroll = styled(Link)`
   text-decoration: none;
+  cursor: pointer;
 `;

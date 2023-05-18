@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 /* style */
 import { useTheme } from 'styled-components';
 import * as S from './styles';
+import AngleRightSolid from '@components/icons/AngleRightSolid';
 
 export const Terminal = () => {
   const { t } = useTranslation();
@@ -38,7 +39,7 @@ export const Terminal = () => {
           in <S.WordColoring color={theme.background.accent}>~\Documents</S.WordColoring>
         </S.TerminalLine>
         <S.TerminalLine>
-          <AngleUpSolid size={16} color={theme.icon.accent} rotate={90} />
+          <AngleRightSolid size={16} color={theme.icon.accent} />
           <S.WordColoring color={theme.background.accent}>cat</S.WordColoring>
           about.txt
         </S.TerminalLine>
@@ -49,7 +50,7 @@ export const Terminal = () => {
           <S.WordColoring color={theme.background.accent}>~\Documents</S.WordColoring>
         </S.TerminalLine>
         <S.TerminalLine>
-          <AngleUpSolid size={16} color={theme.icon.accent} rotate={90} />
+          <AngleRightSolid size={16} color={theme.icon.accent} />
           <S.LastLine></S.LastLine>
         </S.TerminalLine>
       </S.AboutParagraphContainer>

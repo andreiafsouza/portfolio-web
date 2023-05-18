@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import { Link } from 'react-scroll';
-import { mediumLayoutBreakPoint } from '../../utils';
 
 export const Footer = styled.footer`
   background: ${(props) => props.theme.background.footer};
@@ -12,7 +9,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 30vh;
+  height: 16vh;
 `;
 
 export const FooterText = styled.p`

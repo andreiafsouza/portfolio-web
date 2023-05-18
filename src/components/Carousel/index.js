@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 /* components */
 import Glide from '@glidejs/glide';
-import CarouselCaret from '@components/icons/CarouselCaret';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* style */
@@ -13,6 +12,8 @@ import '@glidejs/glide/dist/css/glide.theme.min.css';
 /* images */
 import eldorado from '@images/eldorado-thumbnail.png';
 import coffee from '@images/coffee-thumbnail.png';
+import CaretRight from '@components/icons/CaretRight';
+import CaretLeft from '@components/icons/CaretLeft';
 
 const Carousel = () => {
   const theme = useTheme();
@@ -67,7 +68,7 @@ const Carousel = () => {
           title={t('previous')}
         >
           <i className="glide__icon glide__icon--prev">
-            <CarouselCaret color={theme.svg.accent} rotate={-180} />
+            <CaretLeft className="left" color={theme.svg.accent} />
           </i>
         </button>
         <button
@@ -77,7 +78,7 @@ const Carousel = () => {
           title={t('next')}
         >
           <i className="glide__icon glide__icon--next">
-            <CarouselCaret color={theme.svg.accent} />
+            <CaretRight color={theme.svg.accent} />
           </i>
         </button>
       </S.CaretsContainer>
