@@ -140,7 +140,7 @@ export const Header = () => {
               <S.SelectLanguage aria-expanded={openDropdown} color={theme.text.secondary}>
                 <S.LanguageSelectText>{selectedLanguage}</S.LanguageSelectText>
 
-                <AngleDownSolid className="caret" size={16} color={theme.svg.accent} />
+                <AngleDownSolid size={16} color={theme.svg.accent} />
               </S.SelectLanguage>
               <S.DropdownLanguage aria-expanded={openDropdown}>
                 {Object.keys(languages).map((language) => (

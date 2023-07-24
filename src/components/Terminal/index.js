@@ -36,7 +36,10 @@ export const Terminal = () => {
       <S.AboutParagraphContainer>
         <S.TerminalLine>
           <S.WordColoring color={theme.text.secondary}>Administrator</S.WordColoring>
-          in <S.WordColoring color={theme.background.accent}>~\Documents</S.WordColoring>
+          in{' '}
+          <S.WordColoring color={theme.background.accent} className="doc">
+            ~\Documents
+          </S.WordColoring>
         </S.TerminalLine>
         <S.TerminalLine>
           <AngleRightSolid size={16} color={theme.icon.accent} />
@@ -47,7 +50,9 @@ export const Terminal = () => {
         <S.AboutParagraph>{t('aboutDescriptionTwo')}</S.AboutParagraph>
         <S.TerminalLine>
           <S.WordColoring color={theme.text.secondary}>Administrator</S.WordColoring> in{' '}
-          <S.WordColoring color={theme.background.accent}>~\Documents</S.WordColoring>
+          <S.WordColoring color={theme.background.accent} className="doc">
+            ~\Documents
+          </S.WordColoring>
         </S.TerminalLine>
         <S.TerminalLine>
           <AngleRightSolid size={16} color={theme.icon.accent} />

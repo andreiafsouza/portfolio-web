@@ -79,10 +79,15 @@ export const TerminalLine = styled.div`
   svg {
     margin-left: -0.2rem;
   }
+
+  span.doc {
+    padding-left: 0.4em;
+  }
 `;
 
 export const WordColoring = styled.span`
   color: ${({ color }) => (color ? color : (props) => props.theme.text.primary)};
+  padding-right: 0.4em;
 `;
 
 export const AboutParagraph = styled.p`
