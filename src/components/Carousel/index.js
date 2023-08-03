@@ -10,7 +10,7 @@ import { useTheme } from 'styled-components';
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
 /* images */
-import eldorado from '@images/eldorado-thumbnail.png';
+import blog from '@images/personal-blog-thumbnail.png';
 import coffee from '@images/coffee-thumbnail.png';
 import CaretRight from '@components/icons/CaretRight';
 import CaretLeft from '@components/icons/CaretLeft';
@@ -49,13 +49,13 @@ const Carousel = () => {
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
           <li className="glide__slide">
-            <NavLink to="/portfolio/#2">
-              <img src={eldorado} alt="Eldorado Automóveis - Website" loading="lazy" />
+            <NavLink to="/portfolio/#2" title={'Personal Blog'}>
+              <img src={blog} alt="Personal Blog" loading="lazy" />
             </NavLink>
           </li>
           <li className="glide__slide">
-            <NavLink to="/portfolio/#1">
-              <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
+            <NavLink to="/portfolio/#1" title={'Express Coffee'}>
+              <img src={coffee} alt="Express Coffee" loading="lazy" />
             </NavLink>
           </li>
         </ul>

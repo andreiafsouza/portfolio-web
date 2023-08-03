@@ -12,7 +12,7 @@ import { useTheme } from 'styled-components';
 import CaretLeft from '@components/icons/CaretLeft';
 import CaretRight from '@components/icons/CaretRight';
 
-import eldorado from '@images/eldoauto-full.png';
+import blog from '@images/personal-blog-full.png';
 import coffee from '@images/coffee-full.png';
 
 const FullPageCarousel = () => {
@@ -84,24 +84,27 @@ const FullPageCarousel = () => {
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
           <li className="glide__slide">
-            <S.Title>Eldorado Automóveis</S.Title>
+            <S.Title>Personal Blog</S.Title>
             <S.SlideInfoContainer>
               <S.TechInfoContainer>
-                <S.TechText>JavaScript | React</S.TechText>
-                <S.TechText>HTML | CSS</S.TechText>
-                <S.TechText>Webpack</S.TechText>
+                <S.TechText>Typescript | React</S.TechText>
+                <S.TechText>Tailwind | CSS</S.TechText>
+                <S.TechText>Next</S.TechText>
               </S.TechInfoContainer>
               <S.InfoContainer>
                 <S.TechText>
                   Link:
-                  <S.WebLink href="https://eldoauto-web.vercel.app/" target={'_blank'}>
-                    eldoauto.app
+                  <S.WebLink
+                    href="https://personal-blog-andreiafsouza.vercel.app/"
+                    target={'_blank'}
+                  >
+                    personal-blog.app
                   </S.WebLink>
                 </S.TechText>
-                <S.TechText>{`${t('year')}: 2022`}</S.TechText>
+                <S.TechText>{`${t('year')}: 2023`}</S.TechText>
               </S.InfoContainer>
             </S.SlideInfoContainer>
-            <img src={eldorado} alt="Eldorado Automóveis - Website" loading="lazy" />
+            <img src={blog} alt="Personal Blog - Website" loading="lazy" />
           </li>
           <li className="glide__slide">
             <S.Title>Express Coffee</S.Title>
@@ -109,9 +112,9 @@ const FullPageCarousel = () => {
               <S.TechInfoContainer>
                 <S.TechText>Typescript | React</S.TechText>
                 <S.TechText>Styled Components</S.TechText>
+                <S.TechText>Context API</S.TechText>
                 <S.TechText>Vite</S.TechText>
                 <S.TechText>Zod</S.TechText>
-                <S.TechText>Context API</S.TechText>
               </S.TechInfoContainer>
               <S.InfoContainer>
                 <S.TechText>
