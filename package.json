@@ -1,5 +1,6 @@
 {
   "name": "portfolio-web",
+  "homepage": "https://www.andreiasouza.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -1,14 +1,16 @@
+import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
 import { Home } from '../pages/home';
 import { Portfolio } from '../pages/portfolio';
-import { DefaultLayout } from './layouts/DefaultLayout';
+import LoadingSpinner from './LoadingSpinner/index';
 
 export function Router() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/portfolio/:id?" element={<Portfolio />} />
-    </Routes>
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio/:id?" element={<Portfolio />} />
+      </Routes>
+    </Suspense>
   );
 }
