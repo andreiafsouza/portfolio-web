@@ -7,7 +7,7 @@ export const Container = styled.section`
   margin: 0 auto;
   position: relative;
   padding-inline: 2rem;
-  padding-block: 8rem;
+  padding-block: 1rem;
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     padding-inline: 5rem;

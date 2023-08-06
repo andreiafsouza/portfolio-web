@@ -27,6 +27,7 @@ export const Header = styled.div`
   display: flex;
 
   background: ${(props) => props.theme.background.primary};
+  opacity: 0.9;
   transition: color 350ms ease 0s, background-color 350ms ease 0s;
 `;
 

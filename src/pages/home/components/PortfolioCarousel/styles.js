@@ -6,7 +6,7 @@ export const Container = styled.section`
   margin: 0 auto;
   position: relative;
   padding-inline: 1rem;
-  padding-block: 8rem;
+  padding-block: 1rem;
 
   @media (min-width: ${mediumLayoutBreakPoint}) {
     padding-inline: 5rem;
@@ -18,6 +18,7 @@ const BaseMainText = styled.h1`
   color: ${(props) => props.theme.text.secondary};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${(props) => props.theme.fontSizes.xxl};
+  padding-bottom: 0.5rem;
 `;
 
 export const Title = styled(BaseMainText)`

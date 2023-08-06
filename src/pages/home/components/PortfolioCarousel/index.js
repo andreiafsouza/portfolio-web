@@ -15,7 +15,7 @@ export const PortfolioCarousel = () => {
   const portfolioRef = useRef(null);
 
   useEffect(() => {
-    if (previousLocation === '/portfolio/') {
+    if (previousLocation?.includes('/portfolio/')) {
       portfolioRef.current.scrollIntoView();
       //reset state
       navigate(location.pathname, { replace: true });

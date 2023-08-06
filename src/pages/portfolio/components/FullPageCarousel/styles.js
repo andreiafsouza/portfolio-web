@@ -9,10 +9,6 @@ export const CarouselContainer = styled.div`
     display: none;
   }
 
-  .glide__track {
-    margin-inline: 3rem;
-  }
-
   .glide__slide {
     position: relative;
     user-select: text;
@@ -30,8 +26,6 @@ export const CarouselContainer = styled.div`
 
   img {
     border-radius: 2px;
-    /* border-top-left-radius: 6px;
-    border-top-right-radius: 6px; */
   }
 `;
 
@@ -50,6 +44,11 @@ export const SlideInfoContainer = styled.div`
 
   border-bottom: 2px dotted ${(props) => props.theme.text.secondary};
   color: ${(props) => props.theme.text.secondary};
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  max-width: 90rem;
 `;
 
 export const Title = styled.h1`

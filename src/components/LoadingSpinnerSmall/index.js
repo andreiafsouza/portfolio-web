@@ -10,11 +10,14 @@ const spinAnimation = keyframes`
 `;
 
 const SpinnerContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: ${(props) => props.theme.background.primary};
 `;
 
 const Spinner = styled.div`
@@ -26,7 +29,7 @@ const Spinner = styled.div`
   animation: ${spinAnimation} 0.8s linear infinite;
 `;
 
-const LoadingSpinner = () => {
+const LoadingSpinnerSmall = () => {
   return (
     <SpinnerContainer>
       <Spinner />
@@ -34,4 +37,4 @@ const LoadingSpinner = () => {
   );
 };
 
-export default LoadingSpinner;
+export default LoadingSpinnerSmall;

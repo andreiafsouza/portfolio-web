@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediumLayoutBreakPoint } from 'utils/index';
 
 export const CarouselContainer = styled.div`
   position: relative;
@@ -7,10 +8,11 @@ export const CarouselContainer = styled.div`
     display: none;
   }
 
-  .glide__track {
-    margin-inline: 3rem;
+  @media (min-width: ${mediumLayoutBreakPoint}) {
+    .glide__track {
+      margin-inline: 3rem;
+    }
   }
-
   .glide__slide {
     position: relative;
 
@@ -49,9 +51,6 @@ export const CarouselContainer = styled.div`
 `;
 
 export const CaretsContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 1000;
   width: 100%;
 

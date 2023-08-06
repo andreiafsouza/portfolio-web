@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useRef, useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 /* components */
 import Glide from '@glidejs/glide';
+import LoadingSpinnerSmall from '@components/LoadingSpinnerSmall';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* style */
@@ -19,9 +20,11 @@ const Carousel = () => {
   const theme = useTheme();
   const { t } = useTranslation();
   const carouselRef = useRef(null);
+  const location = useLocation();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    new Glide(carouselRef.current, {
+    const glide = new Glide(carouselRef.current, {
       type: 'carousel',
       perView: 4,
       gap: '12%',
@@ -35,27 +38,33 @@ const Carousel = () => {
         960: {
           perView: 1
         }
-      },
-      // Add the `controls` option with left and right caret icons
-      controls: {
-        prev: '<i class="glide__icon glide__icon--prev"></i>',
-        next: '<i class="glide__icon glide__icon--next"></i>'
       }
-    }).mount();
-  }, []);
+    });
+
+    glide.mount();
+
+    return () => {
+      glide.destroy(); // Clean up the carousel when the component unmounts
+    };
+  }, [location.pathname === '/']);
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
 
   return (
     <S.CarouselContainer ref={carouselRef}>
+      {loading ? <LoadingSpinnerSmall /> : null}
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
           <li className="glide__slide">
-            <NavLink to="/portfolio/#2" title={'Personal Blog'}>
-              <img src={blog} alt="Personal Blog" loading="lazy" />
+            <NavLink to="/portfolio/2" title={'Personal Blog'}>
+              <img src={blog} alt="Personal Blog" onLoad={handleImageLoad} />
             </NavLink>
           </li>
           <li className="glide__slide">
-            <NavLink to="/portfolio/#1" title={'Express Coffee'}>
-              <img src={coffee} alt="Express Coffee" loading="lazy" />
+            <NavLink to="/portfolio/1" title={'Express Coffee'}>
+              <img src={coffee} alt="Express Coffee" onLoad={handleImageLoad} />
             </NavLink>
           </li>
         </ul>

@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { animateScroll } from 'react-scroll';
 import { useLocation } from 'react-router-dom';
 import Glide from '@glidejs/glide';
+
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* style */
@@ -32,23 +33,20 @@ const FullPageCarousel = () => {
 
   useEffect(() => {
     const changeSlideNumber = () => {
-      const hash = location?.hash;
-      const number = parseInt(hash.slice(1));
+      const pathnameParts = location.pathname.split('/');
+      const numberAfterPortfolio = pathnameParts[pathnameParts.indexOf('portfolio') + 1];
+      const number = parseInt(numberAfterPortfolio);
       setCurrentSlide(number);
     };
     changeSlideNumber();
-    if (currentSlide !== null) {
+
+    if (currentSlide !== null && carouselRef.current) {
       const glide = new Glide(carouselRef.current, {
         type: 'carousel',
         perView: 1,
         dragThreshold: false,
         swipeThreshold: false,
-        startAt: currentSlide ? currentSlide : 1,
-        // Add the `controls` option with left and right caret icons
-        controls: {
-          prev: '<i class="glide__icon glide__icon--prev"></i>',
-          next: '<i class="glide__icon glide__icon--next"></i>'
-        }
+        startAt: currentSlide ? currentSlide : 1
       });
 
       glide.mount();
@@ -104,7 +102,9 @@ const FullPageCarousel = () => {
                 <S.TechText>{`${t('year')}: 2023`}</S.TechText>
               </S.InfoContainer>
             </S.SlideInfoContainer>
-            <img src={blog} alt="Personal Blog - Website" loading="lazy" />
+            <S.ImageContainer>
+              <img src={blog} alt="Personal Blog - Website" loading="lazy" />
+            </S.ImageContainer>
           </li>
           <li className="glide__slide">
             <S.Title>Express Coffee</S.Title>
@@ -123,13 +123,15 @@ const FullPageCarousel = () => {
                     href="https://coffee-delivery-git-main-andreiafsouza.vercel.app/"
                     target={'_blank'}
                   >
-                    coffee-delivery.app
+                    express-coffee.app
                   </S.WebLink>
                 </S.TechText>
                 <S.TechText>{`${t('year')}: 2022`}</S.TechText>
               </S.InfoContainer>
             </S.SlideInfoContainer>
-            <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
+            <S.ImageContainer>
+              <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
+            </S.ImageContainer>
           </li>
         </ul>
       </div>
