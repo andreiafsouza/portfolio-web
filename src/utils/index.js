@@ -11,8 +11,8 @@ export const handleScrollToTop = () => {
 
 /* constants */
 export const mediumLayoutBreakPoint = '60em';
-export const smallLayoutBreakPoint = '40em';
-export const mobileBreakPointFont = '40em';
+export const smallLayoutBreakPoint = '42em';
+export const mobileBreakPointFont = '42em';
 
 export const tabletSize = {
   width: 744,

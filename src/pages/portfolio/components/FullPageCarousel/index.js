@@ -103,7 +103,7 @@ const FullPageCarousel = () => {
               </S.InfoContainer>
             </S.SlideInfoContainer>
             <S.ImageContainer>
-              <img src={blog} alt="Personal Blog - Website" loading="lazy" />
+              <img src={blog} alt="Personal Blog - Website" />
             </S.ImageContainer>
           </li>
           <li className="glide__slide">
@@ -130,7 +130,7 @@ const FullPageCarousel = () => {
               </S.InfoContainer>
             </S.SlideInfoContainer>
             <S.ImageContainer>
-              <img src={coffee} alt="Eldorado Automóveis - Website" loading="lazy" />
+              <img src={coffee} alt="Eldorado Automóveis - Website" />
             </S.ImageContainer>
           </li>
         </ul>

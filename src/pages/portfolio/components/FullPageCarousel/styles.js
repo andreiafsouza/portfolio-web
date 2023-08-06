@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mediumLayoutBreakPoint } from '@src/utils';
+import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '@src/utils';
 
 export const CarouselContainer = styled.div`
   position: relative;
@@ -31,11 +31,12 @@ export const CarouselContainer = styled.div`
 
 export const SlideInfoContainer = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 12rem;
 
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+
   gap: 2rem;
   flex-wrap: wrap;
 
@@ -44,6 +45,11 @@ export const SlideInfoContainer = styled.div`
 
   border-bottom: 2px dotted ${(props) => props.theme.text.secondary};
   color: ${(props) => props.theme.text.secondary};
+
+  @media (min-width: ${smallLayoutBreakPoint}) {
+    justify-content: center;
+    max-width: 600px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -72,6 +78,7 @@ export const WebLink = styled.a`
 `;
 
 export const CaretsContainer = styled.div`
+  position: -webkit-sticky;
   position: sticky;
   top: 50%;
   z-index: 1000;
