@@ -1,5 +1,5 @@
 import { typography } from '../stylesheets/base/typography';
-import { colorsLight } from '../stylesheets/abstracts/palettes';
+import { breakPoints } from 'stylesheets/base/breakPoints';
 
 export const lightTheme = {
   background: {
@@ -8,17 +8,21 @@ export const lightTheme = {
     neutral: '#F4F3F5',
     accent: '#9586DD',
     secondaryAccent: '#60859B',
+    createBg: '#9586DD',
+    titleBg: '#E7DEF4',
     navbar: '#EEEEEEE6',
     footer: '#DDDEED'
   },
   text: {
     primary: '#2D2327',
     secondary: '#605C7A',
-    neutral: '#ffffff'
+    neutral: '#ffffff',
+    create: '#BDA523cc' //use in mix blend
   },
   font: {
     main: typography.fontFamilies.main,
-    display: typography.fontFamilies.display
+    display: typography.fontFamilies.display,
+    mono: typography.fontFamilies.mono
   },
   button: {
     hover: 'rgba(224, 211, 245, 0.3)',
@@ -43,5 +47,6 @@ export const lightTheme = {
   },
   fontSizes: typography.fontSizes,
   fontWeights: typography.fontWeights,
-  lineHeight: typography.lineHeight
+  lineHeight: typography.lineHeight,
+  breakPoints: breakPoints
 };
