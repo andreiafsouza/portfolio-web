@@ -42,6 +42,12 @@ to {
   transform: translateY(0);
 }`;
 
+const bgOpacity = keyframes`
+  to {
+    opacity: 0.7;
+  }
+`;
+
 //components
 export const Container = styled.section``;
 
@@ -79,16 +85,28 @@ export const MainLeftContainer = styled.div`
 `;
 
 export const MainTextContainer = styled.div`
+  position: relative;
   display: grid;
-  /*   gap: 1rem; */
   padding: 2.4rem 1rem 2.4rem;
+  transition: background-color 350ms ease 0s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: ${(props) => props.theme.background.titleBg};
+    transition: background-color 350ms ease 0s;
+
+    animation: ${bgOpacity} 2s ease 5s forwards;
+  }
 
   @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  background: ${(props) => props.theme.shadows.secondary};
-  transition: background-color 350ms ease 0s;
 `;
 
 export const MainTextHeadlineContainer = styled.div`
@@ -102,6 +120,7 @@ export const MainTextHeadlineContainer = styled.div`
 `;
 
 const BaseMainText = styled.h1`
+  --animation-bg: ${(props) => props.theme.background.titleBg};
   font-family: ${(props) => props.theme.font.mono};
   color: ${(props) => props.theme.text.secondary};
   font-size: ${(props) => props.theme.fontSizes.xxl};
@@ -125,17 +144,16 @@ const BaseMainText = styled.h1`
 
 export const MainTextMediumDesign = styled(BaseMainText)`
   position: relative;
-  background: ${(props) => props.theme.background.titleBg};
   line-height: 112%;
 
   &::before {
-    background: ${(props) => props.theme.background.titleBg};
+    background: var(--animation-bg);
     animation: ${typewriter} var(--typewriterSpeed) steps(6) var(--typewriterSpeed) forwards;
   }
 
   &::after {
     width: 0.07em;
-    background: ${(props) => props.theme.background.createBg};
+    background: ${(props) => props.theme.background.accent};
     animation: ${typewriter} var(--typewriterSpeed) steps(6) var(--typewriterSpeed) forwards,
       ${blink} var(--blinkSpeed) steps(6) 6,
       ${opacity} 100ms calc(var(--typewriterSpeed) + 1s) forwards;
@@ -144,9 +162,10 @@ export const MainTextMediumDesign = styled(BaseMainText)`
 
 export const MainTextMediumEngineer = styled(BaseMainText)`
   position: relative;
-  background: ${(props) => props.theme.background.titleBg};
+  transform: background-color 500ms calc(var(--typewriterSpeed) + 1s) ease;
+
   &::before {
-    background: ${(props) => props.theme.background.titleBg};
+    background: var(--animation-bg);
     animation: ${typewriter} var(--typewriterSpeed) steps(8) calc(var(--typewriterSpeed) + 1s)
       forwards;
   }
@@ -154,7 +173,7 @@ export const MainTextMediumEngineer = styled(BaseMainText)`
   &::after {
     width: 0.07em;
     opacity: 0;
-    background: ${(props) => props.theme.background.createBg};
+    background: ${(props) => props.theme.background.accent};
     animation: ${opacityIn} 100ms ease calc(var(--typewriterSpeed) + 1s) forwards,
       ${typewriter} var(--typewriterSpeed) steps(8) calc(var(--typewriterSpeed) + 1s) forwards,
       ${blink} var(--blinkSpeed) steps(8) calc(var(--typewriterSpeed) + 1s) 6,
@@ -168,22 +187,18 @@ export const CreateTextWrapper = styled.div`
   transition: background-color 350ms ease 0s;
 
   &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 100%;
-    transition: background-color 350ms ease 0s;
-    background: ${(props) => props.theme.background.createBg};
-    mix-blend-mode: difference;
-    animation: ${slideBg} 1s steps(6) 3s forwards;
+    opacity: 0;
+    width: 0.045em;
+    background: ${(props) => props.theme.background.accent};
+    animation: ${opacityIn} 100ms ease calc(var(--typewriterSpeed) + 2s) forwards,
+      ${typewriter} var(--typewriterSpeed) steps(6) calc(var(--typewriterSpeed) + 2s) forwards,
+      ${blink} var(--blinkSpeed) steps(8) calc(var(--typewriterSpeed) + 1s) 7;
   }
 `;
 
 export const MainTextCreate = styled(BaseMainText)`
   font-size: ${(props) => props.theme.fontSizes.xxxl};
-  color: ${(props) => props.theme.text.create};
+  color: ${(props) => props.theme.background.secondary};
   text-transform: uppercase;
 
   position: relative;
@@ -195,12 +210,11 @@ export const MainTextCreate = styled(BaseMainText)`
   }
 
   &::after {
-    opacity: 0;
-    width: 0.045em;
-    background: ${(props) => props.theme.background.createBg};
-    animation: ${opacityIn} 100ms ease calc(var(--typewriterSpeed) + 2s) forwards,
-      ${typewriter} var(--typewriterSpeed) steps(6) calc(var(--typewriterSpeed) + 2s) forwards,
-      ${blink} var(--blinkSpeed) steps(8) calc(var(--typewriterSpeed) + 1s) 7;
+    right: 100%;
+    transition: background-color 350ms ease 0s;
+    background: ${(props) => props.theme.background.accent};
+    z-index: -1;
+    animation: ${slideBg} 1s 3s forwards;
   }
 `;
 
@@ -307,4 +321,9 @@ export const AboutInfoText = styled.div`
 export const LinkScroll = styled(Link)`
   text-decoration: none;
   cursor: pointer;
+`;
+
+export const BoldText = styled.strong`
+  font-weight: 700;
+  color: red;
 `;

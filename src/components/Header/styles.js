@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-scroll';
-import { mediumLayoutBreakPoint } from '../../utils';
 import {
   borderAnimationUsingBackground,
   borderAnimationUsingBackgroundMedia
@@ -21,7 +20,7 @@ export const Header = styled.header`
 `;
 
 export const Container = styled.div`
-  max-width: 137.5rem;
+  max-width: ${(props) => props.theme.breakPoints.xxl};
   height: 4rem;
   margin-inline: auto;
   padding-bottom: 1rem;
@@ -35,8 +34,8 @@ export const Container = styled.div`
 
   transition: color 350ms ease 0s, background-color 350ms ease 0s;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    padding-inline: 5rem;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    padding-inline: 2rem;
   }
 `;
 
@@ -68,9 +67,9 @@ export const LogoText = styled.div`
 export const ActionsContainer = styled.nav`
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
 
-  @media (max-width: ${mediumLayoutBreakPoint}) {
+  @media (max-width: ${(props) => props.theme.breakPoints.lg}) {
     z-index: 1010;
     position: fixed;
     top: 4rem;
@@ -104,16 +103,15 @@ export const ActionsContainer = styled.nav`
 export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     flex-direction: row;
   }
 `;
 
 export const NavbarItem = styled(Link)`
   position: relative;
-  padding-left: 0.6rem;
   cursor: pointer;
 
   color: ${(props) => props.theme.text.primary};
@@ -229,7 +227,7 @@ export const DropdownLanguage = styled.ul`
   list-style: none;
   position: absolute;
   top: 3rem;
-  left: 0;
+  left: -20%;
   background: ${(props) => props.theme.background.secondaryAccent};
   opacity: 0;
   visibility: hidden;
@@ -280,7 +278,7 @@ export const MenuButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     display: none;
   }
 `;

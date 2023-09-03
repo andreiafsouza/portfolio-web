@@ -4,7 +4,6 @@ import { Link } from '@src/components/Link';
 import { ProfileLines } from '../ProfileLines';
 /* i18 */
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18n';
 /* icons */
 import { AccountCircleOutlined } from '../../../../components/icons/AccountCircleOutlined';
 /* style */
@@ -14,9 +13,6 @@ import * as S from './styles';
 export const Hero = () => {
   const theme = useTheme();
   const { t } = useTranslation();
-
-  // key = 'hello {{what}}'
-  t('key', { what: i18n.format('JavaScript', 'uppercase') }); // -> hello WORLD
 
   return (
     <S.Container id="home">
@@ -63,7 +59,7 @@ export const Hero = () => {
             <S.ProfileAnimationWrapper>
               <ProfileLines />
             </S.ProfileAnimationWrapper>
-            <S.AboutInfoContainer>
+            {/* <S.AboutInfoContainer>
               <S.AboutInfoText>{t('aboutText')}</S.AboutInfoText>
               <S.LinkScroll
                 title={t('about')}
@@ -84,7 +80,7 @@ export const Hero = () => {
                   icon={<AccountCircleOutlined color={theme.text.secondary} size={20} />}
                 />
               </S.LinkScroll>
-            </S.AboutInfoContainer>
+            </S.AboutInfoContainer> */}
           </S.MainRightContainer>
         </S.MainContainer>
       </S.HeroBgContainer>

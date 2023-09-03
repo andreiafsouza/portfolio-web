@@ -8,16 +8,14 @@ export const lightTheme = {
     neutral: '#F4F3F5',
     accent: '#9586DD',
     secondaryAccent: '#60859B',
-    createBg: '#9586DD',
-    titleBg: '#E7DEF4',
+    titleBg: 'rgba(224, 211, 245, 1)',
     navbar: '#EEEEEEE6',
     footer: '#DDDEED'
   },
   text: {
     primary: '#2D2327',
     secondary: '#605C7A',
-    neutral: '#ffffff',
-    create: '#BDA523cc' //use in mix blend
+    neutral: '#ffffff'
   },
   font: {
     main: typography.fontFamilies.main,
@@ -30,7 +28,7 @@ export const lightTheme = {
   },
   shadows: {
     primary: 'rgba(9, 3, 18, 0.1)',
-    secondary: 'rgba(224, 211, 245, 0.5)',
+    secondary: 'rgba(224, 211, 245, 0.8)',
     box: '#605C7Acc'
   },
   icon: {
