@@ -1,67 +1,72 @@
 import styled, { keyframes } from 'styled-components';
-import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '../../../../utils';
-
 import blueprintLines from '../../../../assets/images/blueprint-lines.png';
 import { Link } from 'react-scroll';
 
-const borderRadius = '8px';
-const mainTextAdaptWidth = '1335px';
-
 //animations
-const borderHeight = keyframes`
-from {
-  height: 0;
-  opacity: 0;
-  }
-to {
-  height: 24rem;
-  }
+const typewriter = keyframes`
+  to {
+    left: 100%
+    }
+`;
+
+const slideBg = keyframes`
+  to {
+    right: 0
+    }
+`;
+
+const blink = keyframes`
+  to {
+    background: transparent;
+    }
 `;
 
 const opacity = keyframes`
-from {
-  opacity: 0;
-  }
 to {
-  opacity: 1;
-  }
+  opacity: 0;
+}
 `;
 
-const TextOpacity = keyframes`
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
+const opacityIn = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+`;
+
+const fadeInUp = keyframes`
+to {
+  opacity: 1;
+  transform: translateY(0);
+}`;
+
+const bgOpacity = keyframes`
+  to {
+    opacity: 0.7;
   }
 `;
 
 //components
-export const Container = styled.section`
+export const Container = styled.section``;
+
+export const HeroBgContainer = styled.div`
   position: relative;
-  max-width: 137.5rem;
+  max-width: ${(props) => props.theme.breakPoints.xxl};
   margin: 0 auto;
   background: url(${blueprintLines}) no-repeat;
-
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    background-size: contain;
-  }
 `;
 
 export const MainContainer = styled.div`
+  --typewriterSpeed: 1s;
+  --blinkSpeed: 500ms;
   display: grid;
-  padding: 4rem 0;
+  gap: 2rem;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    grid-auto-flow: column;
-    grid-auto-columns: 1.7fr 1fr;
-    padding: 3.4rem 5rem;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 0 2rem;
   }
 `;
 
@@ -69,38 +74,38 @@ export const MainLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 1.4rem;
 
-  @media (max-width: ${mediumLayoutBreakPoint}) {
-    min-height: 100vh;
-  }
+  padding: 2.4rem 0;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    padding-right: 4rem;
-    margin-bottom: 0;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     background-color: transparent;
+    grid-column: span 3;
   }
 `;
 
 export const MainTextContainer = styled.div`
   position: relative;
-  z-index: 10;
   display: grid;
-  gap: 1rem;
-  padding: 5rem 1rem;
-
-  background: ${(props) => props.theme.shadows.secondary};
+  padding: 2.4rem 1rem 2.4rem;
   transition: background-color 350ms ease 0s;
 
-  border-radius: ${borderRadius};
+  &::before {
+    content: '';
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: ${(props) => props.theme.background.titleBg};
+    transition: background-color 350ms ease 0s;
 
-  @media (max-width: ${mediumLayoutBreakPoint}) {
-    justify-items: center;
+    animation: ${bgOpacity} 2s ease 5s forwards;
   }
 
-  @media (min-width: ${mainTextAdaptWidth}) {
-    display: flex;
-    padding: 10rem 1rem 8.6rem;
-    justify-items: flex-start;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
 
@@ -108,101 +113,145 @@ export const MainTextHeadlineContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
-  gap: 1.6rem;
-
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    align-items: flex-start;
-    padding-left: 1.25rem;
-    gap: 2.2rem;
-  }
-
-  @media (min-width: ${mainTextAdaptWidth}) {
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     align-items: flex-end;
-    padding-right: 0.25rem;
   }
 `;
 
 const BaseMainText = styled.h1`
-  font-family: ${(props) => props.theme.font.display};
+  --animation-bg: ${(props) => props.theme.background.titleBg};
+  font-family: ${(props) => props.theme.font.mono};
   color: ${(props) => props.theme.text.secondary};
-  font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${(props) => props.theme.fontSizes.xxl};
-  text-align: right;
+  line-height: 140%;
+  transition: background-color 350ms ease 0s;
+
+  padding-inline: 0.4rem;
+  width: max-content;
+
+  &::before,
+  &::after {
+    transition: background-color 350ms ease 0s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 `;
 
 export const MainTextMediumDesign = styled(BaseMainText)`
-  line-height: 65%;
-  animation: ${TextOpacity} 5.5s ease-in;
+  position: relative;
+  line-height: 112%;
+
+  &::before {
+    background: var(--animation-bg);
+    animation: ${typewriter} var(--typewriterSpeed) steps(6) var(--typewriterSpeed) forwards;
+  }
+
+  &::after {
+    width: 0.07em;
+    background: ${(props) => props.theme.background.accent};
+    animation: ${typewriter} var(--typewriterSpeed) steps(6) var(--typewriterSpeed) forwards,
+      ${blink} var(--blinkSpeed) steps(6) 6,
+      ${opacity} 100ms calc(var(--typewriterSpeed) + 1s) forwards;
+  }
 `;
 
 export const MainTextMediumEngineer = styled(BaseMainText)`
-  line-height: 70%;
-  animation: ${TextOpacity} 3s ease-in;
+  position: relative;
+  transform: background-color 500ms calc(var(--typewriterSpeed) + 1s) ease;
+
+  &::before {
+    background: var(--animation-bg);
+    animation: ${typewriter} var(--typewriterSpeed) steps(8) calc(var(--typewriterSpeed) + 1s)
+      forwards;
+  }
+
+  &::after {
+    width: 0.07em;
+    opacity: 0;
+    background: ${(props) => props.theme.background.accent};
+    animation: ${opacityIn} 100ms ease calc(var(--typewriterSpeed) + 1s) forwards,
+      ${typewriter} var(--typewriterSpeed) steps(8) calc(var(--typewriterSpeed) + 1s) forwards,
+      ${blink} var(--blinkSpeed) steps(8) calc(var(--typewriterSpeed) + 1s) 6,
+      ${opacity} 100ms calc(var(--typewriterSpeed) + 2s) forwards;
+  }
+`;
+
+export const CreateTextWrapper = styled.div`
+  position: relative;
+  isolation: isolate;
+  transition: background-color 350ms ease 0s;
+
+  &::after {
+    opacity: 0;
+    width: 0.045em;
+    background: ${(props) => props.theme.background.accent};
+    animation: ${opacityIn} 100ms ease calc(var(--typewriterSpeed) + 2s) forwards,
+      ${typewriter} var(--typewriterSpeed) steps(6) calc(var(--typewriterSpeed) + 2s) forwards,
+      ${blink} var(--blinkSpeed) steps(8) calc(var(--typewriterSpeed) + 1s) 7;
+  }
 `;
 
 export const MainTextCreate = styled(BaseMainText)`
   font-size: ${(props) => props.theme.fontSizes.xxxl};
-  line-height: 80%;
-  margin-left: -2px;
-  vertical-align: bottom;
+  color: ${(props) => props.theme.background.secondary};
   text-transform: uppercase;
-  animation: ${opacity} 0.7s ease-in;
+
+  position: relative;
+
+  &::before {
+    background: ${(props) => props.theme.background.titleBg};
+    animation: ${typewriter} var(--typewriterSpeed) steps(6) calc(var(--typewriterSpeed) + 2s)
+      forwards;
+  }
+
+  &::after {
+    right: 100%;
+    transition: background-color 350ms ease 0s;
+    background: ${(props) => props.theme.background.accent};
+    z-index: -1;
+    animation: ${slideBg} 1s 3s forwards;
+  }
 `;
 
 export const MainTextParagraphContainer = styled.div`
   position: relative;
   min-height: 100%;
-  max-width: 14rem;
   display: flex;
-  /*   align-items: flex-end; */
-  padding-left: 1.25rem;
-  border-left: 1px dotted ${(props) => props.theme.text.primary};
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 24rem;
-    animation: ${borderHeight} 3s linear backwards;
-    width: 1px;
-    border-left: 1px dotted ${(props) => props.theme.text.primary};
-    opacity: 0;
-  }
+  text-align: center;
+  width: fit-content;
+  margin-inline: auto;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    border-left: none;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    padding-left: 1.25rem;
     align-items: flex-end;
-    max-width: 50%;
-
-    &::before {
-      opacity: 1;
-    }
+    text-align: left;
   }
 `;
 
-export const MainTextParagraph = styled.div`
+export const MainTextParagraph = styled.h2`
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${(props) => props.theme.fontSizes.lg};
-  line-height: 110%;
   color: ${(props) => props.theme.text.secondary};
-  animation: ${opacity} 0.7s ease-in;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: ${fadeInUp} 2s ease calc(var(--typewriterSpeed) + 3s) forwards;
 `;
 
 export const MainButtonContainer = styled.div`
   position: relative;
   z-index: 10;
-  align-self: center;
   width: 100%;
-  max-width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.25rem;
+  display: grid;
 
   &::after {
     content: '';
@@ -217,57 +266,54 @@ export const MainButtonContainer = styled.div`
     transition: all 350ms ease 0s;
   }
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    align-self: initial;
-    padding: 0;
-    max-width: 70%;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    &::after {
+      width: 76%;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
 
-export const MainRightContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 4rem 1rem 0;
-  background-color: ${(props) => props.theme.background.primary};
-  transition: background-color 350ms ease 0s;
-
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    padding: 0;
-  }
-`;
-
-export const ProfileContainer = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-`;
 
-export const ProfileInfoContainer = styled.div`
-  align-self: flex-end;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-`;
-
-export const AboutInfoContainer = styled.div`
-  padding-inline: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-
-  @media (min-width: ${smallLayoutBreakPoint}) {
-    max-width: 28.75rem;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    align-items: flex-end;
   }
 `;
 
+export const MainRightContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.background.primary};
+  transition: background-color 350ms ease 0s;
+
+  padding: 2.4rem 1rem 2.4rem;
+
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-column: span 2;
+  }
+`;
+
+export const ProfileAnimationWrapper = styled.div``;
+
+export const AboutInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
 export const AboutInfoText = styled.div`
-  min-height: 3.3rem;
+  max-width: 28.75rem;
+
   font-weight: ${(props) => props.theme.fontWeights.normal};
-  line-height: 110%;
   font-size: ${(props) => props.theme.fontSizes.md};
   color: ${(props) => props.theme.text.secondary};
 `;
@@ -275,4 +321,9 @@ export const AboutInfoText = styled.div`
 export const LinkScroll = styled(Link)`
   text-decoration: none;
   cursor: pointer;
+`;
+
+export const BoldText = styled.strong`
+  font-weight: 700;
+  color: red;
 `;

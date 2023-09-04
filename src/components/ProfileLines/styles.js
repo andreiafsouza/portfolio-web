@@ -54,7 +54,7 @@ export const Wrapper = styled.div`
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       path {
-        animation: ${dashIn} 6s linear alternate infinite, ${fadeIn} 1s;
+        animation: ${dashIn} 6s linear infinite, ${fadeIn} 1s;
       }
     }
   }

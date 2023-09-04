@@ -34,16 +34,18 @@ export const About = () => {
             alt="a profile picture illustration of Andreia Souza wearing eyeglasses and smilling"
           />
         </S.ImageContainer>
-        <Terminal />
+        <S.TerminalWrapper>
+          <Terminal />
+        </S.TerminalWrapper>
       </S.AboutInfoContainer>
       <S.SkillsContainer>
         <S.SkillsTextContainer>
           <S.SkillsTitle>Skills</S.SkillsTitle>
           <S.SkillsSubtitle>{t('skills')}</S.SkillsSubtitle>
           <S.SkillsList>
-            HTML | CSS | Javascript | Typescript | React | RESTful APIs | GraphQL | Git | Ant
-            Design | Material UI | Figma | Adobe Creative Suite | Styled Components | Android
-            Studio | Redux
+            HTML | CSS | Javascript | Typescript | React | Redux | Next | RESTful APIs |
+            GraphQL | Git | Ant Design | Material UI | Figma | Adobe Creative Suite | Styled
+            Components | Android Studio |
           </S.SkillsList>
         </S.SkillsTextContainer>
         <S.SkillCardContainer>

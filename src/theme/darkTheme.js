@@ -1,5 +1,6 @@
 import { typography } from '../stylesheets/base/typography';
 import { colors } from '../stylesheets/abstracts/palettes';
+import { breakPoints } from 'stylesheets/base/breakPoints';
 
 export const darkTheme = {
   colors: colors,
@@ -9,6 +10,7 @@ export const darkTheme = {
     neutral: colors.neutral[900],
     accent: colors.accent.yellow,
     secondaryAccent: colors.secondary[800],
+    titleBg: colors.primary[500],
     navbar: `${colors.primary[900]}E6`,
     footer: `${colors.primary[500]}40`
   },
@@ -19,7 +21,8 @@ export const darkTheme = {
   },
   font: {
     main: typography.fontFamilies.main,
-    display: typography.fontFamilies.display
+    display: typography.fontFamilies.display,
+    mono: typography.fontFamilies.mono
   },
   button: {
     hover: colors.shadows[400],
@@ -44,5 +47,6 @@ export const darkTheme = {
   },
   fontSizes: typography.fontSizes,
   fontWeights: typography.fontWeights,
-  lineHeight: typography.lineHeight
+  lineHeight: typography.lineHeight,
+  breakPoints: breakPoints
 };

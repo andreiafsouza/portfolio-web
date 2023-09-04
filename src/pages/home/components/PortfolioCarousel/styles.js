@@ -1,15 +1,13 @@
 import styled from 'styled-components';
-import { mediumLayoutBreakPoint } from '@src/utils';
 
 export const Container = styled.section`
-  max-width: 137.5rem;
+  max-width: ${(props) => props.theme.breakPoints.xxl};
   margin: 0 auto;
   position: relative;
-  padding-inline: 1rem;
-  padding-block: 1rem;
+  padding: 1rem 1rem;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    padding-inline: 5rem;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    padding: 1rem 2rem;
   }
 `;
 

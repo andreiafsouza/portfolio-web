@@ -81,12 +81,19 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+  }
+
 /* Make images easier to work with */
 img,
 picture,
 svg {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 `;

@@ -1,6 +1,5 @@
 /* components */
 import { Hero } from './components/Hero';
-
 import { About } from './components/About';
 import { Divider } from '../../components/Divider';
 import { Container } from './styles';

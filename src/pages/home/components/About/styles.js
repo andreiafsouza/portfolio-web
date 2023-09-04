@@ -2,40 +2,39 @@ import styled from 'styled-components';
 import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '../../../../utils';
 
 export const Container = styled.section`
-  max-width: 137.5rem;
+  display: grid;
+  gap: 2rem;
+  max-width: ${(props) => props.theme.breakPoints.xxl};
   margin: 0 auto;
   position: relative;
-  padding-inline: 1rem;
-  padding-block: 1rem;
+  padding: 1rem 1rem;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    padding-inline: 5rem;
-    padding-block: 2rem;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    padding: 1rem 2rem;
   }
 `;
 
-const ContainerBase = styled.div`
+export const AboutInfoContainer = styled.div`
   display: grid;
   justify-items: center;
   align-items: flex-start;
   gap: 2rem;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    grid-auto-flow: column;
-    grid-auto-columns: 30% 1fr;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
-`;
-
-export const AboutInfoContainer = styled(ContainerBase)`
-  padding-bottom: 3rem;
 `;
 
 export const ImageContainer = styled.div`
   position: relative;
-  max-width: 30rem;
+  max-width: 28rem;
   background-color: ${(props) => props.theme.profile};
   z-index: 0;
   border-radius: 50%;
+
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-column: span 2;
+  }
 `;
 
 export const ProfileLinesContainer = styled.div`
@@ -47,12 +46,20 @@ export const ImageProfile = styled.img`
   opacity: 0.8;
 `;
 
-export const SkillsContainer = styled(ContainerBase)`
-  gap: 2.5rem;
-  align-items: flex-start;
+export const TerminalWrapper = styled.div`
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-column: span 3;
+  }
+`;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    grid-auto-columns: 1fr 1.2fr;
+export const SkillsContainer = styled.div`
+  display: grid;
+  justify-items: center;
+  align-items: flex-start;
+  gap: 2rem;
+
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 `;
 
@@ -65,7 +72,8 @@ export const SkillsTextContainer = styled.div`
     transform: rotate(180deg);
   }
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-column: span 2;
     align-items: flex-end;
 
     svg {
@@ -84,11 +92,10 @@ const BaseMainText = styled.h1`
 const BaseTextParagraph = styled.div`
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${(props) => props.theme.fontSizes.lg};
-  line-height: 110%;
   color: ${(props) => props.theme.text.secondary};
   text-align: center;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     text-align: right;
   }
 `;
@@ -116,7 +123,8 @@ export const SkillCardContainer = styled.div`
 
   padding-top: 1.5rem;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    grid-column: span 3;
     justify-content: flex-start;
   }
 `;
