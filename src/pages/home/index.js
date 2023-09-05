@@ -2,7 +2,7 @@
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Divider } from '../../components/Divider';
-import { Container } from './styles';
+import { Container, NoDividerOnMobile } from './styles';
 import { PortfolioCarousel } from './components/PortfolioCarousel';
 import { Header } from '@components/Header';
 import { Contact } from './components/Contact/index';
@@ -14,7 +14,9 @@ export const Home = () => {
       <Header />
       <main>
         <Hero />
-        <Divider />
+        <NoDividerOnMobile>
+          <Divider />
+        </NoDividerOnMobile>
         <About />
         <Divider />
         <PortfolioCarousel />

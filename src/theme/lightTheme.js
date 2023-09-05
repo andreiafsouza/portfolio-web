@@ -39,7 +39,7 @@ export const lightTheme = {
     primary: '#090312',
     accent: '#9586DD'
   },
-  profile: '#BDA52366',
+  profile: '#BDA52380',
   terminal: {
     header: '#DCDBDB'
   },

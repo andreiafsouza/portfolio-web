@@ -257,11 +257,11 @@ export const MainButtonContainer = styled.div`
     content: '';
     position: absolute;
     top: 0;
-    left: -3.5rem;
+    left: 0;
     width: 100%;
     height: 100%;
     border: 2px solid ${(props) => props.theme.background.secondaryAccent};
-    outline: 4rem solid ${(props) => props.theme.background.secondaryAccent};
+    outline: 3rem solid ${(props) => props.theme.background.secondaryAccent};
     background-color: ${(props) => props.theme.background.secondaryAccent};
     transition: all 350ms ease 0s;
   }
@@ -304,26 +304,7 @@ export const MainRightContainer = styled.div`
 
 export const ProfileAnimationWrapper = styled.div``;
 
-export const AboutInfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-export const AboutInfoText = styled.div`
-  max-width: 28.75rem;
-
-  font-weight: ${(props) => props.theme.fontWeights.normal};
-  font-size: ${(props) => props.theme.fontSizes.md};
-  color: ${(props) => props.theme.text.secondary};
-`;
-
 export const LinkScroll = styled(Link)`
   text-decoration: none;
   cursor: pointer;
-`;
-
-export const BoldText = styled.strong`
-  font-weight: 700;
-  color: red;
 `;

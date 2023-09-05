@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '../../utils';
 
 export const GlobalStyleReset = createGlobalStyle`
 

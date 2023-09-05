@@ -4,14 +4,10 @@ import { Link } from '@src/components/Link';
 import { ProfileLines } from '../ProfileLines';
 /* i18 */
 import { useTranslation } from 'react-i18next';
-/* icons */
-import { AccountCircleOutlined } from '../../../../components/icons/AccountCircleOutlined';
 /* style */
-import { useTheme } from 'styled-components';
 import * as S from './styles';
 
 export const Hero = () => {
-  const theme = useTheme();
   const { t } = useTranslation();
 
   return (
@@ -51,36 +47,12 @@ export const Hero = () => {
                   href={'https://www.linkedin.com/in/andreiafsouza/'}
                 />
               </S.ButtonWrapper>
-              <div></div>
             </S.MainButtonContainer>
           </S.MainLeftContainer>
-
           <S.MainRightContainer>
             <S.ProfileAnimationWrapper>
               <ProfileLines />
             </S.ProfileAnimationWrapper>
-            {/* <S.AboutInfoContainer>
-              <S.AboutInfoText>{t('aboutText')}</S.AboutInfoText>
-              <S.LinkScroll
-                title={t('about')}
-                to="about"
-                exact="true"
-                smooth="true"
-                duration={500}
-                offset={-64}
-                aria-label={`${t('goTo')}${t('about')}`}
-              >
-                <Button
-                  size={'small'}
-                  hasLabel
-                  text={'about.'}
-                  hasIcon
-                  color={theme.text.secondary}
-                  hoverColor={theme.button.hoverLight}
-                  icon={<AccountCircleOutlined color={theme.text.secondary} size={20} />}
-                />
-              </S.LinkScroll>
-            </S.AboutInfoContainer> */}
           </S.MainRightContainer>
         </S.MainContainer>
       </S.HeroBgContainer>

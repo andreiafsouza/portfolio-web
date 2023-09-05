@@ -23,7 +23,7 @@ export const AboutParagraphHeader = styled.div`
   min-width: 100%;
   min-height: 2rem;
   padding-top: 0.4rem;
-  padding-inline: 0.6rem;
+  padding-inline: 1rem;
   background-color: ${(props) => props.theme.background.neutral};
 `;
 
@@ -65,7 +65,7 @@ export const AboutTerminalHeaderCommands = styled.div`
 
 export const AboutParagraphContainer = styled.article`
   padding-top: 1em;
-  padding-inline: 0.5rem;
+  padding-inline: 1rem;
   font-size: ${(props) => props.theme.fontSizes.md};
   color: ${(props) => props.theme.text.primary};
   font-weight: ${(props) => props.theme.fontWeights.normal};

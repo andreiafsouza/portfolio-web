@@ -41,7 +41,7 @@ export const Container = styled.div`
 
 export const LogoContainer = styled(Link)`
   display: flex;
-  padding: 0.16rem 0.4rem;
+  padding: 0.16rem;
   align-items: center;
   background: ${(props) => props.theme.background.primary};
   transition: background-color 350ms ease 0s;

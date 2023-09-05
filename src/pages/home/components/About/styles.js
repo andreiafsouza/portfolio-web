@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mediumLayoutBreakPoint, smallLayoutBreakPoint } from '../../../../utils';
+import blueprintLines from '../../../../assets/images/blueprint-lines.png';
 
 export const Container = styled.section`
   display: grid;
@@ -27,13 +27,38 @@ export const AboutInfoContainer = styled.div`
 
 export const ImageContainer = styled.div`
   position: relative;
+  isolation: isolate;
   max-width: 28rem;
   background-color: ${(props) => props.theme.profile};
   z-index: 0;
   border-radius: 50%;
 
+  &::before {
+    content: '';
+    position: absolute;
+    background: url(${blueprintLines}) no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: -1;
+  }
+
   @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     grid-column: span 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url(${blueprintLines}) no-repeat;
+      top: -20%;
+      left: -20%;
+      width: 120%;
+      height: 120%;
+      opacity: 0.8;
+      z-index: -1;
+    }
   }
 `;
 

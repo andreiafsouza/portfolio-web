@@ -16,12 +16,10 @@ import { AndroidIcon } from '@src/components/icons/AndroidIcon';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* style */
-import { useTheme } from 'styled-components';
 import * as S from './styles';
 import { SkillCard } from '@src/components/SkillCard';
 
 export const About = () => {
-  const theme = useTheme();
   const { t } = useTranslation();
 
   return (
