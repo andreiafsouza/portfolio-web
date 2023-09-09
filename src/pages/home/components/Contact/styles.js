@@ -3,19 +3,18 @@ import { mediumLayoutBreakPoint } from '@src/utils';
 import { smallLayoutBreakPoint } from 'utils/index';
 
 export const Container = styled.section`
-  max-width: 137.5rem;
+  max-width: ${(props) => props.theme.breakPoints.xxl};
   margin: 0 auto;
   position: relative;
-  padding-inline: 2rem;
-  padding-block: 1rem;
+  padding: 3rem 1rem;
 
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    padding-inline: 5rem;
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    padding: 3rem 2rem;
   }
 `;
 
 const BaseTitleText = styled.h1`
-  font-family: ${(props) => props.theme.font.display};
+  font-family: ${(props) => props.theme.font.mono};
   color: ${(props) => props.theme.text.secondary};
   font-weight: ${(props) => props.theme.fontWeights.normal};
   font-size: ${(props) => props.theme.fontSizes.xxl};

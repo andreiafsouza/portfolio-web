@@ -5,8 +5,9 @@ import { Divider } from '../../components/Divider';
 import { Container, NoDividerOnMobile } from './styles';
 import { PortfolioCarousel } from './components/PortfolioCarousel';
 import { Header } from '@components/Header';
-import { Contact } from './components/Contact/index';
-import { Footer } from '@components/Footer/index';
+import { Contact } from './components/Contact/';
+import { Footer } from '@components/Footer/';
+import Portfolio from './components/Portfolio/';
 
 export const Home = () => {
   return (
@@ -14,13 +15,8 @@ export const Home = () => {
       <Header />
       <main>
         <Hero />
-        <NoDividerOnMobile>
-          <Divider />
-        </NoDividerOnMobile>
         <About />
-        <Divider />
         <PortfolioCarousel />
-        <Divider />
         <Contact />
       </main>
       <Footer />

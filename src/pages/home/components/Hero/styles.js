@@ -49,7 +49,9 @@ const bgOpacity = keyframes`
 `;
 
 //components
-export const Container = styled.section``;
+export const Container = styled.section`
+  padding-bottom: 3rem;
+`;
 
 export const HeroBgContainer = styled.div`
   position: relative;
@@ -66,7 +68,7 @@ export const MainContainer = styled.div`
 
   @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    padding: 0 2rem;
+    padding-inline: 2rem;
   }
 `;
 
@@ -295,7 +297,8 @@ export const MainRightContainer = styled.div`
   background-color: ${(props) => props.theme.background.primary};
   transition: background-color 350ms ease 0s;
 
-  padding: 2.4rem 1rem 2.4rem;
+  padding-top: 3rem;
+  padding-inline: 1rem;
 
   @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     grid-column: span 2;

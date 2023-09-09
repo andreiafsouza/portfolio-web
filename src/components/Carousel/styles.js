@@ -1,72 +1,46 @@
 import styled from 'styled-components';
-import { mediumLayoutBreakPoint } from 'utils/index';
-
-export const CarouselContainer = styled.div`
-  position: relative;
-
-  &[aria-expanded='true'] {
-    display: none;
-  }
-
-  @media (min-width: ${mediumLayoutBreakPoint}) {
-    .glide__track {
-      margin-inline: 3rem;
-    }
-  }
-  .glide__slide {
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 2rem;
-      right: 0;
-      bottom: 0;
-      left: 2rem;
-      z-index: -1;
-      border: 2px dotted ${(props) => props.theme.text.secondary};
-      border-radius: 4px;
-
-      transition: all 0.3s ease-in-out, opacity 0.2s ease-in-out;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      padding: 0.8rem;
-
-      &:hover {
-        &::before {
-          top: 0;
-          left: 0rem;
-          right: 2rem;
-          bottom: 2rem;
-        }
-      }
-    }
-  }
-
-  img {
-    cursor: pointer;
-    border-radius: 2px;
-  }
-`;
 
 export const CaretsContainer = styled.div`
   z-index: 1000;
   width: 100%;
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
 
-  .glide__arrow {
-    border: none;
-    box-shadow: none;
+  svg {
+    opacity: 0.6;
+    transition: all 0.1s ease-in-out;
   }
 
-  .glide__icon--prev {
-    position: relative;
+  .glide__arrow {
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    transition: all 0.1s ease-in-out;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transition: all 0.1s ease-in-out;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  .glide__arrow--prev {
     left: 0;
     transition: all 0.1s ease-in-out;
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        left: -4px;
+      &:hover,
+      :focus {
+        svg {
+          transition: all 0.1s ease-in-out;
+          transform: scale(1.1);
+          transform: translateX(-0.25rem);
+          transition: all 0.1s ease-in-out;
+          opacity: 1;
+        }
       }
     }
   }
@@ -76,20 +50,45 @@ export const CaretsContainer = styled.div`
     transition: all 0.1s ease-in-out;
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        right: -4px;
+      &:hover,
+      :focus {
+        svg {
+          transition: all 0.1s ease-in-out;
+          transform: scale(1.1);
+          transform: translateX(0.25rem);
+          transition: all 0.1s ease-in-out;
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
+
+export const CarouselContainer = styled.div`
+  position: relative;
+
+  &[aria-expanded='true'] {
+    display: none;
+  }
+
+  .glide__slide {
+    position: relative;
+    transition: all 0.1s ease-in-out;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover,
+      :focus {
       }
     }
   }
 
-  svg {
-    transition: all 0.1s ease-in-out;
+  img {
+    cursor: pointer;
+    border-radius: 2px;
+  }
 
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        transition: all 0.1s ease-in-out;
-        opacity: 0.8;
-      }
-    }
+  &:hover > ${CaretsContainer} {
+    transition: all 0.1s ease-in-out;
+    opacity: 1;
   }
 `;

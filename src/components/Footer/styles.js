@@ -9,7 +9,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 32vh;
+
+  max-width: ${(props) => props.theme.breakPoints.xxl};
+  margin: 0 auto;
+  position: relative;
+  padding: 6rem 1rem;
 `;
 
 export const FooterText = styled.p`

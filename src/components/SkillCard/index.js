@@ -53,7 +53,7 @@ export const SkillCard = ({ icon: Icon, title, url, animation }) => {
       {animation ? (
         <Icon color={theme.svg.accent} size={48} />
       ) : (
-        <Plus color={theme.svg.accent} size={40} opacity={0.3} />
+        <Plus color={theme.svg.accent} size={38} opacity={0.3} />
       )}
     </S.Container>
   );

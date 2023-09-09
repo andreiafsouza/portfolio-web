@@ -13,10 +13,11 @@ import '@glidejs/glide/dist/css/glide.theme.min.css';
 /* images */
 import blog from '@images/personal-blog-thumbnail.png';
 import coffee from '@images/coffee-thumbnail.png';
+import eldorado from '@images/eldoauto-thumbnail.png';
 import CaretRight from '@components/icons/CaretRight';
 import CaretLeft from '@components/icons/CaretLeft';
 
-const Carousel = () => {
+const Carousel = ({ handleShowSlideDetail }) => {
   const theme = useTheme();
   const { t } = useTranslation();
   const carouselRef = useRef(null);
@@ -29,14 +30,14 @@ const Carousel = () => {
       perView: 4,
       gap: '12%',
       breakpoints: {
-        1680: {
+        1536: {
           perView: 3
         },
-        1200: {
+        1280: {
           perView: 2
         },
-        960: {
-          perView: 1
+        640: {
+          perView: 1.1
         }
       }
     });
@@ -58,13 +59,20 @@ const Carousel = () => {
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
           <li className="glide__slide">
-            <NavLink to="/portfolio/2" title={'Personal Blog'}>
-              <img src={blog} alt="Personal Blog" onLoad={handleImageLoad} />
+            <button title={'Eldorado Automóveis'} onClick={() => handleShowSlideDetail(1)}>
+              <img src={eldorado} alt="Eldorado Automóveis" onLoad={handleImageLoad} />
+            </button>
+          </li>
+
+          <li className="glide__slide">
+            <NavLink to="/portfolio/2" title={'Express Coffee'}>
+              <img src={coffee} alt="Express Coffee" onLoad={handleImageLoad} />
             </NavLink>
           </li>
+
           <li className="glide__slide">
-            <NavLink to="/portfolio/1" title={'Express Coffee'}>
-              <img src={coffee} alt="Express Coffee" onLoad={handleImageLoad} />
+            <NavLink to="/portfolio/3" title={'Personal Blog'}>
+              <img src={blog} alt="Personal Blog" onLoad={handleImageLoad} />
             </NavLink>
           </li>
         </ul>

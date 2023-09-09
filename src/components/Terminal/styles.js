@@ -12,7 +12,7 @@ export const AboutTerminalContainer = styled.div`
   border-radius: 1rem;
   overflow: hidden;
   ${mainBoxShadow}
-  min-height: 27.5rem;
+  /*  min-height: 27.5rem; */
 
   padding-bottom: 1rem;
 `;

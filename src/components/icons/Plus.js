@@ -5,7 +5,7 @@ export const Plus = ({ size, color, opacity }) => {
   return (
     <svg
       width={size ?? 128}
-      viewBox="0 0 448 512"
+      viewBox="0 0 448 448"
       fill={color ?? theme.svg.primary}
       opacity={opacity ?? '1'}
     >

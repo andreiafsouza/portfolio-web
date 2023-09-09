@@ -1,26 +1,14 @@
 import styled from 'styled-components';
 
-const cardBoxWidth = '80px';
-
 export const Container = styled.a`
   position: relative;
-  width: fit-content;
-  padding: 1rem;
-  border-radius: 16px;
-
   display: grid;
   justify-content: center;
-  flex: 0 0 ${cardBoxWidth};
-
+  padding: 1rem;
+  border-radius: 16px;
   cursor: pointer;
 
-  background-color: ${({ animation }) =>
-    animation ? (props) => props.theme.background.secondary : 'transparent'};
-
-  @media (hover: hover) and (pointer: fine) {
-    transform-style: preserve-3d;
-    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
-  }
+  background-color: ${(props) => props.theme.background.secondary};
 
   ::after {
     content: '';
@@ -31,7 +19,24 @@ export const Container = styled.a`
   ::after {
     inset: -0.4rem;
     border: 2px solid ${(props) => props.theme.svg.accent};
-    opacity: ${({ animation }) => (animation ? 1 : 0.3)};
+    opacity: ${({ animation }) => (animation ? 1 : 0.5)};
     transform: translateZ(-30px);
+  }
+
+  svg {
+    min-width: 2.5rem;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    padding: 2rem;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    transform-style: preserve-3d;
+    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+
+    ::after {
+      background-color: ${(props) => props.theme.svg.accent};
+    }
   }
 `;
