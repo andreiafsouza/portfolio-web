@@ -10,7 +10,8 @@ export const lightTheme = {
     secondaryAccent: '#60859B',
     titleBg: 'rgba(224, 211, 245, 1)',
     navbar: '#EEEEEEE6',
-    footer: '#DDDEED'
+    footer: '#DDDEED',
+    portfolio: '#e9e9e9'
   },
   text: {
     primary: '#2D2327',

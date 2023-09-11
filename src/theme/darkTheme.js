@@ -12,7 +12,8 @@ export const darkTheme = {
     secondaryAccent: colors.secondary[800],
     titleBg: colors.primary[500],
     navbar: `${colors.primary[900]}E6`,
-    footer: `${colors.primary[500]}40`
+    footer: `${colors.primary[500]}40`,
+    portfolio: '#110E20'
   },
   text: {
     primary: colors.neutral[100],

@@ -21,14 +21,12 @@ const Carousel = ({ handleShowSlideDetail }) => {
   const theme = useTheme();
   const { t } = useTranslation();
   const carouselRef = useRef(null);
-  const location = useLocation();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const glide = new Glide(carouselRef.current, {
       type: 'carousel',
-      perView: 4,
-      gap: '12%',
+      perView: 3,
+      gap: 16,
       breakpoints: {
         1536: {
           perView: 3
@@ -44,36 +42,37 @@ const Carousel = ({ handleShowSlideDetail }) => {
 
     glide.mount();
 
+    const slideElements = carouselRef.current.querySelectorAll('.glide__slide');
+
+    slideElements.forEach((slide) => {
+      slide.addEventListener('click', () => {
+        const slideId = slide.getAttribute('data-slide-id');
+
+        if (slideId) {
+          handleShowSlideDetail(parseInt(slideId));
+        }
+      });
+    });
+
     return () => {
       glide.destroy(); // Clean up the carousel when the component unmounts
     };
-  }, [location.pathname === '/']);
-
-  const handleImageLoad = () => {
-    setLoading(false);
-  };
+  }, [handleShowSlideDetail]);
 
   return (
     <S.CarouselContainer ref={carouselRef}>
-      {loading ? <LoadingSpinnerSmall /> : null}
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
-          <li className="glide__slide">
-            <button title={'Eldorado Automóveis'} onClick={() => handleShowSlideDetail(1)}>
-              <img src={eldorado} alt="Eldorado Automóveis" onLoad={handleImageLoad} />
-            </button>
+          <li data-slide-id="1" className="glide__slide">
+            <img src={eldorado} alt="Eldorado Automóveis" />
           </li>
 
-          <li className="glide__slide">
-            <NavLink to="/portfolio/2" title={'Express Coffee'}>
-              <img src={coffee} alt="Express Coffee" onLoad={handleImageLoad} />
-            </NavLink>
+          <li data-slide-id="2" className="glide__slide">
+            <img src={coffee} alt="Express Coffee" />
           </li>
 
-          <li className="glide__slide">
-            <NavLink to="/portfolio/3" title={'Personal Blog'}>
-              <img src={blog} alt="Personal Blog" onLoad={handleImageLoad} />
-            </NavLink>
+          <li data-slide-id="3" className="glide__slide">
+            <img src={blog} alt="Postfolio Blog" />
           </li>
         </ul>
       </div>

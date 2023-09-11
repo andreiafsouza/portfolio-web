@@ -66,6 +66,11 @@ export const CaretsContainer = styled.div`
 
 export const CarouselContainer = styled.div`
   position: relative;
+  margin-left: 1rem;
+
+  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
+    margin-right: 1rem;
+  }
 
   &[aria-expanded='true'] {
     display: none;
