@@ -41,7 +41,7 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
     const slideElements = carouselRef.current.querySelectorAll('.glide__slide');
 
     slideElements.forEach((slide) => {
-      const imgElement = slide.querySelector('img'); // Get the img element inside each slide
+      const imgElement = slide.querySelector('.image'); // Get the img element inside each slide
 
       imgElement.addEventListener('click', () => {
         const slideId = slide.getAttribute('data-slide-id');
@@ -64,7 +64,7 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
           {slideDetails?.map((slide, index) => {
             return (
               <li data-slide-id={slide.id} className="glide__slide" key={index}>
-                <S.ImageWrapper>
+                <S.ImageWrapper className="image" title={t('goTo') + t('details')}>
                   <img src={slide.images[0]} alt={slide.title} />
                 </S.ImageWrapper>
                 <S.SlideInfoWrapper>
@@ -93,7 +93,7 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
           title={t('previous')}
         >
           <i className="glide__icon glide__icon--prev">
-            <CaretLeft className="left" color={theme.svg.accent} />
+            <CaretLeft className="left" color={theme.svg.carets} />
           </i>
         </button>
         <button
@@ -103,7 +103,7 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
           title={t('next')}
         >
           <i className="glide__icon glide__icon--next">
-            <CaretRight color={theme.svg.accent} />
+            <CaretRight color={theme.svg.carets} />
           </i>
         </button>
       </S.CaretsContainer>

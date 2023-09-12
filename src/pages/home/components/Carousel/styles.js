@@ -7,7 +7,7 @@ export const CaretsContainer = styled.div`
   transition: all 0.1s ease-in-out;
 
   svg {
-    opacity: 0.6;
+    opacity: 0.5;
     transition: all 0.1s ease-in-out;
   }
 
@@ -22,10 +22,9 @@ export const CaretsContainer = styled.div`
     background: rgba(0, 0, 0, 0.2);
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover,
-      &:focus {
+      &:hover {
         transition: all 0.1s ease-in-out;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -35,8 +34,7 @@ export const CaretsContainer = styled.div`
     transition: all 0.1s ease-in-out;
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover,
-      &:focus {
+      &:hover {
         svg {
           transition: all 0.1s ease-in-out;
           transform: scale(1.1);
@@ -52,8 +50,7 @@ export const CaretsContainer = styled.div`
     transition: all 0.1s ease-in-out;
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover,
-      :focus {
+      &:hover {
         svg {
           transition: all 0.1s ease-in-out;
           transform: scale(1.1);
@@ -80,11 +77,22 @@ export const CarouselContainer = styled.div`
 
   .glide__slide {
     transition: all 0.1s ease-in-out;
+
+    &:hover,
+    :focus {
+      .image {
+        ::before {
+          transition: all 0.4s ease-in-out;
+          top: 100%;
+          height: 0;
+        }
+      }
+    }
   }
 
   img {
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 16px;
     inline-size: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
@@ -99,7 +107,23 @@ export const CarouselContainer = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div``;
+export const ImageWrapper = styled.div`
+  position: relative;
+
+  ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.2px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: all 0.4s ease-in-out;
+  }
+`;
 
 export const SlideInfoWrapper = styled.div`
   padding: 2rem 0.5rem;
@@ -114,7 +138,6 @@ export const SlideTitle = styled.h2`
 `;
 
 export const SlideLink = styled.a`
-  width: max-content;
   text-decoration: none;
   color: ${(props) => props.theme.text.secondary};
   font-size: ${(props) => props.theme.fontSizes.sm};

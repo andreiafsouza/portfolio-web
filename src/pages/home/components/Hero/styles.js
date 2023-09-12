@@ -199,7 +199,6 @@ export const CreateTextWrapper = styled.div`
 `;
 
 export const MainTextCreate = styled(BaseMainText)`
-  font-weight: ${(props) => props.theme.fontWeights.bold};
   font-size: ${(props) => props.theme.fontSizes.xxxl};
   color: ${(props) => props.theme.background.secondary};
   text-transform: uppercase;

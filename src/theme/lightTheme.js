@@ -38,7 +38,8 @@ export const lightTheme = {
   },
   svg: {
     primary: '#090312',
-    accent: '#9586DD'
+    accent: '#9586DD',
+    carets: '#F4F3F5'
   },
   profile: '#BDA52380',
   terminal: {

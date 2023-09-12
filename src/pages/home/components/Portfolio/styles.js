@@ -137,7 +137,7 @@ export const BackButton = styled.button`
   align-items: center;
   justify-content: flex-start;
   max-width: fit-content;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
 
   color: ${(props) => props.theme.text.primary};
 
@@ -145,7 +145,7 @@ export const BackButton = styled.button`
     content: '';
     position: absolute;
     width: 2px;
-    height: 16px;
+    height: 24px;
     transform: rotate(45deg);
     background-color: ${(props) => props.theme.icon.accent};
   }
@@ -154,7 +154,7 @@ export const BackButton = styled.button`
     content: '';
     position: absolute;
     width: 2px;
-    height: 16px;
+    height: 24px;
     transform: rotate(-45deg);
     background-color: ${(props) => props.theme.icon.accent};
   }
@@ -181,6 +181,11 @@ export const BackButton = styled.button`
   @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
     p {
       display: block;
+    }
+
+    ::before,
+    ::after {
+      height: 16px;
     }
   }
 `;

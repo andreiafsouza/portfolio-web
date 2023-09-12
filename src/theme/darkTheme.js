@@ -13,7 +13,7 @@ export const darkTheme = {
     titleBg: colors.primary[500],
     navbar: `${colors.primary[900]}E6`,
     footer: `${colors.primary[500]}40`,
-    portfolio: '#110E20'
+    portfolio: colors.neutral[900]
   },
   text: {
     primary: colors.neutral[100],
@@ -32,7 +32,7 @@ export const darkTheme = {
   shadows: {
     primary: colors.shadows[100],
     secondary: colors.shadows[800],
-    box: '#7662D780'
+    box: `${colors.accent.purple}80`
   },
   icon: {
     primary: colors.neutral[100],
@@ -40,7 +40,8 @@ export const darkTheme = {
   },
   svg: {
     primary: colors.neutral[100],
-    accent: colors.accent.purple
+    accent: colors.accent.purple,
+    carets: colors.neutral[100]
   },
   profile: `${colors.accent.yellow}E6`,
   terminal: {

@@ -42,7 +42,7 @@ export const Container = styled.a`
     :hover,
     :focus {
       transition: all 0.1s ease-in-out;
-      background-color: ${(props) => props.theme.background.primary};
+      background-color: ${(props) => props.theme.background.neutral};
     }
   }
 `;
