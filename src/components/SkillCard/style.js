@@ -38,5 +38,11 @@ export const Container = styled.a`
     ::after {
       background-color: ${(props) => props.theme.svg.accent};
     }
+
+    :hover,
+    :focus {
+      transition: all 0.1s ease-in-out;
+      background-color: ${(props) => props.theme.background.primary};
+    }
   }
 `;

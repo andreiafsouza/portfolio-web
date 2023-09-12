@@ -61,12 +61,7 @@ export const ImageProfile = styled.img`
   opacity: 0.8;
 `;
 
-export const TerminalWrapper = styled.div`
-  /*   @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
-    grid-column: span 3;
-    padding-right: 2rem;
-  } */
-`;
+export const TerminalWrapper = styled.div``;
 
 export const SkillsContainer = styled.div`
   display: grid;
@@ -106,7 +101,7 @@ export const SkillsTextContainer = styled.div`
 const BaseMainText = styled.h1`
   font-family: ${(props) => props.theme.font.mono};
   color: ${(props) => props.theme.text.secondary};
-  font-weight: ${(props) => props.theme.fontWeights.normal};
+  font-weight: ${(props) => props.theme.fontWeights.bold};
   font-size: ${(props) => props.theme.fontSizes.xxl};
 `;
 

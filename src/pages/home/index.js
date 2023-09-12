@@ -1,13 +1,11 @@
 /* components */
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { Divider } from '../../components/Divider';
-import { Container, NoDividerOnMobile } from './styles';
-import { PortfolioCarousel } from './components/PortfolioCarousel';
+import { Container } from './styles';
+import { Portfolio } from './components/Portfolio';
 import { Header } from '@components/Header';
 import { Contact } from './components/Contact/';
 import { Footer } from '@components/Footer/';
-import Portfolio from './components/Portfolio/';
 
 export const Home = () => {
   return (
@@ -16,7 +14,7 @@ export const Home = () => {
       <main>
         <Hero />
         <About />
-        <PortfolioCarousel />
+        <Portfolio />
         <Contact />
       </main>
       <Footer />

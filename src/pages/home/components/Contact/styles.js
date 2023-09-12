@@ -16,7 +16,7 @@ export const Container = styled.section`
 const BaseTitleText = styled.h1`
   font-family: ${(props) => props.theme.font.mono};
   color: ${(props) => props.theme.text.secondary};
-  font-weight: ${(props) => props.theme.fontWeights.normal};
+  font-weight: ${(props) => props.theme.fontWeights.bold};
   font-size: ${(props) => props.theme.fontSizes.xxl};
 `;
 

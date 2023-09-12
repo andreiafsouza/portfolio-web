@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import blueprintLines from '../../../../assets/images/blueprint-lines.png';
+import blueprintLines from '@images/blueprint-lines.png';
 import { Link } from 'react-scroll';
 
 //animations
@@ -199,6 +199,7 @@ export const CreateTextWrapper = styled.div`
 `;
 
 export const MainTextCreate = styled(BaseMainText)`
+  font-weight: ${(props) => props.theme.fontWeights.bold};
   font-size: ${(props) => props.theme.fontSizes.xxxl};
   color: ${(props) => props.theme.background.secondary};
   text-transform: uppercase;

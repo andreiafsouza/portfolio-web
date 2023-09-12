@@ -24,15 +24,15 @@ export const Header = () => {
   const languages = {
     en: {
       nativeName: 'English (US)',
-      abbreviation: 'En'
+      abbreviation: 'EN'
     },
     pt: {
       nativeName: 'Português (BR)',
-      abbreviation: 'Pt'
+      abbreviation: 'PT'
     },
     de: {
       nativeName: 'Deutsch',
-      abbreviation: 'De'
+      abbreviation: 'DE'
     }
   };
 

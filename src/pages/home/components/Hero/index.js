@@ -1,7 +1,7 @@
 /* components */
 import { Button } from '@src/components/Button';
 import { Link } from '@src/components/Link';
-import { ProfileLines } from '../ProfileLines';
+import { HeroAnimationLines } from '../HeroAnimationLines';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* style */
@@ -51,7 +51,7 @@ export const Hero = () => {
           </S.MainLeftContainer>
           <S.MainRightContainer>
             <S.ProfileAnimationWrapper>
-              <ProfileLines />
+              <HeroAnimationLines />
             </S.ProfileAnimationWrapper>
           </S.MainRightContainer>
         </S.MainContainer>

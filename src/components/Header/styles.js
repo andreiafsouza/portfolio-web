@@ -50,9 +50,8 @@ export const LogoContainer = styled(Link)`
 
 export const LogoText = styled.div`
   position: relative;
-  color: ${(props) => props.theme.text.secondary};
-
   font-size: ${(props) => props.theme.fontSizes.lg};
+  transition: all 0.1s ease-in-out;
 
   &::before {
     content: '';
@@ -61,6 +60,14 @@ export const LogoText = styled.div`
     z-index: 0;
     border-left: 0.15rem solid ${(props) => props.theme.svg.accent};
     animation: ${cursorBlink} 1s steps(2) infinite;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-within {
+      transition: all 0.1s ease-in-out;
+      color: ${(props) => props.theme.text.secondary};
+    }
   }
 `;
 
@@ -172,7 +179,7 @@ export const LanguageSelectContainer = styled.div`
 
 export const SelectLanguage = styled.div`
   background: ${(props) => props.theme.background.primary};
-  color: ${(props) => props.theme.text.secondary};
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,6 +205,7 @@ export const SelectLanguage = styled.div`
     &:hover {
       transition: background-color 350ms ease 0s;
       background: ${(props) => props.theme.background.secondary};
+      color: ${(props) => props.theme.text.secondary};
     }
   }
 

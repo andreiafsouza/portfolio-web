@@ -1,6 +1,7 @@
 /* components */
 import { Terminal } from '@src/components/Terminal';
-import { ProfileLines } from '@src/components/ProfileLines/index';
+import { SkillCard } from '@src/components/SkillCard';
+import { ProfileAnimationLines } from '@components/ProfileAnimationLines/';
 /* assets | svgs | images */
 import profile from '@images/profile.png';
 import ReactSolid from '@icons/ReactSolid';
@@ -20,7 +21,6 @@ import { AndroidIcon } from '@src/components/icons/AndroidIcon';
 import { useTranslation } from 'react-i18next';
 /* style */
 import * as S from './styles';
-import { SkillCard } from '@src/components/SkillCard';
 import TailwindIcon from '@icons/TailwindIcon';
 
 export const About = () => {
@@ -30,7 +30,7 @@ export const About = () => {
     <S.Container id="about">
       <S.AboutInfoContainer>
         <S.ImageContainer>
-          <ProfileLines />
+          <ProfileAnimationLines />
           <S.ImageProfile
             src={profile}
             alt="a profile picture illustration of Andreia Souza wearing eyeglasses and smilling"
