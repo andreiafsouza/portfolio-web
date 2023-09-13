@@ -12,9 +12,8 @@ import * as S from './styles';
 import eldorado from '@images/eldoauto-full.jpg';
 import blog from '@images/personal-blog-full.png';
 import coffee from '@images/coffee-full.jpg';
-import coffee2 from '@images/coffee-full-checkout1.png';
-import coffee3 from '@images/coffee-full-checkout2.png';
-import AngleRightSolid from '@components/icons/AngleRightSolid';
+import coffee2 from '@images/coffee-full-checkout1.jpg';
+import coffee3 from '@images/coffee-full-checkout2.jpg';
 
 export const Portfolio = () => {
   const theme = useTheme();
