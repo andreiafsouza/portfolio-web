@@ -34,6 +34,7 @@ export const About = () => {
           <S.ImageProfile
             src={profile}
             alt="a profile picture illustration of Andreia Souza wearing eyeglasses and smilling"
+            loading="lazy"
           />
         </S.ImageContainer>
         <S.TerminalWrapper>

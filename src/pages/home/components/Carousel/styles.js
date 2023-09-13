@@ -12,20 +12,13 @@ export const CaretsContainer = styled.div`
   }
 
   .glide__arrow {
-    top: 22%;
-    padding: 8px;
-    transform: translateY(0);
-    border: none;
-    box-shadow: none;
-    transition: all 0.1s ease-in-out;
-
-    background: rgba(0, 0, 0, 0.2);
-
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         transition: all 0.1s ease-in-out;
-        background: rgba(0, 0, 0, 0.3);
       }
+    }
+
+    @media (min-width: ${(props) => props.theme.breakPoints.md}) {
     }
   }
 
@@ -65,14 +58,26 @@ export const CaretsContainer = styled.div`
 
 export const CarouselContainer = styled.div`
   position: relative;
-  margin-left: 1rem;
 
-  @media (min-width: ${(props) => props.theme.breakPoints.lg}) {
-    margin-right: 1rem;
+  ::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+    background: ${(props) => props.theme.background.portfolio};
   }
 
   &[aria-expanded='true'] {
     display: none;
+  }
+
+  .glide__slides {
+    padding-left: 1.2rem;
+
+    @media (min-width: ${(props) => props.theme.breakPoints.sm}) {
+      padding-left: 1rem;
+    }
   }
 
   .glide__slide {
@@ -81,11 +86,8 @@ export const CarouselContainer = styled.div`
     &:hover,
     :focus {
       .image {
-        ::before {
-          transition: all 0.4s ease-in-out;
-          top: 100%;
-          height: 0;
-        }
+        transform: scale(1);
+        transition: all ease 500ms;
       }
     }
   }
@@ -109,19 +111,10 @@ export const CarouselContainer = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
+  transition: all ease 500ms;
+  transform: scale(0.98);
 
-  ::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.11);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.2px);
-    -webkit-backdrop-filter: blur(0px);
-    transition: all 0.4s ease-in-out;
+  @media (min-width: ${(props) => props.theme.breakPoints.md}) {
   }
 `;
 

@@ -31,7 +31,7 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
           perView: 2
         },
         640: {
-          perView: 1.1
+          perView: 1.3
         }
       }
     });
@@ -65,7 +65,7 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
             return (
               <li data-slide-id={slide.id} className="glide__slide" key={index}>
                 <S.ImageWrapper className="image" title={t('goTo') + t('details')}>
-                  <img src={slide.images[0]} alt={slide.title} />
+                  <img src={slide.images[0]} alt={slide.title} loading="lazy" />
                 </S.ImageWrapper>
                 <S.SlideInfoWrapper>
                   <S.SlideLink
@@ -85,28 +85,6 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
           })}
         </ul>
       </div>
-      <S.CaretsContainer className="glide__arrows" data-glide-el="controls">
-        <button
-          className="glide__arrow glide__arrow--prev"
-          data-glide-dir="<"
-          aria-label={t('previous')}
-          title={t('previous')}
-        >
-          <i className="glide__icon glide__icon--prev">
-            <CaretLeft className="left" color={theme.svg.carets} />
-          </i>
-        </button>
-        <button
-          className="glide__arrow glide__arrow--next"
-          data-glide-dir=">"
-          aria-label={t('next')}
-          title={t('next')}
-        >
-          <i className="glide__icon glide__icon--next">
-            <CaretRight color={theme.svg.carets} />
-          </i>
-        </button>
-      </S.CaretsContainer>
     </S.CarouselContainer>
   );
 };

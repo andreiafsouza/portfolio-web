@@ -179,7 +179,7 @@ export const Portfolio = () => {
                     {slide?.images.map((image, index) => {
                       return (
                         <S.SlideImageWrapper key={index}>
-                          <img src={image} alt={slide.title} />
+                          <img src={image} alt={slide.title} loading="lazy" />
                         </S.SlideImageWrapper>
                       );
                     })}
