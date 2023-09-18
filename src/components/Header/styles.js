@@ -165,7 +165,6 @@ export const NavbarOptions = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding-left: 0.5rem;
 `;
 
 export const ToggleThemeButtonContainer = styled.div`
