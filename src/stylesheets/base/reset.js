@@ -40,10 +40,10 @@ body {
   -moz-tap-highlight-color: ${(props) => props.theme.button.hover};
   -ms-tap-highlight-color: ${(props) => props.theme.button.hover};
 
-  ::-webkit-scrollbar {
+/*   ::-webkit-scrollbar {
     display: none;
   }
-  
+   */
   
   /* ::-webkit-scrollbar {
       width: 8px;
