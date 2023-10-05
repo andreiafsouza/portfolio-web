@@ -51,7 +51,6 @@ export const LogoContainer = styled(Link)`
 export const LogoText = styled.div`
   position: relative;
   font-size: ${(props) => props.theme.fontSizes.lg};
-  transition: all 0.1s ease-in-out;
 
   &::before {
     content: '';
@@ -60,11 +59,11 @@ export const LogoText = styled.div`
     z-index: 0;
     border-left: 0.15rem solid ${(props) => props.theme.svg.accent};
     animation: ${cursorBlink} 1s steps(2) infinite;
+    animation-delay: 4s;
   }
 
   @media (hover: hover) and (pointer: fine) {
-    &:hover,
-    &:focus-within {
+    &:hover {
       transition: all 0.1s ease-in-out;
       color: ${(props) => props.theme.text.secondary};
     }

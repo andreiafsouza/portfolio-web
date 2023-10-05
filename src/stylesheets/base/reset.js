@@ -30,6 +30,7 @@ html:focus-within {
     color: ${(props) => props.theme.background.secondary}
 }
 
+
 html,
 body {
   background: ${(props) => props.theme.background.primary};
@@ -39,28 +40,34 @@ body {
   -webkit-tap-highlight-color: ${(props) => props.theme.button.hover};
   -moz-tap-highlight-color: ${(props) => props.theme.button.hover};
   -ms-tap-highlight-color: ${(props) => props.theme.button.hover};
-
-/*   ::-webkit-scrollbar {
-    display: none;
-  }
-   */
+   
   
-  /* ::-webkit-scrollbar {
-      width: 8px;
-      background-color: ${(props) => props.theme.background.primary}; //card
-    }
+  ::-webkit-scrollbar {
+    width: 0.8em;
+    height: 0.8em;
+  }
         
-    ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: ${(props) => props.theme.background.secondary}; //label
-    }
+  ::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.background.secondary}; 
+  }
 
-    scrollbar-width: thin;
-    scrollbar-color: 
-    ${(props) => props.theme.background.secondary} ${(props) =>
-  props.theme.background.primary}; */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 2px solid ${(props) => props.theme.background.secondary}; 
+    background: ${(props) => props.theme.text.secondary}; 
+  }
  
 }
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: ${(props) => props.theme.text.secondary} ${(props) =>
+  props.theme.background.secondary};
+  }
+}
+
+
 
 /* Set core body defaults */
 body {
