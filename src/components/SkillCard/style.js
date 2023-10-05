@@ -6,7 +6,7 @@ export const Container = styled.a`
   justify-content: center;
   padding: 1rem;
   border-radius: 16px;
-  cursor: pointer;
+  cursor: ${({ animation }) => (animation ? 'pointer' : 'auto')};
 
   background-color: ${(props) => props.theme.background.secondary};
 
@@ -39,10 +39,10 @@ export const Container = styled.a`
       background-color: ${(props) => props.theme.svg.accent};
     }
 
-    :hover,
-    :focus {
+    :hover {
       transition: all 0.1s ease-in-out;
-      background-color: ${(props) => props.theme.background.neutral};
+      background-color: ${({ animation }) =>
+        animation ? (props) => props.theme.background.neutral : ''};
     }
   }
 `;

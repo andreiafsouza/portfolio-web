@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import blueprintLines from '@images/blueprint-lines.png';
-import { bigBoxShadow, mainBoxShadow } from 'stylesheets/abstracts/mixins';
+import { bigBoxShadow } from 'stylesheets/abstracts/mixins';
 
 /* animations */
 const marginSlideRight = keyframes`

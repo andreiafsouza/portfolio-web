@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { mediumLayoutBreakPoint } from '@src/utils';
-import { smallLayoutBreakPoint } from 'utils/index';
 
 export const Container = styled.section`
   max-width: ${(props) => props.theme.breakPoints.xxl};
@@ -50,7 +48,7 @@ export const ContactInfoBox = styled.div`
   gap: 0.5rem;
   justify-content: space-between;
 
-  @media (min-width: ${smallLayoutBreakPoint}) {
+  @media (min-width: ${(props) => props.theme.breakPoints.sm}) {
     flex-direction: row;
     align-items: flex-end;
     gap: 1rem;

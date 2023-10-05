@@ -1,8 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 /* components */
 import Glide from '@glidejs/glide';
-import CaretRight from '@components/icons/CaretRight';
-import CaretLeft from '@components/icons/CaretLeft';
 /* i18 */
 import { useTranslation } from 'react-i18next';
 /* style */
@@ -55,7 +53,7 @@ const Carousel = ({ handleShowSlideDetail, slideNumber, slideDetails }) => {
     return () => {
       glide.destroy(); // Clean up the carousel when the component unmounts
     };
-  }, [handleShowSlideDetail]);
+  }, [handleShowSlideDetail, slideNumber]);
 
   return (
     <S.CarouselContainer ref={carouselRef}>

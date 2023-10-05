@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
+import { VanillaTilt } from 'plugins/vanillaTilt';
 /* assets | svgs | images */
 import { Plus } from '@icons/Plus';
 /* i18 */
@@ -10,40 +11,24 @@ import * as S from './style';
 export const SkillCard = ({ icon: Icon, title, url, animation }) => {
   const theme = useTheme();
   const { t } = useTranslation();
-  const containerRef = useRef(null);
+  const tilt = useRef(null);
+
+  const options = useMemo(
+    () => ({
+      scale: 1.1,
+      speed: 1000,
+      max: 10
+    }),
+    []
+  );
 
   useEffect(() => {
-    const container = containerRef.current;
-
-    if (container) {
-      const rotateElement = (event) => {
-        const x = event.clientX;
-        const y = event.clientY;
-        const middleX = window.innerWidth / 2;
-        const middleY = window.innerHeight / 2;
-        const offsetX = ((x - middleX) / middleX) * 15;
-        const offsetY = ((y - middleY) / middleY) * 15;
-        container.style.setProperty('--rotateX', `${offsetX}deg`);
-        container.style.setProperty('--rotateY', `${-1 * offsetY}deg`);
-      };
-      document.addEventListener('mousemove', rotateElement);
-
-      const resetRotation = () => {
-        container.style.setProperty('--rotateX', '0');
-        container.style.setProperty('--rotateY', '0');
-      };
-      /* document.addEventListener('mouseout', resetRotation); */
-
-      return () => {
-        document.removeEventListener('mousemove', rotateElement);
-        /* document.removeEventListener('mouseout', resetRotation); */
-      };
-    }
-  }, [containerRef]);
+    VanillaTilt.init(tilt.current, options);
+  }, [options]);
 
   return (
     <S.Container
-      ref={animation && containerRef}
+      ref={animation && tilt}
       animation={animation}
       href={url}
       title={title}
