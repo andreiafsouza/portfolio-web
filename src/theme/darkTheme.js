@@ -18,7 +18,8 @@ export const darkTheme = {
   text: {
     primary: colors.neutral[100],
     secondary: colors.primary[200],
-    neutral: colors.neutral[200]
+    neutral: colors.neutral[200],
+    create: colors.primary[500]
   },
   font: {
     main: typography.fontFamilies.main,

@@ -16,7 +16,8 @@ export const lightTheme = {
   text: {
     primary: '#2D2327',
     secondary: '#605C7A',
-    neutral: '#ffffff'
+    neutral: '#ffffff',
+    create: 'rgba(224, 211, 245, 0.8)'
   },
   font: {
     main: typography.fontFamilies.main,

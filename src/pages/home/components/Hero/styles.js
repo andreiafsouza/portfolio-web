@@ -200,16 +200,10 @@ export const CreateTextWrapper = styled.div`
 
 export const MainTextCreate = styled(BaseMainText)`
   font-size: ${(props) => props.theme.fontSizes.xxxl};
-  color: ${(props) => props.theme.background.secondary};
+  color: ${(props) => props.theme.text.create};
   text-transform: uppercase;
 
   position: relative;
-
-  &::before {
-    background: ${(props) => props.theme.background.titleBg};
-    animation: ${typewriter} var(--typewriterSpeed) steps(6) calc(var(--typewriterSpeed) + 2s)
-      forwards;
-  }
 
   &::after {
     right: 100%;
@@ -245,7 +239,7 @@ export const MainTextParagraph = styled.h2`
 
   opacity: 0;
   transform: translateY(3rem);
-  animation: ${fadeInUp} 2s ease calc(var(--typewriterSpeed) + 3s) forwards;
+  animation: ${fadeInUp} 2s ease calc(var(--typewriterSpeed) + 2.5s) forwards;
 `;
 
 export const MainButtonContainer = styled.div`
