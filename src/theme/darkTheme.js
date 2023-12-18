@@ -23,7 +23,6 @@ export const darkTheme = {
   },
   font: {
     main: typography.fontFamilies.main,
-    display: typography.fontFamilies.display,
     mono: typography.fontFamilies.mono
   },
   button: {

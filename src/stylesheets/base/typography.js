@@ -1,8 +1,9 @@
 export const typography = {
   fontFamilies: {
-    main: `'Noto Sans' , '-apple-system', 'sans-serif'`,
-    display: `'Noto Serif', 'serif'`,
-    mono: `'Fragment Mono', 'monospace'`
+    main: `'system-ui', 'sans-serif'`,
+    mono: `SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", 
+    "Courier New", monospace`
   },
   fontSizes: {
     xs: '0.625rem',

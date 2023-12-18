@@ -1,8 +1,4 @@
-import { useTheme } from 'styled-components';
-
 function JavascriptIcon({ size, color }) {
-  const theme = useTheme();
-
   return (
     <svg width={size ?? 128} viewBox="0 0 128 128">
       <path
