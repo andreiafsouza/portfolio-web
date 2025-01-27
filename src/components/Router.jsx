@@ -5,10 +5,8 @@ import LoadingSpinner from './LoadingSpinner/index';
 
 export function Router() {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }

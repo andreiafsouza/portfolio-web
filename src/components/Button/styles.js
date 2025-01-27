@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   borderAnimationUsingBackground,
   borderAnimationUsingBackgroundMedia
-} from '../../stylesheets/abstracts/mixins';
+} from '@src/stylesheets/abstracts/mixins';
 
 export const Container = styled.div`
   max-width: ${({ size }) => (size === 'small' ? 'fit-content' : '8.75rem')};
