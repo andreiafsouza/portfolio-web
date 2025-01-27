@@ -1,6 +1,6 @@
 import { typography } from '../stylesheets/base/typography';
 import { colors } from '../stylesheets/abstracts/palettes';
-import { breakPoints } from 'stylesheets/base/breakPoints';
+import { breakPoints } from '../stylesheets/base/breakPoints';
 
 export const darkTheme = {
   colors: colors,
