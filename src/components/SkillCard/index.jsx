@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef } from 'react';
-import { VanillaTilt } from 'plugins/vanillaTilt';
+import { VanillaTilt } from '@src/plugins/vanillaTilt';
 /* assets | svgs | images */
 import { Plus } from '@icons/Plus';
 /* i18 */

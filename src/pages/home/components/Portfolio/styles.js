@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { bigBoxShadow } from 'stylesheets/abstracts/mixins';
+import { bigBoxShadow } from '@src/stylesheets/abstracts/mixins';
 
 /* animations */
 const marginSlideRight = keyframes`

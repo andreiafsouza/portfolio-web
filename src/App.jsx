@@ -21,7 +21,6 @@ function App() {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <ThemeProvider theme={themeMode}>
         <BrowserRouter>
-          {/*  <Header /> */}
           <Router />
         </BrowserRouter>
         <GlobalStyleReset />

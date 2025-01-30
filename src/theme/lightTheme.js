@@ -1,5 +1,5 @@
 import { typography } from '../stylesheets/base/typography';
-import { breakPoints } from 'stylesheets/base/breakPoints';
+import { breakPoints } from '../stylesheets/base/breakPoints';
 
 export const lightTheme = {
   background: {

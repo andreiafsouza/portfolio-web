@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 /* components */
-import Carousel from 'pages/home/components/Carousel/index';
+import Carousel from '../Carousel/index';
 import CaretLeft from '@components/icons/CaretLeft';
 import CaretRight from '@components/icons/CaretRight';
 /* i18 */
