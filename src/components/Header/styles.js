@@ -186,7 +186,7 @@ export const SelectLanguage = styled.div`
   padding: 0.15rem 0;
   cursor: pointer;
   transition: background-color 350ms ease 0s;
-  text-transform: capitalize;
+  text-transform: uppercase;
 
   &::after {
     content: '';
