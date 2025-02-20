@@ -17,6 +17,8 @@ export const Header = styled.header`
   position: sticky;
   top: 0;
   z-index: 99999;
+  background: ${(props) => props.theme.background.primary};
+  transition: color 350ms ease 0s, background-color 350ms ease 0s;
 `;
 
 export const Container = styled.div`
@@ -29,8 +31,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
-  background: ${(props) => props.theme.background.primary};
 
   transition: color 350ms ease 0s, background-color 350ms ease 0s;
 
