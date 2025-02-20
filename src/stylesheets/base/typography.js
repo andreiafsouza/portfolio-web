@@ -1,9 +1,7 @@
 export const typography = {
   fontFamilies: {
     main: `'system-ui', 'sans-serif'`,
-    mono: `'fragment-mono', SFMono-Regular, Menlo, Monaco,
-    Consolas, "Liberation Mono", 
-    "Courier New", monospace`
+    mono: `"Fragment Mono", 'Monaco', 'Courier New', monospace;`
   },
   fontSizes: {
     xs: '0.625rem',

@@ -1,15 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import frangmentMonoWoff from '../../assets/fonts/fragmentmono-regular.woff';
-import frangmentMonoWoff2 from '../../assets/fonts/fragmentmono-regular.woff2';
 
 export const GlobalStyleReset = createGlobalStyle`
-
-@font-face {
-  font-family: 'fragment-mono';
-  font-weight: 400;
-  src: url(${frangmentMonoWoff2}) format('woff2'), 
-       url(${frangmentMonoWoff}) format('woff');
-}
 
 *,
 *::before,
