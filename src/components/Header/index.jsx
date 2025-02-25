@@ -20,6 +20,7 @@ export const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('');
+  const dropdownTimer = useRef(null);
 
   const languages = {
     en: {
@@ -47,15 +48,6 @@ export const Header = () => {
     smooth: 'true',
     duration: 500,
     onClick: handleMenuButton
-  };
-
-  const handleOpenLanguageMenu = (event) => {
-    event.stopPropagation();
-    setOpenDropdown(!openDropdown);
-  };
-
-  const handleChangeLanguage = (language) => {
-    i18n.changeLanguage(language);
   };
 
   /* useEffects */
@@ -94,6 +86,38 @@ export const Header = () => {
     setSelectedLanguage(i18n.resolvedLanguage);
   }, [i18n.resolvedLanguage]);
 
+  useEffect(() => {
+    return () => {
+      if (dropdownTimer.current) {
+        clearTimeout(dropdownTimer.current);
+      }
+    };
+  }, []);
+
+  /* handlers */
+
+  const handleOpenLanguageMenu = (event) => {
+    event.stopPropagation();
+    setOpenDropdown(!openDropdown);
+  };
+
+  const handleChangeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
+  const handleLanguageMouseEnter = () => {
+    if (dropdownTimer.current) {
+      clearTimeout(dropdownTimer.current);
+    }
+    setOpenDropdown(true);
+  };
+
+  const handleLanguageMouseLeave = () => {
+    dropdownTimer.current = setTimeout(() => {
+      setOpenDropdown(false);
+    }, 1500);
+  };
+
   return (
     <S.Header>
       <S.Container>
@@ -131,10 +155,12 @@ export const Header = () => {
           </S.NavbarContainer>
           <S.NavbarOptions>
             <S.LanguageSelectContainer
-              aria-label={'Select language'}
-              title={'Select language'}
+              aria-label="Select language"
+              title="Select language"
               className="dropdown"
               onClick={handleOpenLanguageMenu}
+              onMouseEnter={handleLanguageMouseEnter}
+              onMouseLeave={handleLanguageMouseLeave}
               ref={languageMenu}
             >
               <S.SelectLanguage aria-expanded={openDropdown} color={theme.text.secondary}>
