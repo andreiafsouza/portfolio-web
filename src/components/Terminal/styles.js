@@ -12,9 +12,12 @@ export const AboutTerminalContainer = styled.div`
   border-radius: 1rem;
   overflow: hidden;
   ${mainBoxShadow}
-  /*  min-height: 27.5rem; */
-
   padding-bottom: 1rem;
+  min-height: 360px;
+
+  @media (min-width: ${(props) => props.theme.breakPoints.md}) {
+    min-height: 312px;
+  }
 `;
 
 export const AboutParagraphHeader = styled.div`

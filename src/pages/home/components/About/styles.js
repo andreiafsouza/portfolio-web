@@ -61,7 +61,9 @@ export const ImageProfile = styled.img`
   opacity: 0.8;
 `;
 
-export const TerminalWrapper = styled.div``;
+export const TerminalWrapper = styled.div`
+  width: 100%;
+`;
 
 export const SkillsContainer = styled.div`
   display: grid;
